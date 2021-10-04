@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="de" style="position: unset !important; overflow: auto !important; margin-top: 0 !important;">
+<head>
+<title>Deklination und Steigerung „gut“ - alle Fälle des Adjektivs, Plural, Genus</title>
+<meta name="description" content="Deklination und Steigerung von gut: im Plural, Genitiv, allen Kasus, Komparativ, Superlativ, ... mit Sprachausgabe und Downloads.">
+<meta name="keywords" content="gut, gut, Deklination, Komparation, deklinieren, komparieren, Steigerung, steigern, Adjektiv, stark, schwach, gemischt, Nominativ, Genitiv, Dativ, Akkusativ, Plural, Singular">
+<meta name="robots" content="noindex, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="HandheldFriendly" content="true">
+<meta name="MobileOptimized" content="width">
+<meta name="application-name" content="Netzverb® Flexion">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000084">
+<meta name="msapplication-TileColor" content="#000084">
+<meta name="theme-color" content="#000084">
+<script type="text/javascript"> const Rahmen = {}; (function() { function istauf(id) { const e = document.getElementById(id); const d = e.currentStyle ? e.currentStyle.display : getComputedStyle(e, null).display; return d!=="none"; } function display(e) { let t = e.tagName; if(t==="UL"||t==="DIV") return "block"; if(t==="TD") return "table-cell"; if(t==="TR") return "table-row"; return "inline"; } function aufzu(id, auf) { document.querySelectorAll('[id=' + id + ']').forEach(e => aufzuE(e, auf)); document.querySelectorAll('[id=' + id + 'Img]').forEach(b => aufzuB(b, auf)); } function aufzuE(e, auf) { e.style.display = auf ? display(e) : "none"; if(auf && e.onchange) e.onchange(undefined); } function aufzuB(b, auf) { let ba = b.getElementsByClassName("rAuf")[0]; ba.style.display = auf ? display(ba) : "none"; let bz = b.getElementsByClassName("rZu")[0]; bz.style.display = auf ? "none" : display(bz); } function setHeight(e) { e.style.height = ''; e.style.height = e.scrollHeight + 'px'; } this.alleaufzu = function(id, k) { const ia = istauf(id); const es = document.getElementsByClassName(k); for (let i = 0; i < es.length; i++) aufzu(es[i].id, !ia); }; this.auf = function(ids) { if(ids instanceof Array) { for (const id in ids) aufzu(ids[id], true); } else aufzu(ids, true); }; this.zu = function(ids) { if(ids instanceof Array) { for (const id in ids) aufzu(ids[id], false); } else aufzu(ids, false); }; this.aufzu = function(ids) { if(ids instanceof Array) { const ia = istauf(ids[0]); for (const id in ids) aufzu(ids[id], !ia); } else aufzu(ids, !istauf(ids)); }; this.breite = function() { return Math.max(document.documentElement.clientWidth, window.innerWidth || 0); }; this.hoch = function(id) { if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) aufzu(id, true); else aufzu(id, false); }; this.resize = function(ev) { setHeight(ev.target); }; this.size = function(id) { setHeight(document.getElementById(id)); }; }).apply(Rahmen); const Eingabe = {}; (function() { function element(id) { return document.getElementById(id); } function sprung(e,l,s) { let i; const os = l.getElementsByClassName("rEinOpt"); let t = -1; for (i = 0; i<os.length; i++) { if(os[i].classList.contains("rEinOptAn")) t=i; } let p = t + s; if(p<0) p=os.length-1; if(p>os.length-1) p=0; for (i = 0; i<os.length; i++) { if(i===t) os[i].classList.remove("rEinOptAn"); if(i===p) { os[i].classList.add("rEinOptAn"); } } e.value=os[p].textContent; e.setSelectionRange(0,e.value.length); } function vorschlag(e,l) { const w = e.value; for (let i=0; i<l.children.length; i++) { if(l.children[i].classList.contains("rEinOpt") && w && l.children[i].textContent && l.children[i].textContent.toLowerCase().startsWith(w.toLowerCase())) { e.value=l.children[i].textContent; e.setSelectionRange(w.length,e.value.length); return; } } } this.zeige = function(ide,idl,v) { let o; const e = element(ide); const l = element(idl); let s = 0; const w = e.value; while(l.children.length>0) l.removeChild(l.children[0]); for(let i=0; i<v.length; i++) { if(!v[i]) continue; if(v[i] instanceof Array) { if(v[i].length <= 1) continue; const g = document.createElement("div"); g.classList.add("rEinGrp"); g.innerHTML = v[i][0]; s++; l.appendChild(g); for(let j = 1; j < v[i].length; j++) { o = document.createElement("div"); o.onmousedown=function(ev) { Eingabe.uebernahme(ev,ide); }; o.classList.add("rEinOpt"); o.innerHTML = v[i][j]; l.appendChild(o); s++; } } else { o = document.createElement('div'); o.onmousedown=function(ev) { Eingabe.uebernahme(ev,ide); }; o.classList.add("rEinOpt"); o.innerHTML = v[i]; l.appendChild(o); s++; } } if(s<=1) {l.style.display = "none"; return;} l.style.width=(l.parentElement.clientWidth)+"px"; e.setAttribute("w",w); l.style.display="inline"; }; this.an = function(ide,idl,fnkl) { const e = element(ide); const w = e.value; setTimeout(function() { if(w!==e.value) return; fnkl(ide,idl,w); },50); }; this.aus = function(ide, idl) { const e = element(ide); const l = element(idl); setTimeout(function() { if(document.activeElement === e || document.activeElement === l) return; l.style.display = "none"; },50); }; this.uebernahme = function(ev,ide) { const e = element(ide); e.value=ev.target.textContent; e.focus(); if(e.form) e.form.submit(); }; this.taste = function(ide, idl, event) { const l = element(idl); const e = element(ide); let keyCode = ('which' in event) ? event.which : event.keyCode; if(keyCode === 40) { sprung(e, l, 1); event.preventDefault(); } if(keyCode === 38) { sprung(e, l, -1); event.preventDefault(); } if(keyCode === 27) { l.style.display = "none"; } }; }).apply(Eingabe); const Hinweis = {}; (function() { this.weg = function(n) { Hinweis.schliessen(n); document.cookie="de.netzverb.rahmen.hinweis_"+n+"=none" + ";expires="+new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toUTCString() + ";path=/"; }; this.schliessen = function(n) { const e = document.getElementById(n); e.style.display="none"; }; }).apply(Hinweis);const Ajax = {}; (function() { let kn, kv, kfa; function pr(p, n, v) { if(!n) return p; return (p ? p + "&" : "") + encodeURIComponent(n) + "=" + encodeURIComponent(v); } function prs(f, s) { let i; let p = pr(null, kn, kv); const is = f.getElementsByTagName("input"); for(i = 0; i<is.length; i++) if(!is[i].disabled && is[i].name && (is[i].type !== "submit" || is[i] === s)) if(is[i].type !== "radio" && is[i].type !== "checkbox" || is[i].checked) p = pr(p, is[i].name, is[i].value); const bs = f.getElementsByTagName("button"); for(i = 0; i<bs.length; i++) if(!bs[i].disabled && bs[i].name && bs[i].type === "submit" && bs[i] === s) p = pr(p, bs[i].name, bs[i].value); const tas = f.getElementsByTagName("textarea"); for(i = 0; i<tas.length; i++) if(!tas[i].disabled && tas[i].name) p = pr(p, tas[i].name, tas[i].value); const ss = f.getElementsByTagName("select"); for(i = 0; i<ss.length; i++) if(!ss[i].disabled && ss[i].name && ss[i].selectedIndex >= 0) p = pr(p, ss[i].name, ss[i].options[ss[i].selectedIndex].value); return p; } this.param = function (p, n, v) { return pr(p, n ,v); }; this.ersetze = function(e, id, h) { return this.submit(e, id, h); }; this.submit = function(e, id, h) { e.preventDefault(); let s; let f = e.currentTarget; if(f.tagName !== "FORM") { s = f; f = f.form; } const p = prs(f, s); let fa = f.action; if(s && s.formAction) fa = s.formAction; if(kfa) fa = kfa; this.post(fa, p, id, h); kn = null; kv = null; kfa = null; return false; }; this.submit2 = function(f, h) { const p = prs(f); let fa = f.action; this.post2(fa, p, h); kn = null; kv = null; kfa = null; return false; }; this.get = function(u, id, i, h) { const r = new XMLHttpRequest(); r.withCredentials = true; r.onload = function() { const d = document.getElementById(id); if(r.status === 200) { if(i) { d.innerHTML = r.responseText; } else { d.outerHTML = r.responseText; } } else { d.innerHTML = r.responseURL + " (" + r.status + ": " + r.statusText + ")"; } if(h) { h(); } }; r.open("GET", u, true); r.setRequestHeader('X-Requested-With', 'XMLHttpRequest');	 r.send(); return false; }; this.get2 = function(u, i, h) { const r = new XMLHttpRequest(); r.withCredentials = true; r.onload = function() { if(h) h(r); }; r.open("GET", u, true); r.setRequestHeader('X-Requested-With', 'XMLHttpRequest'); r.send(); return false; }; this.post = function(u, p, id, h) { const r = new XMLHttpRequest(); r.withCredentials = true; r.onload = function() { const d= document.getElementById(id); if(r.status === 200) { d.outerHTML = r.responseText; } else { d.innerHTML = r.responseURL + " (" + r.status + ": " + r.statusText + ")";	} if(h) h(); }; r.open("POST", u, true); r.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8"); r.setRequestHeader('X-Requested-With', 'XMLHttpRequest');		 r.send(p); return false; }; this.post2 = function(u, p, h) { const r = new XMLHttpRequest(); r.withCredentials = true; r.onload = function() { if(h) h(r); }; r.open("POST", u, true); r.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8"); r.setRequestHeader('X-Requested-With', 'XMLHttpRequest'); r.send(p); return false; }; this.aktion = function(x) { kn = 'aktion'; kv = x; }; this.klick = function(e) { kn = e.currentTarget.name; kv = e.currentTarget.value; kfa = null; if(e.currentTarget.formAction !== window.location.href) kfa = e.currentTarget.formAction; }; }).apply(Ajax);const Verbformen = {}; (function() { this.suchliste = function(ide,idl,w) { const r = new XMLHttpRequest(); r.open("GET", "/suche/deklination/adjektive/eingabe/?w=" + encodeURI(w), true); r.setRequestHeader('X-Requested-With', 'XMLHttpRequest'); r.timeout = 500; r.onload = function (e) { if (r.readyState === 4 && r.status === 200) { Eingabe.zeige(ide,idl,JSON.parse(r.responseText)); } }; r.send(null); }; this.youtube = function(bid,yid) { const b = document.getElementById(bid); if(b.style.display === "none") return; const div = document.createElement("div"); div.innerHTML = "<img loading='lazy' src='/close.svg' onclick=\"this.parentNode.remove(); document.getElementById('" + bid + "').style.display = 'block';\"><iframe width='640' height='360' src='https://www.youtube-nocookie.com/embed/" + yid + "?autoplay=1' frameborder='0' allowfullscreen='allowfullscreen'></iframe>"; div.className = "vVidYt"; div.id = "vVidYtId"; b.parentNode.insertBefore(div,b); b.style.display = "none"; }; }).apply(Verbformen);</script><script type="text/javascript"> const Stimme = {}; (function() { this.sprich = function(u) { let s = document.getElementById("sTon"); if(s && s.play) { s.src = u; s.play(); } else { document.location = u; } }; this.klick = function(e,i) { e.preventDefault(); this.sprich(document.getElementById(i).href); return false; }; }).apply(Stimme);</script><style type="text/css">.rEin {text-align:left;}.rEin input {width:100%;-webkit-appearance:textfield;border-radius:0;}.rEin input::-webkit-search-decoration,.rEin input[type="search"] {-webkit-appearance:none;}.rEinSlct {background-color:#ffffff;display:none;position:absolute;border:none;border-top:solid 1px #aaaaaa;color:#666666;z-index:7;box-sizing:border-box;}.rNav .rEinSlct {position:fixed;max-height:75%;overflow:scroll;overflow-y:auto;overflow-x:hidden;box-shadow:6px 6px 6px 1px rgba(0,0,0,0.5); }.rEinGrp,.rEinOpt {padding:1px 5px;}.rEinGrp {background-color:#eeeeee;}.rEinOptAn {background-color:#000000;color:#ffffff;}.rNav .rEin input {height:30px;margin:3px 0 0 0;padding-top:2px;}.rNav .rEin {font-size:17pt !important;width:250px;max-width:calc(100vw - 182px); border-bottom:solid 1px rgba(255,255,255,0.6); }@media (prefers-color-scheme:dark){.rEinSlct {background-color:#292a2c;color:#9aa0a6;}.rEinGrp {background-color:#202124;}.rEinOptAn {background-color:#000000;color:#ffffff;}}html {scroll-behavior:smooth;text-size-adjust:100%;-webkit-text-size-adjust:100%;height:100.1%;}body {margin:0;padding:0;font-family:sans-serif;font-weight:400;color:#111111;fill:#111111;font-size:0.91em;line-height:1.25;}body>article {background-color:#eceaea;}body>*>div {clear:both;padding:2px 8px;}@media (min-width:1058px){ body>*>div {width:1042px;margin:0 auto;}}body,body>footer {background-color:#1e1e1e;}body>footer {color:#e0e0e0;font-size:0.9em;}body>footer a {color:#80bfff;}body>footer h1,body>footer h2 {color:#e0e0e0 !important;}body>nav {position:fixed;z-index:9999;font-size:1.2em;width:100%;max-height:100vh;box-shadow:0 3px 5px rgba(0,0,0,0.44); color:#aaaaaa;}body>nav a {color:#aaaaaa;}div.rKpfPlz {height:44px;}body>article>div {position:relative;}a {text-decoration:none;color:#12039c;}.rH {font-family:open sans condensed,open sans,sans-serif;}h1,h2,h3,h4,.rH1,.rH2,.rH3,.rH4 {margin-top:16px;margin-bottom:12px;font-family:sans-serif;letter-spacing:-1px;font-weight:bold;}h1,h2,.rH1,.rH2 {color:#000000;}a h1,a h2,a h3,a h4 {color:#111111 !important;}h1,.rH1 {font-size:1.5em;}h2,.rH2 {font-size:1.35em;}h3,.rH3 {font-size:1.2em;}h4,.rH4 {font-size:1.1em;}p,ul,ol,dl {margin:12px 0 16px 0;}p,li {-moz-hyphens:auto;-o-hyphens:auto;-webkit-hyphens:auto;-ms-hyphens:auto;hyphens:auto;}ul {list-style-type:disc;padding-left:12px;}mark {background-color:#d0d0d0;color:#111111;font-weight:inherit;}input,select,textarea {font-family:sans-serif;font-size:inherit;line-height:inherit;border:solid 1px #d0d0d0;outline:none;box-sizing:border-box;border-radius:0;-webkit-border-radius:0px;appearance:none;-moz-appearance:none;-webkit-appearance:none;padding:1px 5px;}input[type='checkbox'] {appearance:checkbox;-moz-appearance:checkbox;-webkit-appearance:checkbox;}input[type='radio'] {appearance:radio;-moz-appearance:radio;-webkit-appearance:radio;} nav input,nav select,nav textarea {border:none;}.rMrgn {margin:0 10px 10px 0;}input[type=submit],.rKnpf {padding:5px 10px;margin:0 12px 12px 0;background-color:#000000;color:#ffffff;fill:#ffffff;border:none;}input[type=submit].rInf,.rInf.rKnpf {background-color:#d0d0d0;color:#ffffff;fill:#ffffff;}input[type=submit]:hover,.rKnpf:hover {box-shadow:0px 2px 5px 0px rgba(0,0,0,0.1), 0px 1px 10px 0px rgba(0,0,0,0.1)}input[type=submit].rRechts,.rKnpf.rRechts,.rMrgn.rRechts {margin:0 0 10px 10px;}textarea {overflow:hidden;}select {appearance:none;-moz-appearance:none;-webkit-appearance:none;}svg,img {vertical-align:baseline;margin:0;}img.rRechts {margin:4px 0 12px 12px;}img.rLinks {margin:4px 12px 12px 0;}button {line-height:inherit;background-color:transparent;padding:0;border:none;margin:0;font-size:inherit;font-family:inherit;color:inherit;border-radius:unset;-webkit-appearance:none;}table {border-spacing:0;border-collapse:collapse;}td,th {padding:0;vertical-align:top;}th a {color:inherit;}hr {border:none;border-bottom:solid 1px #cacaca;margin:0.75em 0;}hr.rInf {border-color:#b6b6b6;border-bottom-style:dashed;}hr.rDpl {margin-bottom:1.15em;padding-top:0.40em;}.rTrng {-moz-hyphens:auto;-o-hyphens:auto;-webkit-hyphens:auto;-ms-hyphens:auto;hyphens:auto;}.rHch {display:none;z-index:8;padding:3px 14px 3px 3px;margin-right:0;box-shadow:-5px 5px 20px -4px rgba(0,0,0,0.5);  position:fixed;bottom:108px;right:0px;width:24px;background-color:#000000;}.rKnpf,.rIn {box-sizing:border-box;display:inline-block;}.rDnb {position:absolute;left:100%;margin-left:8px;top:10px;background-color:transparent;}.rNav {height:36px;overflow:hidden;width:100%;padding:2px 0;}.rNav>* {height:36px;}.rMnRnd {margin-bottom:6px;}.rTab {display:table;}.rTab>div {display:table-cell;vertical-align:middle;}.r1Pxl {width:1px;}.r100Pro {width:100%;}.rLinks {float:left;}.rRechts {float:right;}.rDurch {text-decoration:line-through;}.rNobr {white-space:nowrap;}.r1Zeile {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.rClear {clear:both;}.rClrAft:after {content:"";display:table;clear:both;}.rClrBfr:before {content:"";display:table;clear:both;}.rClrRechts {clear:right;}.rClrLinks {clear:left;}.rDunkel {background-color:#000000;}.rHell {color:#f5f5f5;}.rZu {display:none;}.rAnkr {width:1px;height:56px;margin-top:-56px;float:left;display:block;}.rRel {position:relative;}.rAbs {position:absolute;}.rAuf {display:inline;}.rInl {display:inline;}.rFuss {margin:0 15px 15px 0;}.rLg {margin-right:8px;}.rAkz {color:#FF4081;}.rLst {list-style-type:none;padding-left:0;padding-right:0;}.rLst li {text-indent:-15px;padding-left:15px;padding-right:0;}.rLst[dir="rtl"] li {text-indent:-15px;padding-left:0;padding-right:15px;}.rLst li::before {min-width:15px;float:left;}.rLst[dir="rtl"] li::before {float:right;}.rLstDash li::before {content:"–";}.rLstGt li::before {content:"»";}.rLstBl li::before {content:"•";}.rLstTxt li::before {content:attr(txt); }.rCntr {text-align:center;}.rInf,.rInf a {color:#848484;fill:#c5c5c5;}.rInf img,.rInf svg {filter:grayscale(100%); }.rKln {font-size:0.9em;}.rKln img,.rKln svg {zoom:85%;}.rGrs {font-size:1.1em;}/* deprecated */ .rKnObn {margin-top:0 !important;}/* deprecated */ .rKnUnt {margin-bottom:0 !important;}.rU0px {margin-bottom:0px !important;}.rU1px {margin-bottom:1px !important;}.rU3px {margin-bottom:3px !important;}.rU6px {margin-bottom:6px !important;}.rO0px {margin-top:0px !important;}.rO1px {margin-top:1px !important;}.rO3px {margin-top:3px !important;}.rNt::after {content:"*";color:#848484;font-size:0.65em;vertical-align:top;font-weight:normal;}.rNoSelect {-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}.rImg {border:solid 1px #d0d0d0;}@media (min-width:744px){h1,.rH1 {font-size:1.7em;}h2,.rH2 {font-size:1.4em;}article .rAbschnitt {margin-left:-314px;width:100%;float:left;}article .rAbschnitt>div {margin-left:314px;}article .rInfo {width:300px;float:right;}.rFuss {width:330px;}}@media (prefers-color-scheme:dark){body {color:#e1e1e1;fill:#e1e1e1;}mark {color:#e1e1e1;background-color:#3f3f3f;}body>article {background-color:#232323;}body,body>footer {background-color:#060606;}body>footer {color:#e0e0e0;}body>footer a {color:#b9d1ff;}a {color:#b9d1ff;}h1,h2,.rH1,.rH2 {color:#ffffff;}a h1,a h2,a h3,a h4 {color:#e1e1e1 !important;}input,select,textarea {background-color:#292a2c;border-color:#101112;color:#e1e1e1;}input[type=submit],.rKnpf {background-color:#000000;color:#e8eaed;fill:#e8eaed;}input[type=submit].rInf,.rInf.rKnpf {background-color:#1d1d1d;color:#626262;fill:#626262;}hr {border-color:#484848;}hr.rInf {border-color:#353535;}.rHell {color:#f5f5f5;}.rInf,.rInf a {fill:#626262;}.rImg {border-color:#101112;}}@media (min-width:1261px)and (max-width:1698px){ body>*>div {margin-right:320px;}}@media (min-width:1261px)and (max-width:1378px){ body>*>div {margin-right:320px;margin-left:0;}}.rBox {margin-bottom:16px;overflow:auto;}.rBox header h2 {margin-top:0;}.rBoxWht {background-color:#ffffff;border:solid 2px #d0d0d0;padding:0px 10px;}.rBoxWht textarea,.rBoxWht input,.rBoxWht select {background-color:#e9e9e9;}.rBoxWht input[type=submit],.rBoxWht .rKnpf {background-color:#000000;}.rBoxWht input[type=submit].rInf,.rBoxWht .rInf.rKnpf {background-color:#d0d0d0;}@media (prefers-color-scheme:dark){ .rBoxWht {background-color:#313131;border-color:#000000;}.rBoxWht textarea,.rBoxWht input,.rBoxWht select {background-color:#212121;}.rBoxWht input[type=submit].rInf,.rBoxWht .rInf.rKnpf {background-color:#272727;color:#626262;fill:#626262;}.rBoxWht hr {border-color:#1b1b1b;}.rBoxWht hr.rInf {border-color:#232323;}}.rHw {width:100%;padding:4px 0;background-color:#ffffff;color:#222222;border-bottom:solid 1px #d0d0d0;}.rHw svg {fill:#d0d0d0;}.rHwObn {position:relative;top:0px;}.rHwUnt {opacity:0.91;position:fixed;bottom:0px;z-index:8;box-shadow:1px 0px 2px 0px rgba(0,0,0,0.25); }.rHwUnt a {color:#80bfff;}.rHwBox>div {position:static;padding-right:10px;padding-left:13px;}.rHwBox+.rBox {margin-top:0;}.rHwFhlr svg,.rHwTpp svg,.rHwOk svg,.rHwNtrl svg {fill:#ffffff;fill-opacity:0.6;}.rHwFhlr {background-color:#d90000;color:#ffbfbf;border:none;}.rHwTpp {background-color:#aa5500;color:#ffcf9f;border:none;}.rHwOk {background-color:#008000;color:#a6ffa6;border:none;}.rHwNtrl {color:#e0e0e0;background-color:#111111;border:none;}@media (prefers-color-scheme:dark){ .rHw {background-color:#292a2c;color:#e8eaed;border-color:#101112;}.rHw svg {fill:#9aa0a6;}.rHwUnt a {color:#80bfff;}.rHwFhlr {background-color:#6a0000;color:#facfb4;}.rHwFhlr svg,.rHwTpp svg,.rHwOk svg,.rHwNtrl svg {fill:#ffffff;}.rHwTpp {background-color:#422100;color:#f5d99e;}.rHwOk {background-color:#003c00;color:#baf2b7;}.rHwNtrl {color:#e0e0e0;background-color:#111111;}}.rMn {margin:10px 0 0 auto;padding-top:8px;width:33%;border-top:solid 1px #9b9b9b;box-sizing:border-box;}.rMnOpt {padding-top:1px;}.rMnKat {color:#ffffff;}.rMnLnk {margin-right:10px;}.rMnOptn .rMnOptn {margin-left:22px;}@media (max-width:699px){.rMn {width:100%;}}nav.rKrml {margin:9px 0 8px 0;}nav.rKrml span {white-space:nowrap;}q {font-weight:bold;}q:before {content:none;}q:after {content:none;}q>b {color:#2a2abc;font-weight:inherit !important;}q>u {color:#028b02;text-decoration:none;}s {color:#aaaaaa;text-decoration:none;}.rKnpf q>b {color:#8cc6ff;}.rKnpf q>u {color:#87f57a;}.rInf q>b,.rInf q>u {color:#848484;fill:#c5c5c5;}g,g a {color:#848484;fill:#c5c5c5;}/* deprecated */b>u {color:#2a2abc;text-decoration:none;}b>i {color:#028b02;font-style:normal;}.rKnpf b>u {color:#8cc6ff;}.rKnpf b>i {color:#87f57a;}.rInf b>u,.rInf b>i {color:#848484;fill:#c5c5c5;}@media (prefers-color-scheme:dark){q>b {color:#8cc6ff;}q>u {color:#87f57a;}.rInf q>b,.rInf q>u {fill:#626262;}/* deprecated */b>u {color:#8cc6ff;}b>i {color:#87f57a;}.rInf b>u,.rInf b>i {fill:#626262;}}.kFrm select {border:none;background-color:transparent;}.kFrm textarea {width:100%;}.kBwrt {font-size:1.3em;}.kAn {color:#000000;}.kAus {color:#aaaaaa;}.kAnt {margin-left:5%;}.kLnk {white-space:nowrap;}@media (prefers-color-scheme:dark){.kAn {color:#dcdee4;}.kAus {color:#5e6064;}}.aArt {min-height:90px;}.aDnb {min-height:600px;min-width:300px;}.aInf {min-height:250px;}.aAnz {margin:8px 0;text-align:center;background-color:rgba(255,255,255,0.4); }@media (max-width:1000px){ .aArt {min-height:250px;}}@media (max-width:1260px){ .aDnb {display:none;min-height:unset;min-width:unset;}}@media (prefers-color-scheme:dark){ .aAnz {background-color:rgba(255,255,255,0.05); }}.bHf {font-size:1.44em;}.bZrt {font-weight:bold;}.bKas {}.rDunkel {background-color:#000084;}.rHch {background-color:#000084;}h1,h2 {color:#000084;}.rHell {color:#9999ce;}body>nav,body>nav a {color:#9999ce;}.rMn {border-color:#5050a4;}h4 {display:inline;}input[type=submit],.rKnpf,.rBoxWht input[type=submit],.rBoxWht .rKnpf {background-color:#000084;}.rEinOptAn {background-color:#000084;}.vLeg {font-size:0.9em;margin-top:8px;}.vFuss {width:280px;margin:0 15px 15px 0;}.vEin {display:flex;}.vEin input,.vEin .rEinSlct {font-size:1.4em;border:solid 1px #d0d0d0;}dl.vNrn {list-style-type:none;margin-right:0;margin-left:0;}dl.vNrn dd,dl.vNrn dt {display:flex;margin:2px 0 2px 0;align-items:baseline;}dl.vNrn .vLng {min-width:23px;}.vAuswahl {display:inline-block;margin-bottom:10px;}.vAuswahl .rKnpf {margin:5px auto;}.vUnd,.vUnd b>u,.vUnd b>i {color:#aaaaaa;}			.vTxtTbl {overflow:auto;white-space:nowrap;}.vTxtTbl td,.vTxtTbl th {padding-right:8px;}.vBImg {max-height:80px;height:17vw;}.vArbBltt {display:inline-block;margin:0 10px 10px 0;}				.vArbBltt img {max-width:300px;height:80px;}				p.vGrnd {font-size:2.2em;}p.vStm {font-size:1.55em;margin-bottom:20px;}svg.vIcn {fill:#000084;}.vVidYt {position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin-bottom:20px;}.vVidYt img {position:absolute;top:0;right:0;z-index:99999;width:40px;height:40px;background-color:rgba(111,111,111,.5); }.vVidYt iframe,.vVidYt object,.vVidYt embed {position:absolute;top:0;left:0;width:100%;height:100%;}@media (prefers-color-scheme:dark){.rDunkel {background-color:#00002b;}.rHell {color:#9999aa;}.rHch {background-color:#000000;}h1,h2,.rH1,.rH2 {color:#ffffff;}a h1,a h2 {color:#ffffff;!important;}body>nav,body>nav a {color:#9999aa;}.rMn {border-color:#6f6f86;}input[type=submit],.rKnpf,.rBoxWht input[type=submit],.rBoxWht .rKnpf {background-color:#000000;}.rEinOptAn {background-color:#00003c;}.vEin input,.vEin .rEinSlct {font-size:1.4em;border-color:#101112;}.vUnd,.vUnd b>u,.vUnd b>i {color:#aaaaaa;}svg.vIcn {fill:#dcdee4;}}</style>
+<style type="text/css">.vTbl {float:left;margin:5px 0 15px 0;padding-right:15px;box-sizing:border-box;}.vTbl table {margin-top:5px;}.vTbl td {padding-right:5px;white-space:nowrap;}.vTbl th {font-style:italic;font-weight:normal;}.vDkl {margin-left:56px;}.vDkl .vTbl {position:relative;background-color:#ffffff;margin-left:-56px;min-width:calc(25% + 56px); }.vDkl th {width:56px;}.vDkl h3,.vDkl h3,.vDkl h2,.vDkl h2 {margin-left:56px;line-height:25px;display:inline;}.rAbschnitt .rH2,.rAbschnitt h2 {color:#FF4081;}.vDkl .vTbl tr:nth-child(odd){ background-color:#f0f0f0;}.vKs {text-align:left;}@media (max-width:900px){ .vDkl .vTbl {min-width:calc(40% + 56px); }}@media (max-width:700px){ .vDkl .vTbl {min-width:calc(30% + 56px); }}@media (max-width:500px){ .vDkl .vTbl {min-width:calc(40% + 56px); }}@media (prefers-color-scheme:dark){.vDkl .vTbl {position:relative;background-color:#313131;}.vDkl .vTbl tr:nth-child(odd){ background-color:#282828;}}</style>
+<script async="async" src="//cdn-a.yieldlove.com/yieldlove-bidder.js?verbformen.de_artikel"></script><script async="async" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script><script>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+googletag.cmd.push(function() {
+googletag.pubads().disableInitialLoad();
+googletag.enableServices();
+});
+</script>
+</head>
+<body>
+<div id="rkopf"></div>
+<nav class="rDunkel"><div>
+<div class="rNav">
+<div class="rRechts" id="rMnImg" onclick="Rahmen.aufzu(['rMn','rMnNav'])"><svg fill="#ffffff" fill-opacity="0.6" height="36" viewbox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" style="display: none;" d="m11.41 15.41 4.59-4.58 4.59 4.58 1.41-1.41-6-6l-6 6 1.41 1.41z"></path><path class="rZu" style="display: inline;" d="m8 4.667h16v2h-16m0 4h16v2h-16m-2e-7 4h16v2h-16z"></path></svg></div>
+<div class="rLinks rLg"><a href="/"><svg xmlns="http://www.w3.org/2000/svg" height="36" width="36" version="1.1" viewbox="0 20 320 320"><path d="M265 41.4L29 72.9 69.6 116l247 22z" fill="#3a3a3a"></path><path d="M163 82.7L317 138l-52-96.9z" fill="#2d2d2d"></path><path d="M265 41.4l-186 254 138 12 100-169z" fill="#d00"></path><path d="M223 158L80 295l137 12z" fill="#c90000"></path><path d="M226 94.2l-146 201 144-137z" fill="#d30000"></path><path d="M4.65 132l74.6 163 138 12-50-161z" fill="#ffce00"></path><path d="M217 308L79 295l-3.7-99z" fill="#ebba00"></path><path d="M75.4 197l3.8 98L12 149z" fill="#f5c400"></path><path d="M107 63l56 19.7 101-41.3z" fill="#333"></path></svg></a></div>
+<form class="rLinks" id="vKpfEin" action="/deklination/adjektive/">
+<div class="rEin rLinks">
+<input autofocus="autofocus" onfocus="this.setSelectionRange(0, this.value.length)" id="896de" name="w" type="search" value="gut" placeholder="" title="" autocomplete="off" onkeydown="Eingabe.taste('896de','896deListe', event)" oninput="Eingabe.an('896de','896deListe',Verbformen.suchliste)" onblur="Eingabe.aus('896de','896deListe')"><br><div class="rEinSlct" id="896deListe"></div>
+</div>
+<button class="rLinks" type="submit"><svg fill="#ffffff" fill-opacity="0.6" height="36" viewbox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></button>
+<button class="rLinks" type="submit" formaction="/suche/deklination/adjektive/"><svg fill="#ffffff" fill-opacity="0.6" height="32" viewbox="0 -2 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"></path></svg></button>
+</form>
+<div class="rLinks rHell" style="margin: 8px;">Netzverb® Flexion</div>
+<div class="rRechts rTab rNoSelect rMnLnk" onclick="Rahmen.aufzu(['vLng', 'rMn'])">
+<div>
+Deutsch
+<img src="/rahmen/mnwahl.svg" height="8" width="10">
+</div>
+</div>
+</div>
+<div class="rClear"></div>
+<div class="rZu" id="rMn">
+<div class="rMn">
+<div class="rNoSelect" onclick="Rahmen.aufzu('rMnNav')">
+<span class="rMnKat">Navigation</span>
+<img src="/rahmen/mnwahl.svg" height="8" width="10">
+</div>
+<div class="rZu" id="rMnNav">
+<div class="rMnOptn">
+<div class="rMnOpt">
+<a href="/sitemap.htm">
+Sitemap
+</a>
+</div>
+<div class="rMnOpt">
+<a href="/">
+Flexion
+</a>
+</div>
+<div class="rMnOpt">
+<a href="/konjugation/">
+Konjugation
+</a>
+</div>
+<div class="rMnOptn">
+<div class="rMnOpt">
+<a href="/konjugation/">
+Verben
+</a>
+</div>
+<div class="rMnOpt">
+<a href="/konjugation/beispiele/">
+Beispiele
+</a>
+</div>
+<div class="rMnOpt">
+<a href="/konjugation/arbeitsblaetter-uebungen/">
+Arbeitsblätter
+</a>
+</div>
+</div>
+<div class="rMnOpt">
+<a href="/deklination/">
+Deklination
+</a>
+</div>
+<div class="rMnOptn">
+<div class="rMnOpt">
+<a href="/deklination/substantive/">
+Substantive
+</a>
+</div>
+<div class="rMnOpt">
+<a href="/deklination/adjektive/">
+Adjektive
+</a>
+</div>
+<div class="rMnOpt">
+<a href="/deklination/pronomen/">
+Pronomen
+</a>
+</div>
+<div class="rMnOpt">
+<a href="/deklination/artikel/">
+Artikel
+</a>
+</div>
+</div>
+<div class="rMnOpt">
+<a href="/suche/">
+Suche
+</a>
+</div>
+<div class="rMnOpt">
+<a href="/mitmachen.htm">
+Mitmachen
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="rMn">
+<div class="rNoSelect" onclick="Rahmen.aufzu('vLng')">
+<span class="rMnKat">Sprache</span>: Deutsch
+<img src="/rahmen/mnwahl.svg" height="8" width="10">
+</div>
+<div class="rZu" id="vLng">
+<div class="rMnOpt">
+<img src="/rahmen/mnan.svg" height="18" width="18"> 	
+<a href="https://www.verbformen.de/deklination/adjektive/gut.htm" rel="nofollow">
+Deutsch
+</a>
+</div>
+<div class="rMnOpt">
+<img src="/rahmen/mnaus.svg" height="18" width="18"> 
+<a href="https://www.verbformen.com/declension/adjectives/gut.htm" rel="nofollow">
+English
+</a>
+</div>
+<div class="rMnOpt">
+<img src="/rahmen/mnaus.svg" height="18" width="18"> 
+<a href="https://www.verbformen.ru/sklonenie/prilagatelnye/gut.htm" rel="nofollow">
+Русский
+</a>
+</div>
+<div class="rMnOpt">
+<img src="/rahmen/mnaus.svg" height="18" width="18"> 
+<a href="https://www.verbformen.pt/declinacao/adjetivos/gut.htm" rel="nofollow">
+Português
+</a>
+</div>
+<div class="rMnOpt">
+<img src="/rahmen/mnaus.svg" height="18" width="18"> 
+<a href="https://www.verbformen.es/declinacion/adjetivos/gut.htm" rel="nofollow">
+Español
+</a>
+</div>
+</div>
+</div>
+<div>
+<div class="rMn">
+<div>
+<span class="rMnKat">Teilen: </span>
+<a rel="nofollow" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.verbformen.de%2Fdeklination%2Fadjektive%2F%3Fw%3Dgut" title="Teilen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewbox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg"><path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path></svg></a>
+<a rel="nofollow" href="https://twitter.com/home?status=https%3A%2F%2Fwww.verbformen.de%2Fdeklination%2Fadjektive%2F%3Fw%3Dgut" title="Teilen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewbox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path></svg></a>
+</div>
+</div>
+</div>
+<div class="rMnRnd rClear"></div>
+</div>
+</div></nav><div class="rKpfPlz"></div>
+<aside class="rHw rHwObn" id="gut"><div>
+<div class="rRechts" onclick="Hinweis.weg('gut')">
+<svg height="22" viewbox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path></svg>
+</div>
+Auch gefunden:
+≡ <a href="/deklination/substantive/?w=Gut">Gut</a>
+<span class="rKln rInf">‹Subst.›</span>
+</div>
+</aside><article class=""><div>
+<nav class="rKrml rKln rInf"><a href="https://www.verbformen.de/"><span>Flexion</span></a>
+› 	
+<a href="https://www.verbformen.de/deklination/"><span>Deklination</span></a>
+› 	
+<a href="https://www.verbformen.de/deklination/adjektive/"><span>Adjektive</span></a>
+› 	
+<a href="https://www.verbformen.de/deklination/adjektive/gut.htm"><span>gut</span></a>
+</nav><nav class="rClear"><a class="rKnpf rLinks" href="/deklination/adjektive/?w=" title="Deklination und Steigerung aller deutschen Adjektive">
+<svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m15 7.6v1.95h-11.4l5.25 5.05-1.35 1.4-7.5-7.5 7.5-7.5 1.35 1.35-5.25 5.25z"></path></svg></a>
+<a class="rKnpf rLinks" href="/suche/deklination/adjektive/" title="Deklination und Steigerung aller deutschen Adjektive">
+<svg fill="" class="kIcn" height="12" viewbox="0 1 15 15" width="12" xmlns="http://www.w3.org/2000/svg"><path d="m5.6 1.01a5.57 5.57 0 0 1 5.57 5.57c0 1.38-0.506 2.65-1.34 3.63l0.232 0.232h0.677l4.29 4.29-1.29 1.29-4.29-4.29v-0.677l-0.232-0.232c-1 0.8-2.27 1.4-3.65 1.4a5.57 5.57 0 0 1 -5.57 -5.62 5.57 5.57 0 0 1 5.57 -5.57m0 1.71c-2.14 0-3.86 1.71-3.86 3.86 0 2.14 1.71 3.86 3.86 3.86 2.14 0 3.86-1.71 3.86-3.86 0-2.14-1.71-3.86-3.86-3.86z"></path></svg></a>
+<a class="rKnpf rLinks" target="_blank" href="/deklination/adjektive/gut.pdf" onclick="gtag('config', 'UA-1466848-8', {'anonymize_ip': true, 'page_path': '/deklination/adjektive/gut.pdf'})">
+PDF <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m8.4 16h-1.95v-11.4l-5.05 5.25-1.4-1.35 7.5-7.5 7.5 7.5-1.4 1.35-5.2-5.25z"></path></svg></a>
+<div id="vNavAufZuImg" class="rInf rKnpf rNoSelect rLinks" onclick="Rahmen.aufzu('vNavAufZu')">
+<svg fill="" class="kIcn" height="12" viewbox="6 4 12 16" width="10" xmlns="http://www.w3.org/2000/svg"><path style="display: none;" class="rAuf" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"></path><path style="display: inline;" class="rZu" d="M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z"></path></svg>
+</div>
+<div id="vNavAufZu" class="rZu">
+<a class="rKnpf rLinks" href="/sitemap.htm" title="Inhaltsverzeichnis und Sitemap">
+Sitemap</a>
+<a class="rKnpf rLinks" target="_blank" href="/deklination/adjektive/gut.png" onclick="gtag('config', 'UA-1466848-8', {'anonymize_ip': true, 'page_path': '/deklination/adjektive/gut.png'})">
+PNG <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m8.4 16h-1.95v-11.4l-5.05 5.25-1.4-1.35 7.5-7.5 7.5 7.5-1.4 1.35-5.2-5.25z"></path></svg></a>
+</div>
+</nav><div id="div-gpt-ad-1407836066662-0" class="aAnz aArt rClear">
+<script type="text/javascript">
+if (window.innerWidth >= 1000) {
+googletag.cmd.push(function() {
+googletag.defineSlot('/53015287/verbformen.de_d_970x90_1', [[970, 90], [728, 90]], 'div-gpt-ad-1407836066662-0').addService(googletag.pubads());
+googletag.display('div-gpt-ad-1407836066662-0');
+});
+}
+if (window.innerWidth < 1000) {
+googletag.cmd.push(function() {
+googletag.defineSlot('/53015287/verbformen.de_m_300x250_1', [300, 250], 'div-gpt-ad-1407836066662-0').addService(googletag.pubads());
+googletag.display('div-gpt-ad-1407836066662-0');
+});
+}
+</script>
+</div>
+<div class="rCntr" style="margin: 8px 0 8px 0;"><a href="/mitmachen.htm" class="rInf rKln">Werbung ausblenden</a></div>
+<h1 class="rClear">
+Deklination und Steigerung des Adjektivs gut</h1>
+<p>
+Die <a href="/deklination/adjektive/gut.htm">Deklination des Adjektivs gut</a> erfolgt über die Komparationsformen <a href="/deklination/adjektive/gut.htm">gut</a>,<a href="/deklination/adjektive/besser.htm">besser</a>,<a href="/deklination/adjektive/besser_sup.htm">am besten</a>. Die Endungen für die Steigerung im Komparativ und Superlativ sind -/-.
+<span id="24284">Das Adjektiv gut kann sowohl attributiv vor einem Nomen mit und ohne Artikel jeweils stark, schwach und gemischt verwendet werden als auch prädikativ in Verbindung mit einem Verb.Man kann hier nicht nur gut deklinieren und steigern, sondern alle <a href="/suche/deklination/adjektive/">deutschen Adjektive</a>.</span>
+<span id="24284Img" onclick="event.stopPropagation(); Rahmen.aufzu('24284');" class="rInf"><svg style="vertical-align: bottom;" fill="" width="18px" height="18px" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path><path class="rZu" d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span>
+<script type="text/javascript"> if(Rahmen.breite()<700) Rahmen.aufzu('24284'); </script><span class="kLnk">
+<a href="#kommentare" class="kLnk">Kommentare</a>
+<a href="#kommentare" class="kLnk">☆</a>
+</span></p>
+<div class="rAnkr" id="Steckbrief"></div>
+<a class="rKnpf rNoSelect rLinks" href="#Steckbrief" title="">
+<b><i></i>gut<u></u><i></i></b> <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m15.02 3.529-9.265 11.7-5.724-4.68 1.201-1.471 4.255 3.471 7.923-10.22z"></path></svg></a>
+<a class="rKnpf rNoSelect rLinks" href="/deklination/adjektive/besser.htm#Steckbrief" title="">
+<b><i></i>besser<i></i></b> <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m0 9.4v-1.95h11.4l-5.25-5.05 1.35-1.4 7.5 7.5-7.5 7.5-1.35-1.4 5.25-5.2z"></path></svg></a>
+<a class="rKnpf rNoSelect rLinks" href="/deklination/adjektive/besser_sup.htm#Steckbrief" title="">
+am <b><i></i>be<u>st</u><i>en</i></b> <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m0 9.4v-1.95h11.4l-5.25-5.05 1.35-1.4 7.5 7.5-7.5 7.5-1.35-1.4 5.25-5.2z"></path></svg></a>
+<div class="rClear"></div>
+<div class="rAbschnitt "><div>
+<section class="rBox rBoxWht " id="8516aBox"><div class="rClear" style="margin-bottom: 10px;"></div>
+<header><div class="rInf">
+Positiv
+· Endungen -/-</div></header><p class="vGrnd rCntr">
+<img loading="lazy" alt="Deutsch" src="/bedeutungenweb/de.svg" width="21" height="21"><b><i></i>gut<u></u><i></i></b><a class="" href="https://www.verbformen.de/deklination/adjektive/grundform/gut.mp3" id="2c336" onclick="Stimme.klick(event,'2c336')" rel="nofollow"><img loading="lazy" src="/s.svg" width="24" height="24" alt=""></a></p>
+<p class="vStm rCntr">
+<b><i></i>gut<u></u><i></i></b>
+·
+<b><i></i>besser<i></i></b>
+·
+am <b><i></i>be<u>st</u><i>en</i></b><a class="" href="https://www.verbformen.de/deklination/adjektive/stammformen/gut.mp3" id="d87bf" onclick="Stimme.klick(event,'d87bf')" rel="nofollow"><img loading="lazy" src="/s.svg" width="18" height="18" alt=""></a></p>
+<div id="8516a" class="rAufZu">
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</section><!-- Yieldlove AdTag - verbformen.de - responsive --><div id="div-gpt-ad-1407836102907-0" class="aAnz aArt rClear">
+<script type="text/javascript">
+if (window.innerWidth >= 1100) {
+googletag.cmd.push(function() {
+googletag.defineSlot('/53015287/verbformen.de_d_728x90_1', [728, 90], 'div-gpt-ad-1407836102907-0').addService(googletag.pubads());
+googletag.display('div-gpt-ad-1407836102907-0');
+});
+}
+if (window.innerWidth < 1100) {
+googletag.cmd.push(function() {
+googletag.defineSlot('/53015287/verbformen.de_m_320x250_1', [[320, 250], [300, 250], [320, 100], [320, 50]], 'div-gpt-ad-1407836102907-0').addService(googletag.pubads());
+googletag.display('div-gpt-ad-1407836102907-0');
+});
+}
+</script>
+</div>
+<div class="rCntr" style="margin: 8px 0 8px 0;"><a href="/mitmachen.htm" class="rInf rKln">Werbung ausblenden</a></div>
+<div class="rAnkr rAnkrBox" id="stark"></div>
+<section class="rBox rBoxWht " id="86614Box"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="86614Img" onclick="Rahmen.alleaufzu('86614','rAufZu')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="m16.6 9.67-1.42-1.41l-3.2 3.14-3.17-3.14-1.42 1.41 4.59 4.63m-4.59 5.8 1.42 1.41 3.17-3.17 3.17 3.17 1.41-1.41-4.58-4.59-4.59 4.59zm9.19-15.9l-1.42-1.41-3.17 3.17-3.17-3.17-1.42 1.41 4.58 4.59"></path><path class="rZu" d="m12 13.8-3.17-3.17-1.41 1.41 4.58 4.59 4.59-4.59-1.42-1.41m-3.16-6.36 3.17 3.17 1.41-1.41-4.58-4.59-4.59 4.59 1.42 1.41 3.17-3.17zm-0.01 15.2-3.17-3.17-1.41 1.41 4.58 4.59 4.59-4.59-1.42-1.41"></path></svg></button></nav><header><p><span class="rInf">Die starke Deklination von gut ohne Artikel oder Pronomen</span></p>
+</header><div id="86614" class="rAufZu">
+<div class="vDkl">
+<div class="vTbl" style="z-index: 8;">
+<h2>Maskulin</h2>
+<span class="rh2"><a class="" href="https://www.verbformen.de/deklination/adjektive/singular/gut_mask.mp3" id="bb56e" onclick="Stimme.klick(event,'bb56e')" rel="nofollow"><img loading="lazy" src="/s.svg" width="18" height="18" alt=""></a></span>
+<table>
+<tr>
+<th scope="row" class="vKs" title="Nominativ">Nom.</th>
+<td><b><i></i>gut<u></u><i>er</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Genitiv">Gen.</th>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Dativ">Dat.</th>
+<td><b><i></i>gut<u></u><i>em</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Akkusativ">Akk.</th>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+</table>
+</div>
+<div class="vTbl" style="z-index: 7;">
+<h2>Neutral</h2>
+<span class="rh2"><a class="" href="https://www.verbformen.de/deklination/adjektive/singular/gut_neut.mp3" id="b7e0b" onclick="Stimme.klick(event,'b7e0b')" rel="nofollow"><img loading="lazy" src="/s.svg" width="18" height="18" alt=""></a></span>
+<table>
+<tr>
+<th scope="row" class="vKs" title="Nominativ">Nom.</th>
+<td><b><i></i>gut<u></u><i>es</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Genitiv">Gen.</th>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Dativ">Dat.</th>
+<td><b><i></i>gut<u></u><i>em</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Akkusativ">Akk.</th>
+<td><b><i></i>gut<u></u><i>es</i></b></td>
+</tr>
+</table>
+</div>
+<div class="vTbl" style="z-index: 6;">
+<h2>Feminin</h2>
+<span class="rh2"><a class="" href="https://www.verbformen.de/deklination/adjektive/singular/gut_fem.mp3" id="ef911" onclick="Stimme.klick(event,'ef911')" rel="nofollow"><img loading="lazy" src="/s.svg" width="18" height="18" alt=""></a></span>
+<table>
+<tr>
+<th scope="row" class="vKs" title="Nominativ">Nom.</th>
+<td><b><i></i>gut<u></u><i>e</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Genitiv">Gen.</th>
+<td><b><i></i>gut<u></u><i>er</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Dativ">Dat.</th>
+<td><b><i></i>gut<u></u><i>er</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Akkusativ">Akk.</th>
+<td><b><i></i>gut<u></u><i>e</i></b></td>
+</tr>
+</table>
+</div>
+<div class="vTbl" style="z-index: 5;">
+<h2>Plural</h2>
+<span class="rh2"><a class="" href="https://www.verbformen.de/deklination/adjektive/plural/gut.mp3" id="87ea5" onclick="Stimme.klick(event,'87ea5')" rel="nofollow"><img loading="lazy" src="/s.svg" width="18" height="18" alt=""></a></span>
+<table>
+<tr>
+<th scope="row" class="vKs" title="Nominativ">Nom.</th>
+<td><b><i></i>gut<u></u><i>e</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Genitiv">Gen.</th>
+<td><b><i></i>gut<u></u><i>er</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Dativ">Dat.</th>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Akkusativ">Akk.</th>
+<td><b><i></i>gut<u></u><i>e</i></b></td>
+</tr>
+</table>
+</div>
+</div>
+<hr class="rClear">
+<a class="rKnpf rNoSelect rLinks" href="/deklination/adjektive/besser.htm">
+Komparativ <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m0 9.4v-1.95h11.4l-5.25-5.05 1.35-1.4 7.5 7.5-7.5 7.5-1.35-1.4 5.25-5.2z"></path></svg></a>
+<a class="rKnpf rNoSelect rLinks" href="/deklination/adjektive/besser_sup.htm">
+Superlativ <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m0 9.4v-1.95h11.4l-5.25-5.05 1.35-1.4 7.5 7.5-7.5 7.5-1.35-1.4 5.25-5.2z"></path></svg></a>
+<a class="rKnpf rLinks rNoSelect" target="_blank" href="/deklination/adjektive/gut.pdf" onclick="gtag('config', 'UA-1466848-8', {'anonymize_ip': true, 'page_path': '/deklination/adjektive/gut.pdf'})">
+PDF <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m8.4 16h-1.95v-11.4l-5.05 5.25-1.4-1.35 7.5-7.5 7.5 7.5-1.4 1.35-5.2-5.25z"></path></svg></a>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</section><div class="rAnkr rAnkrBox" id="schwach"></div>
+<section class="rBox rBoxWht " id="a92f2Box"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="a92f2Img" onclick="Rahmen.aufzu('a92f2')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z"></path><path class="rZu" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z"></path></svg></button></nav><header><h2>Schwache Deklination</h2>
+<p><span class="rInf">Die schwache Deklination des Adjektivs gut mit dem bestimmtem Artikel 'der' oder mit Pronomen wie 'dieser' und 'jener'</span></p>
+</header><div id="a92f2" class="rAufZu">
+<hr>
+<div class="vDkl">
+<div class="vTbl" style="z-index: 8;">
+<h3>Maskulin</h3>
+<span class="rh3"><a class="" href="https://www.verbformen.de/deklination/adjektive/singular/der_gut_mask.mp3" id="192f0" onclick="Stimme.klick(event,'192f0')" rel="nofollow"><img loading="lazy" src="/s.svg" width="18" height="18" alt=""></a></span>
+<table>
+<tr>
+<th scope="row" class="vKs" title="Nominativ">Nom.</th>
+<td>der</td>
+<td><b><i></i>gut<u></u><i>e</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Genitiv">Gen.</th>
+<td>des</td>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Dativ">Dat.</th>
+<td>dem</td>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Akkusativ">Akk.</th>
+<td>den</td>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+</table>
+</div>
+<div class="vTbl" style="z-index: 7;">
+<h3>Neutral</h3>
+<span class="rh3"><a class="" href="https://www.verbformen.de/deklination/adjektive/singular/der_gut_neut.mp3" id="d4c61" onclick="Stimme.klick(event,'d4c61')" rel="nofollow"><img loading="lazy" src="/s.svg" width="18" height="18" alt=""></a></span>
+<table>
+<tr>
+<th scope="row" class="vKs" title="Nominativ">Nom.</th>
+<td>das</td>
+<td><b><i></i>gut<u></u><i>e</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Genitiv">Gen.</th>
+<td>des</td>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Dativ">Dat.</th>
+<td>dem</td>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Akkusativ">Akk.</th>
+<td>das</td>
+<td><b><i></i>gut<u></u><i>e</i></b></td>
+</tr>
+</table>
+</div>
+<div class="vTbl" style="z-index: 6;">
+<h3>Feminin</h3>
+<span class="rh3"><a class="" href="https://www.verbformen.de/deklination/adjektive/singular/der_gut_fem.mp3" id="e0989" onclick="Stimme.klick(event,'e0989')" rel="nofollow"><img loading="lazy" src="/s.svg" width="18" height="18" alt=""></a></span>
+<table>
+<tr>
+<th scope="row" class="vKs" title="Nominativ">Nom.</th>
+<td>die</td>
+<td><b><i></i>gut<u></u><i>e</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Genitiv">Gen.</th>
+<td>der</td>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Dativ">Dat.</th>
+<td>der</td>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Akkusativ">Akk.</th>
+<td>die</td>
+<td><b><i></i>gut<u></u><i>e</i></b></td>
+</tr>
+</table>
+</div>
+<div class="vTbl" style="z-index: 5;">
+<h3>Plural</h3>
+<span class="rh3"><a class="" href="https://www.verbformen.de/deklination/adjektive/plural/der_gut.mp3" id="b59d4" onclick="Stimme.klick(event,'b59d4')" rel="nofollow"><img loading="lazy" src="/s.svg" width="18" height="18" alt=""></a></span>
+<table>
+<tr>
+<th scope="row" class="vKs" title="Nominativ">Nom.</th>
+<td>die</td>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Genitiv">Gen.</th>
+<td>der</td>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Dativ">Dat.</th>
+<td>den</td>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Akkusativ">Akk.</th>
+<td>die</td>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="rClear"></div>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</section><!-- Yieldlove AdTag - verbformen.de - responsive --><div id="div-gpt-ad-1407836149906-0" class="aAnz aArt rClear">
+<script type="text/javascript">
+if (window.innerWidth >= 1100) {
+googletag.cmd.push(function() {
+googletag.defineSlot('/53015287/verbformen.de_d_728x90_2', [728, 90], 'div-gpt-ad-1407836149906-0').addService(googletag.pubads());
+googletag.display('div-gpt-ad-1407836149906-0');
+});
+}
+if (window.innerWidth < 1100) {
+googletag.cmd.push(function() {
+googletag.defineSlot('/53015287/verbformen.de_m_300x250_3', [300, 250], 'div-gpt-ad-1407836149906-0').addService(googletag.pubads());
+googletag.display('div-gpt-ad-1407836149906-0');
+});
+}
+</script>
+</div>
+<div class="rAnkr rAnkrBox" id="gemischt"></div>
+<section class="rBox rBoxWht " id="cd36cBox"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="cd36cImg" onclick="Rahmen.aufzu('cd36c')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z"></path><path class="rZu" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z"></path></svg></button></nav><header><h2>Gemischte Deklination</h2>
+<p><span class="rInf">Die gemischte Deklination des Adjektivs gut mit dem  unbestimmtem Artikel 'ein' oder mit Pronomen wie 'kein' und 'mein'</span></p>
+</header><div id="cd36c" class="rAufZu">
+<hr>
+<div class="vDkl">
+<div class="vTbl" style="z-index: 8;">
+<h3>Maskulin</h3>
+<span class="rh3"><a class="" href="https://www.verbformen.de/deklination/adjektive/singular/ein_gut_mask.mp3" id="94f58" onclick="Stimme.klick(event,'94f58')" rel="nofollow"><img loading="lazy" src="/s.svg" width="18" height="18" alt=""></a></span>
+<table>
+<tr>
+<th scope="row" class="vKs" title="Nominativ">Nom.</th>
+<td>ein</td>
+<td><b><i></i>gut<u></u><i>er</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Genitiv">Gen.</th>
+<td>eines</td>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Dativ">Dat.</th>
+<td>einem</td>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Akkusativ">Akk.</th>
+<td>einen</td>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+</table>
+</div>
+<div class="vTbl" style="z-index: 7;">
+<h3>Neutral</h3>
+<span class="rh3"><a class="" href="https://www.verbformen.de/deklination/adjektive/singular/ein_gut_neut.mp3" id="14840" onclick="Stimme.klick(event,'14840')" rel="nofollow"><img loading="lazy" src="/s.svg" width="18" height="18" alt=""></a></span>
+<table>
+<tr>
+<th scope="row" class="vKs" title="Nominativ">Nom.</th>
+<td>ein</td>
+<td><b><i></i>gut<u></u><i>es</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Genitiv">Gen.</th>
+<td>eines</td>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Dativ">Dat.</th>
+<td>einem</td>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Akkusativ">Akk.</th>
+<td>ein</td>
+<td><b><i></i>gut<u></u><i>es</i></b></td>
+</tr>
+</table>
+</div>
+<div class="vTbl" style="z-index: 6;">
+<h3>Feminin</h3>
+<span class="rh3"><a class="" href="https://www.verbformen.de/deklination/adjektive/singular/ein_gut_fem.mp3" id="b4910" onclick="Stimme.klick(event,'b4910')" rel="nofollow"><img loading="lazy" src="/s.svg" width="18" height="18" alt=""></a></span>
+<table>
+<tr>
+<th scope="row" class="vKs" title="Nominativ">Nom.</th>
+<td>eine</td>
+<td><b><i></i>gut<u></u><i>e</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Genitiv">Gen.</th>
+<td>einer</td>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Dativ">Dat.</th>
+<td>einer</td>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Akkusativ">Akk.</th>
+<td>eine</td>
+<td><b><i></i>gut<u></u><i>e</i></b></td>
+</tr>
+</table>
+</div>
+<div class="vTbl" style="z-index: 5;">
+<h3>Plural</h3>
+<span class="rh3"><a class="" href="https://www.verbformen.de/deklination/adjektive/plural/kein_gut.mp3" id="3d4ae" onclick="Stimme.klick(event,'3d4ae')" rel="nofollow"><img loading="lazy" src="/s.svg" width="18" height="18" alt=""></a></span>
+<table>
+<tr>
+<th scope="row" class="vKs" title="Nominativ">Nom.</th>
+<td>keine</td>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Genitiv">Gen.</th>
+<td>keiner</td>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Dativ">Dat.</th>
+<td>keinen</td>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+<tr>
+<th scope="row" class="vKs" title="Akkusativ">Akk.</th>
+<td>keine</td>
+<td><b><i></i>gut<u></u><i>en</i></b></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="rClear"></div>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</section><div class="rAnkr rAnkrBox" id="praedikativ"></div>
+<section class="rBox rBoxWht " id="fa7caBox"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="fa7caImg" onclick="Rahmen.aufzu('fa7ca')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z"></path><path class="rZu" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z"></path></svg></button></nav><header><h2>Prädikativer Gebrauch</h2>
+<p><span class="rInf">Verwendung von gut als Prädikativ</span></p>
+</header><div id="fa7ca" class="rAufZu">
+<hr>
+<div class="vDkl">
+<div class="vTbl" style="z-index: 8;">
+<h3>Singular</h3>
+<span class="rH3"><a class="" href="https://www.verbformen.de/deklination/adjektive/praedikativ/singular/gut.mp3" id="163e6" onclick="Stimme.klick(event,'163e6')" rel="nofollow"><img loading="lazy" src="/s.svg" width="18" height="18" alt=""></a></span>
+<table>
+<tr>
+<th>Mask.</th>
+<td>er</td>
+<td>ist</td>
+<td><b><i></i>gut<u></u><i></i></b></td>
+</tr>
+<tr>
+<th>Fem.</th>
+<td>sie</td>
+<td>ist</td>
+<td><b><i></i>gut<u></u><i></i></b></td>
+</tr>
+<tr>
+<th>Neut.</th>
+<td>es</td>
+<td>ist</td>
+<td><b><i></i>gut<u></u><i></i></b></td>
+</tr>
+</table>
+</div>
+<div class="vTbl" style="z-index: 5;">
+<h3>Plural</h3>
+<span class="rH3"><a class="" href="https://www.verbformen.de/deklination/adjektive/praedikativ/plural/gut.mp3" id="4e007" onclick="Stimme.klick(event,'4e007')" rel="nofollow"><img loading="lazy" src="/s.svg" width="18" height="18" alt=""></a></span>
+<table>
+<tr>
+<th></th>
+<td>sie</td>
+<td>sind</td>
+<td><b><i></i>gut<u></u><i></i></b></td>
+</tr>
+<tr>
+<th></th>
+<td></td>
+</tr>
+<tr>
+<th></th>
+<td></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="rClear"></div>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</section>
+</div></div>
+<div class="rInfo">
+<nav class="rBox rBoxWht " id="e9ccdBox"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="e9ccdImg" onclick="Rahmen.aufzu('e9ccd')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z"></path><path class="rZu" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z"></path></svg></button></nav><header><h2>Arbeitsblätter</h2>
+<p><span class="rInf">Materialien zu gut</span></p>
+</header><div id="e9ccd" class="rAufZu">
+<hr>
+<a href="https://www.verbformen.de/deklination/adjektive/gut.htm"> 
+<img loading="lazy" height="80" class="rImg rLinks vBImg" alt="Deklination und Steigerung des Adjektivs gut" src="/deklination/adjektive/gut.png"></a>
+<a target="_blank" href="/deklination/adjektive/gut.pdf" onclick="gtag('config', 'UA-1466848-8', {'anonymize_ip': true, 'page_path': '/deklination/adjektive/gut.pdf'})">
+➔ Deklinationstabelle PDF</a>
+<br>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</nav><nav class="rBox rBoxWht " id="af4b1Box"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="af4b1Img" onclick="Rahmen.aufzu('af4b1')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z"></path><path class="rZu" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z"></path></svg></button></nav><header><h2>Adjektive</h2>
+<p><span class="rInf">Zufällig ausgewählte Adjektive</span></p>
+</header><div id="af4b1" class="rAufZu">
+<hr>
+<p style="column-count: 3;">
+≡ <a href="/deklination/adjektive/zinsfrei.htm" title="zinsfrei">zinsfrei</a><br>
+≡ <a href="/deklination/adjektive/stupend.htm" title="stupend">stupend</a><br>
+≡ <a href="/deklination/adjektive/wehrhaft.htm" title="wehrhaft">wehrhaft</a><br>
+≡ <a href="/deklination/adjektive/filigran.htm" title="filigran">filigran</a><br>
+≡ <a href="/deklination/adjektive/minimal.htm" title="minimal">minimal</a><br>
+≡ <a href="/deklination/adjektive/gereizt.htm" title="gereizt">gereizt</a><br>
+≡ <a href="/deklination/adjektive/handsam.htm" title="handsam">handsam</a><br>
+≡ <a href="/deklination/adjektive/bordeaux.htm" title="bordeaux">bordeaux</a><br>
+≡ <a href="/deklination/adjektive/finzelig.htm" title="finzelig">finzelig</a><br>
+≡ <a href="/deklination/adjektive/schwarz.htm" title="schwarz">schwarz</a><br>
+≡ <a href="/deklination/adjektive/zinnen.htm" title="zinnen">zinnen</a><br>
+≡ <a href="/deklination/adjektive/bildhaft.htm" title="bildhaft">bildhaft</a><br>
+≡ <a href="/deklination/adjektive/wa3hlbar.htm" title="wählbar">wählbar</a><br>
+≡ <a href="/deklination/adjektive/moosig.htm" title="moosig">moosig</a><br>
+≡ <a href="/deklination/adjektive/furzig.htm" title="furzig">furzig</a><br>
+≡ <a href="/deklination/adjektive/extensiv.htm" title="extensiv">extensiv</a><br>
+≡ <a href="/deklination/adjektive/pair.htm" title="pair">pair</a><br>
+≡ <a href="/deklination/adjektive/unmutig.htm" title="unmutig">unmutig</a><br></p>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</nav><!-- Yieldlove AdTag - verbformen.de - responsive --><div id="div-gpt-ad-1407836191958-0" class="aAnz aInf rClear">
+<script type="text/javascript">
+if (window.innerWidth >= 768) {
+googletag.cmd.push(function() {
+googletag.defineSlot('/53015287/verbformen.de_d_300x250_1', [300, 250], 'div-gpt-ad-1407836191958-0').addService(googletag.pubads());
+googletag.display('div-gpt-ad-1407836191958-0');
+});
+}
+if (window.innerWidth < 768) {
+googletag.cmd.push(function() {
+googletag.defineSlot('/53015287/verbformen.de_m_300x250_2', [300, 250], 'div-gpt-ad-1407836191958-0').addService(googletag.pubads());
+googletag.display('div-gpt-ad-1407836191958-0');
+});
+}
+</script>
+</div>
+<div class="rCntr" style="margin: 8px 0 8px 0;"><a href="/mitmachen.htm" class="rInf rKln">Werbung ausblenden</a></div>
+</div>
+<div class="rClear"></div>
+<section class="rBox rBoxTrns " id="042a7Box"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="042a7Img" onclick="Rahmen.aufzu('042a7')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z"></path><path class="rZu" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z"></path></svg></button></nav><header><h2>Deklinations- und Komparationsformen von  gut</h2>
+<p><span class="rInf">Zusammenfassung aller Deklinationsformen und Steigerungsformen des Adjektivs bzw. Eigenschaftswortes gut in allen Genera und Fällen</span></p>
+</header><div id="042a7" class="rAufZu">
+<hr>
+<p>Die gut Deklination und Steigerung online als Deklinations- und Komparationstabellen mit allen starken, schwachen und gemischten Formen. Diese werden übersichtlich als Tabelle im Singular (Einzahl) und im Plural (Mehrzahl) und in allen vier Fällen Nominativ (auch 1. Fall, Wer-Fall), Genitiv (auch 2. Fall, Wes-Fall, Wessen-Fall), Dativ (auch 3. Fall, Wem-Fall) und Akkusativ (auch 4. Fall, Wen-Fall) dargestellt. Weitere Informationen finden sich unter <a rel="nofollow" href="https://de.wiktionary.org/wiki/gut">Wiktionary gut</a> und unter <a rel="nofollow" href="https://www.duden.de/suchen/dudenonline/gut">gut</a> im Duden.</p>
+<h3>Komparation und Steigerung gut</h3>
+<div class="vTxtTbl">
+<table>
+<tr>
+<th scope="row">Positiv</th>
+<td>gut</td>
+</tr>
+<tr>
+<th scope="row">Komparativ</th>
+<td>besser</td>
+</tr>
+<tr>
+<th scope="row">Superlativ</th>
+<td>am besten</td>
+</tr>
+</table>
+</div>
+<ul>
+<li>
+<b>Positiv</b>:
+gut</li>
+<li>
+<b>Komparativ</b>:
+besser</li>
+<li>
+<b>Superlativ</b>:
+am besten</li>
+</ul>
+<h3>Starke Deklination gut</h3>
+<div class="vTxtTbl">
+<table>
+<tr>
+<th></th>
+<th scope="col">Maskulin</th>
+<th scope="col">Neutral</th>
+<th scope="col">Feminin</th>
+<th scope="col">Plural</th>
+</tr>
+<tr>
+<th scope="row">Nom.</th>
+<td>guter</td>
+<td>gutes</td>
+<td>gute</td>
+<td>gute</td>
+</tr>
+<tr>
+<th scope="row">Gen.</th>
+<td>guten</td>
+<td>guten</td>
+<td>guter</td>
+<td>guter</td>
+</tr>
+<tr>
+<th scope="row">Dat.</th>
+<td>gutem</td>
+<td>gutem</td>
+<td>guter</td>
+<td>guten</td>
+</tr>
+<tr>
+<th scope="row">Akk.</th>
+<td>guten</td>
+<td>gutes</td>
+<td>gute</td>
+<td>gute</td>
+</tr>
+</table>
+</div>
+<ul>
+<li>
+<b>Maskulin</b>: 
+guter, guten, gutem, guten</li>
+<li>
+<b>Neutral</b>: 
+gutes, guten, gutem, gutes</li>
+<li>
+<b>Feminin</b>: 
+gute, guter, guter, gute</li>
+<li>
+<b>Plural</b>: 
+gute, guter, guten, gute</li>
+</ul>
+<h3>Schwache Deklination gut</h3>
+<ul>
+<li>
+<b>Maskulin</b>: 
+der gute, des guten, dem guten, den guten</li>
+<li>
+<b>Neutral</b>: 
+das gute, des guten, dem guten, das gute</li>
+<li>
+<b>Feminin</b>: 
+die gute, der guten, der guten, die gute</li>
+<li>
+<b>Plural</b>: 
+die guten, der guten, den guten, die guten</li>
+</ul>
+<h3>Gemischte Deklination gut</h3>
+<ul>
+<li>
+<b>Maskulin</b>: 
+ein guter, eines guten, einem guten, einen guten</li>
+<li>
+<b>Neutral</b>: 
+ein gutes, eines guten, einem guten, ein gutes</li>
+<li>
+<b>Feminin</b>: 
+eine gute, einer guten, einer guten, eine gute</li>
+<li>
+<b>Plural</b>: 
+keine guten, keiner guten, keinen guten, keine guten</li>
+</ul>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</section><div class="rClear"></div>
+<div class="rClear"></div>
+<div class="rAnkr rAnkrBox" id="kommentare"></div>
+<section class="rBox rBoxTrns " id="e9f77Box"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="e9f77Img" onclick="Rahmen.aufzu('e9f77')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z"></path><path class="rZu" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z"></path></svg></button></nav><header><h2>Kommentare</h2>
+</header><div id="e9f77" class="rAufZu">
+<hr>
+<!-- Yieldlove AdTag - verbformen.de - responsive --><div id="div-gpt-ad-1407836016707-0" class="aAnz aArt rClear">
+<script type="text/javascript">
+if (window.innerWidth >= 768) {
+googletag.cmd.push(function() {
+googletag.defineSlot('/53015287/verbformen.de_d_728x90_3', [728, 90], 'div-gpt-ad-1407836016707-0').addService(googletag.pubads());
+googletag.display('div-gpt-ad-1407836016707-0');
+});
+}
+if (window.innerWidth < 768) {
+googletag.cmd.push(function() {
+googletag.defineSlot('/53015287/verbformen.de_m_300x250_4', [300, 250], 'div-gpt-ad-1407836016707-0').addService(googletag.pubads());
+googletag.display('div-gpt-ad-1407836016707-0');
+});
+}
+</script>
+</div>
+<div class="kFrm" id="3aa0f">
+<form method="post" action="/kommentare/anlage.htm" onsubmit="Ajax.ersetze(event,'3aa0f')">
+<div class="rMrgn">
+<select class="kBwrt rRechts" name="bewertung"><option value="" selected>★✰✰✰✰</option>
+<option value="5">★★★★★</option>
+<option value="4">★★★★</option>
+<option value="3">★★★</option>
+<option value="2">★★</option>
+<option value="1">★</option></select><label for="kommentar">Kommentar:</label><br><div class="rClear"></div>
+<textarea maxlength="1000" rows="5" name="kommentar" id="kommentar" required="required"></textarea>
+</div>
+<span class="rMrgn rIn"><label for="name">Name:</label>
+<input name="autor" id="name" required="required" maxlength="20" size="15" value=""></span>
+<span class="rMrgn rIn"><label for="email">E-Mail (<a href="https://www.netzverb.de/datenschutz.htm">Datenschutz</a>):</label>
+<input type="email" name="email" id="email" value=""></span>
+<span class="rMrgn rIn">
+<img style="vertical-align: middle;" loading="lazy" src="/kommentare/captcha.png?68eb6" width="90"><input name="captcha" id="captcha" required="required" size="5" style=""></span>
+<input type="submit" value="Kommentieren"><input name="pfad" type="hidden" value="/deklination/adjektive/gut.htm"><input name="url" type="hidden" value="https://www.verbformen.de/deklination/adjektive/?w=gut">
+</form>
+</div>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</section><div class="rDnb">
+<!-- Yieldlove AdTag - verbformen.de - responsive -->
+<div id="div-gpt-ad-1407836062535-0" class="aAnz aDnb" style="position: fixed;">
+<script type="text/javascript">
+if (window.innerWidth >= 1260) {
+googletag.cmd.push(function() {
+googletag.defineSlot('/53015287/verbformen.de_d_300x600_1', [[300, 600], [160, 600], [300, 250]], 'div-gpt-ad-1407836062535-0').addService(googletag.pubads());
+googletag.display('div-gpt-ad-1407836062535-0');
+});
+}
+</script>
+</div>
+</div>
+</div>
+<div class="rClear"></div></article><script type="text/javascript">window.onscroll = function() { Rahmen.hoch('rHch'); };</script><a href="#rkopf"><div id="rHch" class="rHch"><svg fill="#ffffff" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z"></path></svg></div></a>
+<footer><div>
+<div class="rLinks rFuss">
+<h2>Kontakt</h2>
+<p>Netzverb® Deutsch<br>
+Inh. <a href="https://www.netzverb.de/andreas.htm">Andreas Göbel</a><br>
+Alte Buchholzer Str. 8<br>
+D-09487 Schlettau</p>
+<p>Telefon: +49 3733 6196894<br>
+E-Mail: info@netzverb.de</p>
+<p>Facebook: <a rel="nofollow" href="https://www.facebook.com/Netzverb">facebook.com/Netzverb</a><br>
+Twitter: <a rel="nofollow" href="https://twitter.com/Netzverb">twitter.com/Netzverb</a><br>
+Youtube: <a href="https://www.youtube.com/Netzverb-Deutsch">youtube.com/Netzverb</a><br>
+TikTok: <a href="https://www.tiktok.com/@netzverb">tiktok.com/@Netzverb</a><br>
+Instagram: <a href="https://www.instagram.com/netzverb/">instagram.com/Netzverb</a><br>
+Pinterest: <a href="https://www.pinterest.de/netzverb/">pinterest.de/Netzverb</a><br>
+Tumblr: <a href="https://netzverb.tumblr.com/">netzverb.tumblr.com</a><br>
+Google Play Store: <a href="https://play.google.com/store/apps/dev?id=7197812532170593543">play.google.com/Netzverb</a><br>
+Facebook App: <a href="https://www.facebook.com/Verbformen" target="_blank">facebook.com/Verbformen</a><br></p>
+</div>
+<div class="rLinks rFuss">
+<h2>Netzverb</h2>
+<p>Netzwerk der deutschen Sprache<br><a rel="nofollow" href="https://www.netzverb.de">www.netzverb.de</a>  ·
+<a rel="nofollow" href="https://www.netzverb.de/blog/">Blog</a></p>
+<p>Deutsche Flexion: <a rel="nofollow" href="https://www.verbformen.de">verbformen.de</a><br>
+Deutsches Wörterbuch: <a rel="nofollow" href="https://www.verben.de">verben.de</a><br>
+Deutsche Grammatik: <a rel="nofollow" href="//www.sprachlehre.de">sprachlehre.de</a><br>
+Deutsche Sätze: <a rel="nofollow" href="//www.satzapp.de">satzapp.de</a><br>
+Deutsche Wörter: <a rel="nofollow" href="https://www.verblisten.de">verblisten.de</a><br>
+Sprachforum: <a rel="nofollow" href="http://www.konjugation.de">konjugation.de</a><br>
+Deutsche Konjugation: <a rel="nofollow" href="http://www.konjugieren.de">konjugieren.de</a><br>
+Deutsche Deklination: <a rel="nofollow" href="http://www.deklinieren.de">deklinieren.de</a></p>
+<p><strong>Apps 📱</strong><br>
+Android: <a href="https://play.google.com/store/apps/details?id=de.verbformen.verben.app">Verben</a>
+<a href="https://play.google.com/store/apps/details?id=de.verbformen.verben.app.pro">Pro</a>
+<a href="https://play.google.com/store/apps/details?id=de.verbformen.verben.app.top">Top</a> · <a href="https://play.google.com/store/apps/details?id=de.verbformen.substantive.app.top">Substantive</a>
+<a href="https://play.google.com/store/apps/details?id=de.verbformen.substantive.app.pro">Pro</a>
+<a href="https://play.google.com/store/apps/details?id=de.verbformen.substantive.app.top">Top</a>
+<br>
+iOS:  <a href="https://apps.apple.com/de/app/id1522285301">Verben</a><br>
+Google: <a href="https://assistant.google.com/services/a/id/0d6a90c5e47fa7eb">Sprachassistent</a></p>
+</div>
+<div class="rLinks rFuss">
+<h2>Hinweise</h2>
+<p><a href="//www.netzverb.de/impressum.htm">Impressum</a><br><a href="//www.netzverb.de/impressum.htm">Nutzungsbedingungen</a></p>
+<h2>Datenschutz</h2>
+<p><a href="//www.netzverb.de/datenschutz.htm">Datenschutzerklärung</a><br><a href="javascript:window.yieldlove_cmp.loadPrivacyManager(379508)">Einwilligungen</a></p>
+<h2>Hilfe</h2>
+<p><a href="/hilfe/">Hilfe und FAQ</a> · <a href="/kommentare.htm">Kommentare</a><br><a href="//www.netzverb.de/links/">Links</a> · <a href="/hilfe/widgets.htm">Widgets</a> · <a href="/neuigkeiten.htm">Neuigkeiten</a></p>
+<p><a href="/mitmachen.htm">Werbung ausblenden</a></p>
+<a href="/nutzer/?anmelden">Anmelden</a>
+</div>
+<div class="rClear">
+<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow">
+<svg fill="#fff" fill-opacity="0.6" height="26" viewbox="0 0 26 26" width="26" xmlns="http://www.w3.org/2000/svg"><path d="m13 0c3.6 0 6.7 1.3 9.3 3.8 1.2 1.2 2.2 2.6 2.8 4.2 0.6 1.6 0.9 3.3 0.9 5 0 1.8-0.3 3.5-0.9 5 -0.6 1.6-1.5 2.9-2.8 4.1 -1.3 1.3-2.7 2.2-4.3 2.9 -1.6 0.7-3.3 1-5 1s-3.4-0.3-4.9-1c-1.6-0.6-3-1.6-4.3-2.9 -1.3-1.2-2.2-2.6-2.8-4.2 -0.6-1.5-1-3.2-1-4.9s0.3-3.4 1-5c0.7-1.6 1.6-3 2.9-4.3 2.5-2.5 5.5-3.8 9.1-3.8Zm0 2.3c-3 0-5.5 1-7.5 3.1 -1 1-1.8 2.2-2.3 3.5 -0.5 1.3-0.8 2.6-0.8 4 0 1.4 0.3 2.7 0.8 4 0.5 1.3 1.3 2.4 2.4 3.5s2.2 1.8 3.5 2.3c1.3 0.5 2.6 0.8 4 0.8 1.4 0 2.7-0.3 4.1-0.8s2.5-1.3 3.5-2.3c2-2 3-4.5 3-7.4 0-1.4-0.3-2.8-0.8-4.1 -0.5-1.3-1.2-2.4-2.2-3.4 -2.1-2.1-4.6-3.1-7.6-3.1Zm-0.2 8.5l-1.7 0.9c-0.2-0.4-0.4-0.7-0.7-0.8 -0.3-0.2-0.5-0.2-0.8-0.2 -1.2 0-1.7 0.8-1.7 2.3 0 0.7 0.1 1.3 0.4 1.7 0.3 0.4 0.7 0.6 1.3 0.6 0.8 0 1.3-0.4 1.6-1.1l1.6 0.8c-0.3 0.6-0.8 1.1-1.4 1.5 -0.6 0.4-1.3 0.5-2 0.5 -1.2 0-2.1-0.4-2.8-1.1 -0.7-0.7-1.1-1.7-1.1-3 0-1.2 0.4-2.2 1.1-2.9 0.7-0.7 1.6-1.1 2.7-1.1 1.6 0 2.8 0.6 3.5 1.9Zm7.5 0l-1.7 0.9c-0.2-0.4-0.4-0.7-0.7-0.8 -0.3-0.2-0.5-0.2-0.8-0.2 -1.2 0-1.7 0.8-1.7 2.3 0 0.7 0.1 1.3 0.4 1.7 0.3 0.4 0.7 0.6 1.3 0.6 0.8 0 1.3-0.4 1.6-1.1l1.6 0.8c-0.4 0.6-0.8 1.1-1.4 1.5 -0.6 0.4-1.3 0.5-2 0.5 -1.2 0-2.1-0.4-2.8-1.1 -0.7-0.7-1.1-1.7-1.1-3 0-1.2 0.4-2.2 1.1-2.9 0.7-0.7 1.6-1.1 2.7-1.1 1.6 0 2.8 0.6 3.4 1.9Z"></path></svg><svg fill="#fff" fill-opacity="0.6" height="26" viewbox="0 0 26 26" width="26" xmlns="http://www.w3.org/2000/svg"><path d="m13 0c3.7 0 6.7 1.3 9.2 3.8 2.5 2.6 3.8 5.6 3.8 9.2 0 3.7-1.2 6.7-3.7 9.1 -2.6 2.6-5.8 3.9-9.3 3.9 -3.6 0-6.6-1.3-9.2-3.8 -2.5-2.6-3.8-5.6-3.8-9.2 0-3.6 1.3-6.6 3.8-9.2 2.5-2.5 5.6-3.8 9.2-3.8Zm0.1 2.3c-3 0-5.4 1-7.5 3.1 -2.1 2.2-3.2 4.7-3.2 7.6 0 2.9 1.1 5.4 3.2 7.5 2 2 4.5 3.1 7.4 3.1 2.9 0 5.4-1.1 7.6-3.2 2-2 3.1-4.5 3.1-7.4s-1-5.5-3.1-7.6c-2-2.1-4.5-3.2-7.5-3.2Zm3.5 7.4v5.3h-1.5v6.3h-4v-6.3h-1.5v-5.3c0-0.2 0.1-0.4 0.2-0.6 0.2-0.2 0.4-0.2 0.6-0.2h5.3c0.2 0 0.4 0.1 0.6 0.2 0.2 0.2 0.3 0.4 0.3 0.6Zm-5.4-3.4c0-1.2 0.6-1.8 1.8-1.8s1.8 0.6 1.8 1.8c0 1.2-0.6 1.8-1.8 1.8 -1.2 0-1.8-0.6-1.8-1.8Z"></path></svg><svg fill="#fff" fill-opacity="0.6" height="26" viewbox="0 0 26 26" width="26" xmlns="http://www.w3.org/2000/svg"><path d="m13 0c3.6 0 6.7 1.3 9.2 3.8 2.5 2.5 3.8 5.6 3.8 9.2 0 3.6-1.2 6.7-3.7 9.1 -2.6 2.6-5.7 3.9-9.3 3.9 -3.5 0-6.6-1.3-9.2-3.8 -2.5-2.6-3.8-5.6-3.8-9.2 0-3.5 1.3-6.6 3.8-9.2 2.5-2.5 5.6-3.8 9.2-3.8Zm0 2.3c-3 0-5.4 1-7.5 3.1 -2.1 2.2-3.2 4.7-3.2 7.5 0 2.9 1.1 5.4 3.2 7.5 2.1 2.1 4.6 3.2 7.5 3.2 2.9 0 5.4-1.1 7.6-3.2 2.1-2 3.1-4.5 3.1-7.4 0-3-1-5.5-3.1-7.5 -2-2.2-4.5-3.2-7.4-3.2Zm-5.7 8.9c0.3-1.6 0.9-2.9 1.9-3.7 1-0.9 2.3-1.3 3.8-1.3 2.1 0 3.7 0.7 4.9 2 1.2 1.3 1.8 3 1.8 5.1 0 2-0.6 3.7-1.9 5 -1.3 1.3-2.9 2-4.9 2 -1.5 0-2.7-0.4-3.8-1.3s-1.7-2.1-1.9-3.8h3.3c0.1 1.6 1 2.4 2.9 2.4 0.9 0 1.7-0.4 2.2-1.2 0.6-0.8 0.8-1.8 0.8-3.2 0-1.4-0.3-2.4-0.8-3.1 -0.5-0.7-1.2-1.1-2.2-1.1 -1.7 0-2.7 0.8-2.9 2.3h1l-2.6 2.6 -2.6-2.6 1 0Z"></path></svg></a>
+<p>Alle originären Inhalte auf dieser Website sind, soweit nichts anderes vermerkt ist, unter der offenen Lizenz <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license nofollow" target="_blank">CC BY-SA 4.0</a> <em>(https://creativecommons.org/licenses/by-sa/4.0)</em> verfügbar. Die Inhalte dürfen somit frei und dauerhaft verwendet, kopiert und geändert werden und eignen sich im Rahmen von Open Educational Resources (OER) als Lehrmaterial. Bei einer Veröffentlichung ist als Urheber <em>"Netzverb (<a href="https://www.verbformen.de/">www.verbformen.de</a>)"</em> mit Verlinkung auf <em>https://www.verbformen.de/</em> zu nennen. Mehr Informationen stehen in den <a rel="nofollow" href="//www.netzverb.de/impressum.htm">Nutzungsbedingungen</a>. Server gehostet von <a rel="nofollow" href="https://www.inetsolutions.de/">Inetsolutions</a>.</p>
+</div>
+<span class="rInf rKln">48 ms</span>
+</div></footer><audio id="sTon" preload="auto" autoplay></audio><script async src="https://www.googletagmanager.com/gtag/js?id=UA-1466848-8"></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-1466848-8', { 'anonymize_ip': true });
+</script><script async type="text/javascript">
+if(document.getElementById("vStckLngImg")) {
+document.getElementById("vStckLngImg").addEventListener("click", function() {
+gtag('event', 'open-profile-details', {'event_category' : 'details', 'event_label' : 'Profile Details'});
+});
+}
+if(document.getElementById("vVdPlay")) {
+document.getElementById("vVdPlay").addEventListener("click", function() {
+gtag('event', 'play-conjugation-video', {'event_category' : 'videos', 'event_label' : 'Conjugation Video'});
+});
+}
+</script><script type="application/ld+json">{
+"@id": "http://www.netzverb.de/",
+"@context": "http://schema.org",
+"@type": "Organization",
+"url": "http://www.netzverb.de/",
+"name": "Netzverb Inh. Andreas Göbel",
+"logo": {
+"@type": "ImageObject",
+"url": "http://www.netzverb.de/netzverb.png"
+}, 
+"sameAs": [
+"https://www.facebook.com/NetzverbDeutsch",
+"https://twitter.com/Netzverb",
+"https://www.youtube.com/Netzverb-Deutsch",
+"https://www.tiktok.com/@netzverb",
+"https://www.instagram.com/netzverb/",
+"https://www.pinterest.de/netzverb/",
+"https://netzverb.tumblr.com/"
+]
+}</script><script type="application/ld+json">{
+"@context": "http://schema.org",
+"@type": "WebSite",
+"url": "https://www.verbformen.de/",
+"potentialAction": {
+"@type": "SearchAction",
+"target": "https://www.verbformen.de/suche/?w={search_term_string}",
+"query-input": "required name=search_term_string"
+},
+"author": { "@id": "http://www.netzverb.de/" },
+"publisher": { "@id": "http://www.netzverb.de/" }
+}</script><script type="application/ld+json">{
+"@context": "http://schema.org",
+"@type": "Article",
+"mainEntityOfPage": {
+"@type": "WebPage",
+"@id": "https://www.verbformen.de/deklination/adjektive/gut.htm"
+},
+"headline": "Deklination und Steigerung des Adjektivs gut",
+"image": {
+"@type": "ImageObject",
+"url": "https://www.verbformen.de/deklination/adjektive/gut.png",
+"license": "https://creativecommons.org/licenses/by-sa/4.0/",
+"acquireLicensePage": "https://www.netzverb.de/impressum.htm",
+"height": 600,
+"width": 900
+},
+"license": "https://creativecommons.org/licenses/by-sa/4.0/",
+"acquireLicensePage": "https://www.netzverb.de/impressum.htm",
+"datePublished": "2018-02-01T08:00:00+02:00",
+"dateModified": "2018-08-06T12:07:00+02:00",
+"author": {
+"@id": "http://www.netzverb.de/"
+},
+"publisher": {
+"@id": "http://www.netzverb.de/"
+}
+}</script><script type="application/ld+json">[			
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"gut",
+"url":"https://www.verbformen.de/deklination/adjektive/gut.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"besser",
+"url":"https://www.verbformen.de/deklination/adjektive/besser.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"am besten",
+"url":"https://www.verbformen.de/deklination/adjektive/besser_sup.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"Deklination und Steigerung des Adjektivs gut",
+"url":"https://www.verbformen.de/deklination/adjektive/gut.htm"
+}
+]
+</script>
+</body>
+</html>

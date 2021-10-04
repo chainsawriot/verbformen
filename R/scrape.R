@@ -197,6 +197,9 @@ tidy.verbformenobj <- function(x, ...) {
     vt %>% rvest::html_element("h3") %>% rvest::html_text() -> genush3
     purrr::discard(c(genush3, genush2), is.na) -> genus
     vt %>% rvest::html_element("table") %>% rvest::html_table() -> konj
+    if (ncol(konj) == 3) {
+        konj %>% dplyr::mutate("X2" := paste(.data$X2, .data$X3)) -> konj
+    }
     tab <- tibble::tibble(deklination = deklination, genus = genus, kasus = konj$X1, wort = konj$X2)
     tab$wort <- .clean_text(tab$wort)
     return(tab)
