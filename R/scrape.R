@@ -208,6 +208,8 @@ tidy.verbformenobj <- function(obj, ...) {
     allp[[2]] %>% .squish_text -> comparativ
     rbox[[1]] %>% rvest::html_element("header") %>% .squish_text() -> info
     purrr::map2_dfr(rbox[2:4], c("starke", "schwache", "gemischte"), .parse_adjt_all) -> adj_table
+    prad <- tibble::tibble(deklination = "Prädikativ", genus = NA, kasus = NA, wort = grundform)
+    adj_table <- dplyr::bind_rows(prad, adj_table)
     res <- list(pos = "Adjektiv", "basicinfo" = info, "grundform" = grundform, "comparativ" = comparativ, "table" = adj_table)
     class(res) <- append(class(res), "verbformenobj")
     return(res)
