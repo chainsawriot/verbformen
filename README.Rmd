@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # verbformen <img src="man/figures/verbformen_logo.png" align="right" height="200" />
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/chainsawriot/verbformen/workflows/R-CMD-check/badge.svg)](https://github.com/chainsawriot/verbformen/actions)
 <!-- badges: end -->
 
 The goal of verbformen is to query the website [verbformen.de](https://www.verbformen.de/) for *Konjugationen* (conjugations, derived forms of a verb) and *Deklinationen* (declensions, different forms of a noun or an adjective) of a German word. Additional data are also provided (e.g. whether the verb is seperable). The data is provided with the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) License. The copyright holder of the data is Netzverb® Deutsch. Please share the data with the same license and an appropriate attribution. More information is available in the [Nutzungsbedingungen](https://www.netzverb.de/impressum.htm) of the website.

@@ -65,7 +65,11 @@ verbformen <- function(input, tidy = FALSE, pos = "ukn", sleep = 1) {
     vt %>% rvest::html_element("table") %>% rvest::html_table() -> konj
     if (ncol(konj) == 3) {
         ## trennbar
-        konj %>% dplyr::mutate(X2 = paste(X2, X3)) -> konj
+        if (tempus != "Imperativ") {
+            konj %>% dplyr::mutate(X2 = paste(X2, X3)) -> konj
+        } else {
+            konj %>% dplyr::mutate(X1 = paste(X1, X3)) -> konj            
+        }
     }
     if (tempus == "Imperativ") {
         tab <- tibble::tibble(person = konj$X2, tempus = tempus, wort = konj$X1) %>% dplyr::filter(!is.na(person))

@@ -1,0 +1,2211 @@
+<!DOCTYPE html>
+<html lang="de" style="position: unset !important; overflow: auto !important; margin-top: 0 !important;">
+<head>
+<title>
+Konjugation „aufgeben“ - alle Formen des Verbs, Beispiele, Regeln</title>
+<meta name="description" content="Konjugation Verb aufgeben: im Präsens, Präteritum, Konjunktiv, Perfekt, ... viele Beispiele, Grammatik, Regeln erklärt, Übersetzung, Übungen, Bedeutung und kostenlose Downloads.">
+<meta name="keywords" content="aufgeben, aufgeben Konjugation, aufgeben konjugieren, Verb aufgeben, Präsens, Präteritum, Futur, Perfekt, Aktiv, Passiv, Konjunktiv, Imperativ">
+<meta name="robots" content="noindex, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="HandheldFriendly" content="true">
+<meta name="MobileOptimized" content="width">
+<meta name="application-name" content="Netzverb® Flexion">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000084">
+<meta name="msapplication-TileColor" content="#000084">
+<meta name="theme-color" content="#000084">
+<script type="text/javascript"> const Rahmen = {}; (function() { function istauf(id) { const e = document.getElementById(id); const d = e.currentStyle ? e.currentStyle.display : getComputedStyle(e, null).display; return d!=="none"; } function display(e) { let t = e.tagName; if(t==="UL"||t==="DIV") return "block"; if(t==="TD") return "table-cell"; if(t==="TR") return "table-row"; return "inline"; } function aufzu(id, auf) { document.querySelectorAll('[id=' + id + ']').forEach(e => aufzuE(e, auf)); document.querySelectorAll('[id=' + id + 'Img]').forEach(b => aufzuB(b, auf)); } function aufzuE(e, auf) { e.style.display = auf ? display(e) : "none"; if(auf && e.onchange) e.onchange(undefined); } function aufzuB(b, auf) { let ba = b.getElementsByClassName("rAuf")[0]; ba.style.display = auf ? display(ba) : "none"; let bz = b.getElementsByClassName("rZu")[0]; bz.style.display = auf ? "none" : display(bz); } function setHeight(e) { e.style.height = ''; e.style.height = e.scrollHeight + 'px'; } this.alleaufzu = function(id, k) { const ia = istauf(id); const es = document.getElementsByClassName(k); for (let i = 0; i < es.length; i++) aufzu(es[i].id, !ia); }; this.auf = function(ids) { if(ids instanceof Array) { for (const id in ids) aufzu(ids[id], true); } else aufzu(ids, true); }; this.zu = function(ids) { if(ids instanceof Array) { for (const id in ids) aufzu(ids[id], false); } else aufzu(ids, false); }; this.aufzu = function(ids) { if(ids instanceof Array) { const ia = istauf(ids[0]); for (const id in ids) aufzu(ids[id], !ia); } else aufzu(ids, !istauf(ids)); }; this.breite = function() { return Math.max(document.documentElement.clientWidth, window.innerWidth || 0); }; this.hoch = function(id) { if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) aufzu(id, true); else aufzu(id, false); }; this.resize = function(ev) { setHeight(ev.target); }; this.size = function(id) { setHeight(document.getElementById(id)); }; }).apply(Rahmen); const Eingabe = {}; (function() { function element(id) { return document.getElementById(id); } function sprung(e,l,s) { let i; const os = l.getElementsByClassName("rEinOpt"); let t = -1; for (i = 0; i<os.length; i++) { if(os[i].classList.contains("rEinOptAn")) t=i; } let p = t + s; if(p<0) p=os.length-1; if(p>os.length-1) p=0; for (i = 0; i<os.length; i++) { if(i===t) os[i].classList.remove("rEinOptAn"); if(i===p) { os[i].classList.add("rEinOptAn"); } } e.value=os[p].textContent; e.setSelectionRange(0,e.value.length); } function vorschlag(e,l) { const w = e.value; for (let i=0; i<l.children.length; i++) { if(l.children[i].classList.contains("rEinOpt") && w && l.children[i].textContent && l.children[i].textContent.toLowerCase().startsWith(w.toLowerCase())) { e.value=l.children[i].textContent; e.setSelectionRange(w.length,e.value.length); return; } } } this.zeige = function(ide,idl,v) { let o; const e = element(ide); const l = element(idl); let s = 0; const w = e.value; while(l.children.length>0) l.removeChild(l.children[0]); for(let i=0; i<v.length; i++) { if(!v[i]) continue; if(v[i] instanceof Array) { if(v[i].length <= 1) continue; const g = document.createElement("div"); g.classList.add("rEinGrp"); g.innerHTML = v[i][0]; s++; l.appendChild(g); for(let j = 1; j < v[i].length; j++) { o = document.createElement("div"); o.onmousedown=function(ev) { Eingabe.uebernahme(ev,ide); }; o.classList.add("rEinOpt"); o.innerHTML = v[i][j]; l.appendChild(o); s++; } } else { o = document.createElement('div'); o.onmousedown=function(ev) { Eingabe.uebernahme(ev,ide); }; o.classList.add("rEinOpt"); o.innerHTML = v[i]; l.appendChild(o); s++; } } if(s<=1) {l.style.display = "none"; return;} l.style.width=(l.parentElement.clientWidth)+"px"; e.setAttribute("w",w); l.style.display="inline"; }; this.an = function(ide,idl,fnkl) { const e = element(ide); const w = e.value; setTimeout(function() { if(w!==e.value) return; fnkl(ide,idl,w); },50); }; this.aus = function(ide, idl) { const e = element(ide); const l = element(idl); setTimeout(function() { if(document.activeElement === e || document.activeElement === l) return; l.style.display = "none"; },50); }; this.uebernahme = function(ev,ide) { const e = element(ide); e.value=ev.target.textContent; e.focus(); if(e.form) e.form.submit(); }; this.taste = function(ide, idl, event) { const l = element(idl); const e = element(ide); let keyCode = ('which' in event) ? event.which : event.keyCode; if(keyCode === 40) { sprung(e, l, 1); event.preventDefault(); } if(keyCode === 38) { sprung(e, l, -1); event.preventDefault(); } if(keyCode === 27) { l.style.display = "none"; } }; }).apply(Eingabe); const Hinweis = {}; (function() { this.weg = function(n) { Hinweis.schliessen(n); document.cookie="de.netzverb.rahmen.hinweis_"+n+"=none" + ";expires="+new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toUTCString() + ";path=/"; }; this.schliessen = function(n) { const e = document.getElementById(n); e.style.display="none"; }; }).apply(Hinweis);const Ajax = {}; (function() { let kn, kv, kfa; function pr(p, n, v) { if(!n) return p; return (p ? p + "&" : "") + encodeURIComponent(n) + "=" + encodeURIComponent(v); } function prs(f, s) { let i; let p = pr(null, kn, kv); const is = f.getElementsByTagName("input"); for(i = 0; i<is.length; i++) if(!is[i].disabled && is[i].name && (is[i].type !== "submit" || is[i] === s)) if(is[i].type !== "radio" && is[i].type !== "checkbox" || is[i].checked) p = pr(p, is[i].name, is[i].value); const bs = f.getElementsByTagName("button"); for(i = 0; i<bs.length; i++) if(!bs[i].disabled && bs[i].name && bs[i].type === "submit" && bs[i] === s) p = pr(p, bs[i].name, bs[i].value); const tas = f.getElementsByTagName("textarea"); for(i = 0; i<tas.length; i++) if(!tas[i].disabled && tas[i].name) p = pr(p, tas[i].name, tas[i].value); const ss = f.getElementsByTagName("select"); for(i = 0; i<ss.length; i++) if(!ss[i].disabled && ss[i].name && ss[i].selectedIndex >= 0) p = pr(p, ss[i].name, ss[i].options[ss[i].selectedIndex].value); return p; } this.param = function (p, n, v) { return pr(p, n ,v); }; this.ersetze = function(e, id, h) { return this.submit(e, id, h); }; this.submit = function(e, id, h) { e.preventDefault(); let s; let f = e.currentTarget; if(f.tagName !== "FORM") { s = f; f = f.form; } const p = prs(f, s); let fa = f.action; if(s && s.formAction) fa = s.formAction; if(kfa) fa = kfa; this.post(fa, p, id, h); kn = null; kv = null; kfa = null; return false; }; this.submit2 = function(f, h) { const p = prs(f); let fa = f.action; this.post2(fa, p, h); kn = null; kv = null; kfa = null; return false; }; this.get = function(u, id, i, h) { const r = new XMLHttpRequest(); r.withCredentials = true; r.onload = function() { const d = document.getElementById(id); if(r.status === 200) { if(i) { d.innerHTML = r.responseText; } else { d.outerHTML = r.responseText; } } else { d.innerHTML = r.responseURL + " (" + r.status + ": " + r.statusText + ")"; } if(h) { h(); } }; r.open("GET", u, true); r.setRequestHeader('X-Requested-With', 'XMLHttpRequest');	 r.send(); return false; }; this.get2 = function(u, i, h) { const r = new XMLHttpRequest(); r.withCredentials = true; r.onload = function() { if(h) h(r); }; r.open("GET", u, true); r.setRequestHeader('X-Requested-With', 'XMLHttpRequest'); r.send(); return false; }; this.post = function(u, p, id, h) { const r = new XMLHttpRequest(); r.withCredentials = true; r.onload = function() { const d= document.getElementById(id); if(r.status === 200) { d.outerHTML = r.responseText; } else { d.innerHTML = r.responseURL + " (" + r.status + ": " + r.statusText + ")";	} if(h) h(); }; r.open("POST", u, true); r.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8"); r.setRequestHeader('X-Requested-With', 'XMLHttpRequest');		 r.send(p); return false; }; this.post2 = function(u, p, h) { const r = new XMLHttpRequest(); r.withCredentials = true; r.onload = function() { if(h) h(r); }; r.open("POST", u, true); r.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8"); r.setRequestHeader('X-Requested-With', 'XMLHttpRequest'); r.send(p); return false; }; this.aktion = function(x) { kn = 'aktion'; kv = x; }; this.klick = function(e) { kn = e.currentTarget.name; kv = e.currentTarget.value; kfa = null; if(e.currentTarget.formAction !== window.location.href) kfa = e.currentTarget.formAction; }; }).apply(Ajax);const Verbformen = {}; (function() { this.suchliste = function(ide,idl,w) { const r = new XMLHttpRequest(); r.open("GET", "/suche/eingabe/?w=" + encodeURI(w), true); r.setRequestHeader('X-Requested-With', 'XMLHttpRequest'); r.timeout = 500; r.onload = function (e) { if (r.readyState === 4 && r.status === 200) { Eingabe.zeige(ide,idl,JSON.parse(r.responseText)); } }; r.send(null); }; this.youtube = function(bid,yid) { const b = document.getElementById(bid); if(b.style.display === "none") return; const div = document.createElement("div"); div.innerHTML = "<img loading='lazy' src='/close.svg' onclick=\"this.parentNode.remove(); document.getElementById('" + bid + "').style.display = 'block';\"><iframe width='640' height='360' src='https://www.youtube-nocookie.com/embed/" + yid + "?autoplay=1' frameborder='0' allowfullscreen='allowfullscreen'></iframe>"; div.className = "vVidYt"; div.id = "vVidYtId"; b.parentNode.insertBefore(div,b); b.style.display = "none"; }; }).apply(Verbformen);</script><script type="text/javascript"> const Stimme = {}; (function() { this.sprich = function(u) { let s = document.getElementById("sTon"); if(s && s.play) { s.src = u; s.play(); } else { document.location = u; } }; this.klick = function(e,i) { e.preventDefault(); this.sprich(document.getElementById(i).href); return false; }; }).apply(Stimme);</script><style type="text/css">.rEin {text-align:left;}.rEin input {width:100%;-webkit-appearance:textfield;border-radius:0;}.rEin input::-webkit-search-decoration,.rEin input[type="search"] {-webkit-appearance:none;}.rEinSlct {background-color:#ffffff;display:none;position:absolute;border:none;border-top:solid 1px #aaaaaa;color:#666666;z-index:7;box-sizing:border-box;}.rNav .rEinSlct {position:fixed;max-height:75%;overflow:scroll;overflow-y:auto;overflow-x:hidden;box-shadow:6px 6px 6px 1px rgba(0,0,0,0.5); }.rEinGrp,.rEinOpt {padding:1px 5px;}.rEinGrp {background-color:#eeeeee;}.rEinOptAn {background-color:#000000;color:#ffffff;}.rNav .rEin input {height:30px;margin:3px 0 0 0;padding-top:2px;}.rNav .rEin {font-size:17pt !important;width:250px;max-width:calc(100vw - 182px); border-bottom:solid 1px rgba(255,255,255,0.6); }@media (prefers-color-scheme:dark){.rEinSlct {background-color:#292a2c;color:#9aa0a6;}.rEinGrp {background-color:#202124;}.rEinOptAn {background-color:#000000;color:#ffffff;}}html {scroll-behavior:smooth;text-size-adjust:100%;-webkit-text-size-adjust:100%;height:100.1%;}body {margin:0;padding:0;font-family:sans-serif;font-weight:400;color:#111111;fill:#111111;font-size:0.91em;line-height:1.25;}body>article {background-color:#eceaea;}body>*>div {clear:both;padding:2px 8px;}@media (min-width:1058px){ body>*>div {width:1042px;margin:0 auto;}}body,body>footer {background-color:#1e1e1e;}body>footer {color:#e0e0e0;font-size:0.9em;}body>footer a {color:#80bfff;}body>footer h1,body>footer h2 {color:#e0e0e0 !important;}body>nav {position:fixed;z-index:9999;font-size:1.2em;width:100%;max-height:100vh;box-shadow:0 3px 5px rgba(0,0,0,0.44); color:#aaaaaa;}body>nav a {color:#aaaaaa;}div.rKpfPlz {height:44px;}body>article>div {position:relative;}a {text-decoration:none;color:#12039c;}.rH {font-family:open sans condensed,open sans,sans-serif;}h1,h2,h3,h4,.rH1,.rH2,.rH3,.rH4 {margin-top:16px;margin-bottom:12px;font-family:sans-serif;letter-spacing:-1px;font-weight:bold;}h1,h2,.rH1,.rH2 {color:#000000;}a h1,a h2,a h3,a h4 {color:#111111 !important;}h1,.rH1 {font-size:1.5em;}h2,.rH2 {font-size:1.35em;}h3,.rH3 {font-size:1.2em;}h4,.rH4 {font-size:1.1em;}p,ul,ol,dl {margin:12px 0 16px 0;}p,li {-moz-hyphens:auto;-o-hyphens:auto;-webkit-hyphens:auto;-ms-hyphens:auto;hyphens:auto;}ul {list-style-type:disc;padding-left:12px;}mark {background-color:#d0d0d0;color:#111111;font-weight:inherit;}input,select,textarea {font-family:sans-serif;font-size:inherit;line-height:inherit;border:solid 1px #d0d0d0;outline:none;box-sizing:border-box;border-radius:0;-webkit-border-radius:0px;appearance:none;-moz-appearance:none;-webkit-appearance:none;padding:1px 5px;}input[type='checkbox'] {appearance:checkbox;-moz-appearance:checkbox;-webkit-appearance:checkbox;}input[type='radio'] {appearance:radio;-moz-appearance:radio;-webkit-appearance:radio;} nav input,nav select,nav textarea {border:none;}.rMrgn {margin:0 10px 10px 0;}input[type=submit],.rKnpf {padding:5px 10px;margin:0 12px 12px 0;background-color:#000000;color:#ffffff;fill:#ffffff;border:none;}input[type=submit].rInf,.rInf.rKnpf {background-color:#d0d0d0;color:#ffffff;fill:#ffffff;}input[type=submit]:hover,.rKnpf:hover {box-shadow:0px 2px 5px 0px rgba(0,0,0,0.1), 0px 1px 10px 0px rgba(0,0,0,0.1)}input[type=submit].rRechts,.rKnpf.rRechts,.rMrgn.rRechts {margin:0 0 10px 10px;}textarea {overflow:hidden;}select {appearance:none;-moz-appearance:none;-webkit-appearance:none;}svg,img {vertical-align:baseline;margin:0;}img.rRechts {margin:4px 0 12px 12px;}img.rLinks {margin:4px 12px 12px 0;}button {line-height:inherit;background-color:transparent;padding:0;border:none;margin:0;font-size:inherit;font-family:inherit;color:inherit;border-radius:unset;-webkit-appearance:none;}table {border-spacing:0;border-collapse:collapse;}td,th {padding:0;vertical-align:top;}th a {color:inherit;}hr {border:none;border-bottom:solid 1px #cacaca;margin:0.75em 0;}hr.rInf {border-color:#b6b6b6;border-bottom-style:dashed;}hr.rDpl {margin-bottom:1.15em;padding-top:0.40em;}.rTrng {-moz-hyphens:auto;-o-hyphens:auto;-webkit-hyphens:auto;-ms-hyphens:auto;hyphens:auto;}.rHch {display:none;z-index:8;padding:3px 14px 3px 3px;margin-right:0;box-shadow:-5px 5px 20px -4px rgba(0,0,0,0.5);  position:fixed;bottom:108px;right:0px;width:24px;background-color:#000000;}.rKnpf,.rIn {box-sizing:border-box;display:inline-block;}.rDnb {position:absolute;left:100%;margin-left:8px;top:10px;background-color:transparent;}.rNav {height:36px;overflow:hidden;width:100%;padding:2px 0;}.rNav>* {height:36px;}.rMnRnd {margin-bottom:6px;}.rTab {display:table;}.rTab>div {display:table-cell;vertical-align:middle;}.r1Pxl {width:1px;}.r100Pro {width:100%;}.rLinks {float:left;}.rRechts {float:right;}.rDurch {text-decoration:line-through;}.rNobr {white-space:nowrap;}.r1Zeile {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.rClear {clear:both;}.rClrAft:after {content:"";display:table;clear:both;}.rClrBfr:before {content:"";display:table;clear:both;}.rClrRechts {clear:right;}.rClrLinks {clear:left;}.rDunkel {background-color:#000000;}.rHell {color:#f5f5f5;}.rZu {display:none;}.rAnkr {width:1px;height:56px;margin-top:-56px;float:left;display:block;}.rRel {position:relative;}.rAbs {position:absolute;}.rAuf {display:inline;}.rInl {display:inline;}.rFuss {margin:0 15px 15px 0;}.rLg {margin-right:8px;}.rAkz {color:#FF4081;}.rLst {list-style-type:none;padding-left:0;padding-right:0;}.rLst li {text-indent:-15px;padding-left:15px;padding-right:0;}.rLst[dir="rtl"] li {text-indent:-15px;padding-left:0;padding-right:15px;}.rLst li::before {min-width:15px;float:left;}.rLst[dir="rtl"] li::before {float:right;}.rLstDash li::before {content:"–";}.rLstGt li::before {content:"»";}.rLstBl li::before {content:"•";}.rLstTxt li::before {content:attr(txt); }.rCntr {text-align:center;}.rInf,.rInf a {color:#848484;fill:#c5c5c5;}.rInf img,.rInf svg {filter:grayscale(100%); }.rKln {font-size:0.9em;}.rKln img,.rKln svg {zoom:85%;}.rGrs {font-size:1.1em;}/* deprecated */ .rKnObn {margin-top:0 !important;}/* deprecated */ .rKnUnt {margin-bottom:0 !important;}.rU0px {margin-bottom:0px !important;}.rU1px {margin-bottom:1px !important;}.rU3px {margin-bottom:3px !important;}.rU6px {margin-bottom:6px !important;}.rO0px {margin-top:0px !important;}.rO1px {margin-top:1px !important;}.rO3px {margin-top:3px !important;}.rNt::after {content:"*";color:#848484;font-size:0.65em;vertical-align:top;font-weight:normal;}.rNoSelect {-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}.rImg {border:solid 1px #d0d0d0;}@media (min-width:744px){h1,.rH1 {font-size:1.7em;}h2,.rH2 {font-size:1.4em;}article .rAbschnitt {margin-left:-314px;width:100%;float:left;}article .rAbschnitt>div {margin-left:314px;}article .rInfo {width:300px;float:right;}.rFuss {width:330px;}}@media (prefers-color-scheme:dark){body {color:#e1e1e1;fill:#e1e1e1;}mark {color:#e1e1e1;background-color:#3f3f3f;}body>article {background-color:#232323;}body,body>footer {background-color:#060606;}body>footer {color:#e0e0e0;}body>footer a {color:#b9d1ff;}a {color:#b9d1ff;}h1,h2,.rH1,.rH2 {color:#ffffff;}a h1,a h2,a h3,a h4 {color:#e1e1e1 !important;}input,select,textarea {background-color:#292a2c;border-color:#101112;color:#e1e1e1;}input[type=submit],.rKnpf {background-color:#000000;color:#e8eaed;fill:#e8eaed;}input[type=submit].rInf,.rInf.rKnpf {background-color:#1d1d1d;color:#626262;fill:#626262;}hr {border-color:#484848;}hr.rInf {border-color:#353535;}.rHell {color:#f5f5f5;}.rInf,.rInf a {fill:#626262;}.rImg {border-color:#101112;}}@media (min-width:1261px)and (max-width:1698px){ body>*>div {margin-right:320px;}}@media (min-width:1261px)and (max-width:1378px){ body>*>div {margin-right:320px;margin-left:0;}}.rBox {margin-bottom:16px;overflow:auto;}.rBox header h2 {margin-top:0;}.rBoxWht {background-color:#ffffff;border:solid 2px #d0d0d0;padding:0px 10px;}.rBoxWht textarea,.rBoxWht input,.rBoxWht select {background-color:#e9e9e9;}.rBoxWht input[type=submit],.rBoxWht .rKnpf {background-color:#000000;}.rBoxWht input[type=submit].rInf,.rBoxWht .rInf.rKnpf {background-color:#d0d0d0;}@media (prefers-color-scheme:dark){ .rBoxWht {background-color:#313131;border-color:#000000;}.rBoxWht textarea,.rBoxWht input,.rBoxWht select {background-color:#212121;}.rBoxWht input[type=submit].rInf,.rBoxWht .rInf.rKnpf {background-color:#272727;color:#626262;fill:#626262;}.rBoxWht hr {border-color:#1b1b1b;}.rBoxWht hr.rInf {border-color:#232323;}}.rHw {width:100%;padding:4px 0;background-color:#ffffff;color:#222222;border-bottom:solid 1px #d0d0d0;}.rHw svg {fill:#d0d0d0;}.rHwObn {position:relative;top:0px;}.rHwUnt {opacity:0.91;position:fixed;bottom:0px;z-index:8;box-shadow:1px 0px 2px 0px rgba(0,0,0,0.25); }.rHwUnt a {color:#80bfff;}.rHwBox>div {position:static;padding-right:10px;padding-left:13px;}.rHwBox+.rBox {margin-top:0;}.rHwFhlr svg,.rHwTpp svg,.rHwOk svg,.rHwNtrl svg {fill:#ffffff;fill-opacity:0.6;}.rHwFhlr {background-color:#d90000;color:#ffbfbf;border:none;}.rHwTpp {background-color:#aa5500;color:#ffcf9f;border:none;}.rHwOk {background-color:#008000;color:#a6ffa6;border:none;}.rHwNtrl {color:#e0e0e0;background-color:#111111;border:none;}@media (prefers-color-scheme:dark){ .rHw {background-color:#292a2c;color:#e8eaed;border-color:#101112;}.rHw svg {fill:#9aa0a6;}.rHwUnt a {color:#80bfff;}.rHwFhlr {background-color:#6a0000;color:#facfb4;}.rHwFhlr svg,.rHwTpp svg,.rHwOk svg,.rHwNtrl svg {fill:#ffffff;}.rHwTpp {background-color:#422100;color:#f5d99e;}.rHwOk {background-color:#003c00;color:#baf2b7;}.rHwNtrl {color:#e0e0e0;background-color:#111111;}}.rMn {margin:10px 0 0 auto;padding-top:8px;width:33%;border-top:solid 1px #9b9b9b;box-sizing:border-box;}.rMnOpt {padding-top:1px;}.rMnKat {color:#ffffff;}.rMnLnk {margin-right:10px;}.rMnOptn .rMnOptn {margin-left:22px;}@media (max-width:699px){.rMn {width:100%;}}nav.rKrml {margin:9px 0 8px 0;}nav.rKrml span {white-space:nowrap;}q {font-weight:bold;}q:before {content:none;}q:after {content:none;}q>b {color:#2a2abc;font-weight:inherit !important;}q>u {color:#028b02;text-decoration:none;}s {color:#aaaaaa;text-decoration:none;}.rKnpf q>b {color:#8cc6ff;}.rKnpf q>u {color:#87f57a;}.rInf q>b,.rInf q>u {color:#848484;fill:#c5c5c5;}g,g a {color:#848484;fill:#c5c5c5;}/* deprecated */b>u {color:#2a2abc;text-decoration:none;}b>i {color:#028b02;font-style:normal;}.rKnpf b>u {color:#8cc6ff;}.rKnpf b>i {color:#87f57a;}.rInf b>u,.rInf b>i {color:#848484;fill:#c5c5c5;}@media (prefers-color-scheme:dark){q>b {color:#8cc6ff;}q>u {color:#87f57a;}.rInf q>b,.rInf q>u {fill:#626262;}/* deprecated */b>u {color:#8cc6ff;}b>i {color:#87f57a;}.rInf b>u,.rInf b>i {fill:#626262;}}.kFrm select {border:none;background-color:transparent;}.kFrm textarea {width:100%;}.kBwrt {font-size:1.3em;}.kAn {color:#000000;}.kAus {color:#aaaaaa;}.kAnt {margin-left:5%;}.kLnk {white-space:nowrap;}@media (prefers-color-scheme:dark){.kAn {color:#dcdee4;}.kAus {color:#5e6064;}}.aArt {min-height:90px;}.aDnb {min-height:600px;min-width:300px;}.aInf {min-height:250px;}.aAnz {margin:8px 0;text-align:center;background-color:rgba(255,255,255,0.4); }@media (max-width:1000px){ .aArt {min-height:250px;}}@media (max-width:1260px){ .aDnb {display:none;min-height:unset;min-width:unset;}}@media (prefers-color-scheme:dark){ .aAnz {background-color:rgba(255,255,255,0.05); }}.bHf {font-size:1.44em;}.bZrt {font-weight:bold;}.bKas {}.rDunkel {background-color:#000084;}.rHch {background-color:#000084;}h1,h2 {color:#000084;}.rHell {color:#9999ce;}body>nav,body>nav a {color:#9999ce;}.rMn {border-color:#5050a4;}h4 {display:inline;}input[type=submit],.rKnpf,.rBoxWht input[type=submit],.rBoxWht .rKnpf {background-color:#000084;}.rEinOptAn {background-color:#000084;}.vLeg {font-size:0.9em;margin-top:8px;}.vFuss {width:280px;margin:0 15px 15px 0;}.vEin {display:flex;}.vEin input,.vEin .rEinSlct {font-size:1.4em;border:solid 1px #d0d0d0;}dl.vNrn {list-style-type:none;margin-right:0;margin-left:0;}dl.vNrn dd,dl.vNrn dt {display:flex;margin:2px 0 2px 0;align-items:baseline;}dl.vNrn .vLng {min-width:23px;}.vAuswahl {display:inline-block;margin-bottom:10px;}.vAuswahl .rKnpf {margin:5px auto;}.vUnd,.vUnd b>u,.vUnd b>i {color:#aaaaaa;}			.vTxtTbl {overflow:auto;white-space:nowrap;}.vTxtTbl td,.vTxtTbl th {padding-right:8px;}.vBImg {max-height:80px;height:17vw;}.vArbBltt {display:inline-block;margin:0 10px 10px 0;}				.vArbBltt img {max-width:300px;height:80px;}				p.vGrnd {font-size:2.2em;}p.vStm {font-size:1.55em;margin-bottom:20px;}svg.vIcn {fill:#000084;}.vVidYt {position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin-bottom:20px;}.vVidYt img {position:absolute;top:0;right:0;z-index:99999;width:40px;height:40px;background-color:rgba(111,111,111,.5); }.vVidYt iframe,.vVidYt object,.vVidYt embed {position:absolute;top:0;left:0;width:100%;height:100%;}@media (prefers-color-scheme:dark){.rDunkel {background-color:#00002b;}.rHell {color:#9999aa;}.rHch {background-color:#000000;}h1,h2,.rH1,.rH2 {color:#ffffff;}a h1,a h2 {color:#ffffff;!important;}body>nav,body>nav a {color:#9999aa;}.rMn {border-color:#6f6f86;}input[type=submit],.rKnpf,.rBoxWht input[type=submit],.rBoxWht .rKnpf {background-color:#000000;}.rEinOptAn {background-color:#00003c;}.vEin input,.vEin .rEinSlct {font-size:1.4em;border-color:#101112;}.vUnd,.vUnd b>u,.vUnd b>i {color:#aaaaaa;}svg.vIcn {fill:#dcdee4;}}</style>
+<style type="text/css">div.vBsp {margin:1px 0 10px 0;box-sizing:border-box;width:100%;}.vBsp table {width:100%;}td.vBspV {padding-right:10px;white-space:nowrap;width:30%;}td.vBspB {width:70%;}td.vBspB ul {margin:0;}td.vKpfZ {padding-right:5px;}form.vUe {display:inline;}select.vUe {background-color:transparent;padding:0;margin:0;}div.vTbl {float:left;min-width:30%;margin:5px 0 15px 0;padding-right:10px;box-sizing:border-box;}.vTbl td {padding-right:5px;white-space:nowrap;}.vTbl tr:nth-child(odd){ background-color:#f3f3f3;}.rAbschnitt .rH2,.rAbschnitt h2 {color:#FF4081;}.vTbl h3,.vBsp h3,.vTbl h2,.vBsp h2 {display:inline-block;margin-bottom:6px;margin-top:0;line-height:25px;}@media (max-width:900px){ div.vTbl {min-width:48%;} }@media (max-width:700px){ div.vTbl {min-width:30%;} }@media (max-width:500px){ div.vTbl {min-width:48%;} }@media (prefers-color-scheme:dark){.vTbl tr:nth-child(odd){ background-color:#282828;}}</style>
+<script async="async" src="//cdn-a.yieldlove.com/yieldlove-bidder.js?verbformen.de_artikel"></script><script async="async" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script><script>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+googletag.cmd.push(function() {
+googletag.pubads().disableInitialLoad();
+googletag.enableServices();
+});
+</script>
+</head>
+<body>
+<div id="rkopf"></div>
+<nav class="rDunkel"><div>
+<div class="rNav">
+<div class="rRechts" id="rMnImg" onclick="Rahmen.aufzu(['rMn','rMnNav'])"><svg fill="#ffffff" fill-opacity="0.6" height="36" viewbox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" style="display: none;" d="m11.41 15.41 4.59-4.58 4.59 4.58 1.41-1.41-6-6l-6 6 1.41 1.41z"></path><path class="rZu" style="display: inline;" d="m8 4.667h16v2h-16m0 4h16v2h-16m-2e-7 4h16v2h-16z"></path></svg></div>
+<div class="rLinks rLg"><a href="/"><svg xmlns="http://www.w3.org/2000/svg" height="36" width="36" version="1.1" viewbox="0 20 320 320"><path d="M265 41.4L29 72.9 69.6 116l247 22z" fill="#3a3a3a"></path><path d="M163 82.7L317 138l-52-96.9z" fill="#2d2d2d"></path><path d="M265 41.4l-186 254 138 12 100-169z" fill="#d00"></path><path d="M223 158L80 295l137 12z" fill="#c90000"></path><path d="M226 94.2l-146 201 144-137z" fill="#d30000"></path><path d="M4.65 132l74.6 163 138 12-50-161z" fill="#ffce00"></path><path d="M217 308L79 295l-3.7-99z" fill="#ebba00"></path><path d="M75.4 197l3.8 98L12 149z" fill="#f5c400"></path><path d="M107 63l56 19.7 101-41.3z" fill="#333"></path></svg></a></div>
+<form class="rLinks" id="vKpfEin" action="/">
+<div class="rEin rLinks">
+<input autofocus="autofocus" onfocus="this.setSelectionRange(0, this.value.length)" id="b914d" name="w" type="search" value="aufgeben" placeholder="" title="" autocomplete="off" onkeydown="Eingabe.taste('b914d','b914dListe', event)" oninput="Eingabe.an('b914d','b914dListe',Verbformen.suchliste)" onblur="Eingabe.aus('b914d','b914dListe')"><br><div class="rEinSlct" id="b914dListe"></div>
+</div>
+<button class="rLinks" type="submit"><svg fill="#ffffff" fill-opacity="0.6" height="36" viewbox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></button>
+<button class="rLinks" type="submit" formaction="/suche/"><svg fill="#ffffff" fill-opacity="0.6" height="32" viewbox="0 -2 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"></path></svg></button>
+</form>
+<div class="rLinks rHell" style="margin: 8px;">Netzverb® Flexion</div>
+<div class="rRechts rTab rNoSelect rMnLnk" onclick="Rahmen.aufzu(['vLng', 'rMn'])">
+<div>
+Deutsch
+<img src="/rahmen/mnwahl.svg" height="8" width="10">
+</div>
+</div>
+<div class="rRechts rTab rNoSelect rMnLnk" onclick="Rahmen.aufzu(['vGns', 'rMn'])">
+<div>
+Aktiv
+<img src="/rahmen/mnwahl.svg" height="8" width="10">
+</div>
+</div>
+<div class="rRechts rTab rNoSelect rMnLnk" onclick="Rahmen.aufzu(['vStz', 'rMn'])">
+<div>
+Hauptsatz
+<img src="/rahmen/mnwahl.svg" height="8" width="10">
+</div>
+</div>
+</div>
+<div class="rClear"></div>
+<div class="rZu" id="rMn">
+<div class="rMn">
+<div class="rNoSelect" onclick="Rahmen.aufzu('rMnNav')">
+<span class="rMnKat">Navigation</span>
+<img src="/rahmen/mnwahl.svg" height="8" width="10">
+</div>
+<div class="rZu" id="rMnNav">
+<div class="rMnOptn">
+<div class="rMnOpt">
+<a href="/sitemap.htm">
+Sitemap
+</a>
+</div>
+<div class="rMnOpt">
+<a href="/">
+Flexion
+</a>
+</div>
+<div class="rMnOpt">
+<a href="/konjugation/">
+Konjugation
+</a>
+</div>
+<div class="rMnOptn">
+<div class="rMnOpt">
+<a href="/konjugation/">
+Verben
+</a>
+</div>
+<div class="rMnOpt">
+<a href="/konjugation/beispiele/">
+Beispiele
+</a>
+</div>
+<div class="rMnOpt">
+<a href="/konjugation/arbeitsblaetter-uebungen/">
+Arbeitsblätter
+</a>
+</div>
+</div>
+<div class="rMnOpt">
+<a href="/deklination/">
+Deklination
+</a>
+</div>
+<div class="rMnOptn">
+<div class="rMnOpt">
+<a href="/deklination/substantive/">
+Substantive
+</a>
+</div>
+<div class="rMnOpt">
+<a href="/deklination/adjektive/">
+Adjektive
+</a>
+</div>
+<div class="rMnOpt">
+<a href="/deklination/pronomen/">
+Pronomen
+</a>
+</div>
+<div class="rMnOpt">
+<a href="/deklination/artikel/">
+Artikel
+</a>
+</div>
+</div>
+<div class="rMnOpt">
+<a href="/suche/">
+Suche
+</a>
+</div>
+<div class="rMnOpt">
+<a href="/mitmachen.htm">
+Mitmachen
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="rMn">
+<div class="rNoSelect" onclick="Rahmen.aufzu('vLng')">
+<span class="rMnKat">Sprache</span>: Deutsch
+<img src="/rahmen/mnwahl.svg" height="8" width="10">
+</div>
+<div class="rZu" id="vLng">
+<div class="rMnOpt">
+<img src="/rahmen/mnan.svg" height="18" width="18"> 	
+<a href="https://www.verbformen.de/konjugation/aufgeben.htm" rel="nofollow">
+Deutsch
+</a>
+</div>
+<div class="rMnOpt">
+<img src="/rahmen/mnaus.svg" height="18" width="18"> 
+<a href="https://www.verbformen.com/conjugation/aufgeben.htm" rel="nofollow">
+English
+</a>
+</div>
+<div class="rMnOpt">
+<img src="/rahmen/mnaus.svg" height="18" width="18"> 
+<a href="https://www.verbformen.ru/sprjazhenie/aufgeben.htm" rel="nofollow">
+Русский
+</a>
+</div>
+<div class="rMnOpt">
+<img src="/rahmen/mnaus.svg" height="18" width="18"> 
+<a href="https://www.verbformen.pt/conjugacao/aufgeben.htm" rel="nofollow">
+Português
+</a>
+</div>
+<div class="rMnOpt">
+<img src="/rahmen/mnaus.svg" height="18" width="18"> 
+<a href="https://www.verbformen.es/conjugacion/aufgeben.htm" rel="nofollow">
+Español
+</a>
+</div>
+</div>
+</div>
+<div class="rMn">
+<div class="rNoSelect" onclick="Rahmen.aufzu('vGns')">
+<span class="rMnKat">Aktionsform</span>: Aktiv
+<img src="/rahmen/mnwahl.svg" height="8" width="10">
+</div>
+<div class="rZu" id="vGns">
+<div class="rMnOpt">
+<img src="/rahmen/mnan.svg" height="18" width="18"> 	
+<a href="/konjugation/aktiv/aufgeben.htm">
+Aktiv
+</a>
+</div>
+<div class="rMnOpt">
+<img src="/rahmen/mnaus.svg" height="18" width="18"> 
+<a href="/konjugation/vpassiv/aufgeben.htm">
+Vorgangspassiv
+</a>
+</div>
+<div class="rMnOpt">
+<img src="/rahmen/mnaus.svg" height="18" width="18"> 
+<a href="/konjugation/zpassiv/aufgeben.htm">
+Zustandspassiv
+</a>
+</div>
+</div>
+</div>
+<div class="rMn">
+<div class="rNoSelect" onclick="Rahmen.aufzu('vStz')">
+<span class="rMnKat">Satzart</span>: Hauptsatz
+<img src="/rahmen/mnwahl.svg" height="8" width="10">
+</div>
+<div class="rZu" id="vStz">
+<div class="rMnOpt">
+<img src="/rahmen/mnan.svg" height="18" width="18"> 	
+<a href="/konjugation/aussagesatz/aufgeben.htm">
+Hauptsatz
+</a>
+</div>
+<div class="rMnOpt">
+<img src="/rahmen/mnaus.svg" height="18" width="18"> 
+<a href="/konjugation/fragesatz/aufgeben.htm">
+Fragesatz
+</a>
+</div>
+<div class="rMnOpt">
+<img src="/rahmen/mnaus.svg" height="18" width="18"> 
+<a href="/konjugation/nebensatz/aufgeben.htm">
+Nebensatz
+</a>
+</div>
+</div>
+</div>
+<div>
+<div class="rMn">
+<div>
+<span class="rMnKat">Teilen: </span>
+<a rel="nofollow" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.verbformen.de%2F%3Fw%3Daufgeben" title="Teilen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewbox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg"><path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path></svg></a>
+<a rel="nofollow" href="https://twitter.com/home?status=https%3A%2F%2Fwww.verbformen.de%2F%3Fw%3Daufgeben" title="Teilen"><svg fill="#ffffff" fill-opacity="0.6" height="26" viewbox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path></svg></a>
+</div>
+</div>
+</div>
+<div class="rMnRnd rClear"></div>
+</div>
+</div></nav><div class="rKpfPlz"></div>
+<article class=""><div>
+<nav class="rKrml rKln rInf"><a href="https://www.verbformen.de/"><span>Flexion</span></a>
+› 	
+<a href="https://www.verbformen.de/konjugation/"><span>Konjugation</span></a>
+› 	
+<a href="https://www.verbformen.de/konjugation/aufgeben.htm"><span>aufgeben</span></a>
+</nav><nav class="rClear"><a class="rKnpf rLinks" href="/" title="Konjugation aller deutschen Verben">
+<svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m15 7.6v1.95h-11.4l5.25 5.05-1.35 1.4-7.5-7.5 7.5-7.5 1.35 1.35-5.25 5.25z"></path></svg></a>
+<a class="rKnpf rLinks" href="/suche/" title="Konjugation aller deutschen Verben">
+<svg fill="" class="kIcn" height="12" viewbox="0 1 15 15" width="12" xmlns="http://www.w3.org/2000/svg"><path d="m5.6 1.01a5.57 5.57 0 0 1 5.57 5.57c0 1.38-0.506 2.65-1.34 3.63l0.232 0.232h0.677l4.29 4.29-1.29 1.29-4.29-4.29v-0.677l-0.232-0.232c-1 0.8-2.27 1.4-3.65 1.4a5.57 5.57 0 0 1 -5.57 -5.62 5.57 5.57 0 0 1 5.57 -5.57m0 1.71c-2.14 0-3.86 1.71-3.86 3.86 0 2.14 1.71 3.86 3.86 3.86 2.14 0 3.86-1.71 3.86-3.86 0-2.14-1.71-3.86-3.86-3.86z"></path></svg></a>
+<a class="rKnpf rLinks" href="https://play.google.com/store/apps/details?id=de.verbformen.verben.app">
+<svg fill="" height="14" viewbox="0 -2 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"></path></svg></a>
+<a class="rKnpf rLinks" target="_blank" href="/konjugation/aufgeben.pdf" onclick="gtag('config', 'UA-1466848-8', {'anonymize_ip': true, 'page_path': '/konjugation/aufgeben.pdf'})">
+PDF <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m8.4 16h-1.95v-11.4l-5.05 5.25-1.4-1.35 7.5-7.5 7.5 7.5-1.4 1.35-5.2-5.25z"></path></svg></a>	
+<a class="rKnpf rLinks" href="https://youtu.be/dgxUBSjo9t0">
+<svg fill="#ffffff" height="14" viewbox="0 2 24 17" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"></path></svg></a>
+<div id="vNavAufZuImg" class="rKnpf rNoSelect rInf rLinks" onclick="Rahmen.aufzu('vNavAufZu')">
+<svg fill="" class="kIcn" height="12" viewbox="6 4 12 16" width="10" xmlns="http://www.w3.org/2000/svg"><path style="display: none;" class="rAuf" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"></path><path style="display: inline;" class="rZu" d="M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z"></path></svg>
+</div>
+<div id="vNavAufZu" class="rZu">
+<a class="rKnpf rLinks" href="/sitemap.htm" title="Inhaltsverzeichnis und Sitemap">
+Sitemap</a>
+<a class="rKnpf rLinks" target="_blank" href="/konjugation/steckbrief/aufgeben.png" onclick="gtag('config', 'UA-1466848-8', {'anonymize_ip': true, 'page_path': '/konjugation/steckbrief/aufgeben.png'})">
+PNG <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m8.4 16h-1.95v-11.4l-5.05 5.25-1.4-1.35 7.5-7.5 7.5 7.5-1.4 1.35-5.2-5.25z"></path></svg></a>
+<a class="rKnpf rLinks" target="_blank" href="/konjugation/aufgeben.docx" onclick="gtag('config', 'UA-1466848-8', {'anonymize_ip': true, 'page_path': '/konjugation/aufgeben.docx'})">
+DOCX <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m8.4 16h-1.95v-11.4l-5.05 5.25-1.4-1.35 7.5-7.5 7.5 7.5-1.4 1.35-5.2-5.25z"></path></svg></a>
+<a class="rKnpf rLinks" href="/konjugation/beispiele/aufgeben.htm" title="Beispiele zur Konjugation des Verbs aufgeben">
+Beispiele <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m0 9.4v-1.95h11.4l-5.25-5.05 1.35-1.4 7.5 7.5-7.5 7.5-1.35-1.4 5.25-5.2z"></path></svg></a>		
+<a class="rKnpf rLinks" href="/konjugation/arbeitsblaetter-uebungen/aufgeben.htm" title="Arbeitsblätter zur Konjugation des  Verbs aufgeben">
+Arbeitsblätter <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m0 9.4v-1.95h11.4l-5.25-5.05 1.35-1.4 7.5 7.5-7.5 7.5-1.35-1.4 5.25-5.2z"></path></svg></a>
+</div>
+</nav><div id="div-gpt-ad-1407836066662-0" class="aAnz aArt rClear">
+<script type="text/javascript">
+if (window.innerWidth >= 1000) {
+googletag.cmd.push(function() {
+googletag.defineSlot('/53015287/verbformen.de_d_970x90_1', [[970, 90], [728, 90]], 'div-gpt-ad-1407836066662-0').addService(googletag.pubads());
+googletag.display('div-gpt-ad-1407836066662-0');
+});
+}
+if (window.innerWidth < 1000) {
+googletag.cmd.push(function() {
+googletag.defineSlot('/53015287/verbformen.de_m_300x250_1', [300, 250], 'div-gpt-ad-1407836066662-0').addService(googletag.pubads());
+googletag.display('div-gpt-ad-1407836066662-0');
+});
+}
+</script>
+</div>
+<div class="rCntr" style="margin: 8px 0 8px 0;"><a href="/mitmachen.htm" class="rInf rKln">Werbung ausblenden</a></div>
+<h1 class="rClear">Konjugation des Verbs aufgeben</h1>
+<p>
+Das <a href="https://www.verbformen.de/konjugation/aufgeben.htm" title="aufgeben Konjugation">Konjugieren des Verbs aufgeben</a> erfolgt unregelmäßig. Die Stammformen sind gibt auf, gab auf und hat aufgegeben. Der Ablaut erfolgt mit den Stammvokalen e
+- a
+- e. Als Hilfsverb von aufgeben wird "haben" verwendet. 
+<span id="c693a">Die Vorsilbe auf- von aufgeben ist trennbar. Die Beugung erfolgt im Aktiv und die Darstellung als Hauptsatz. Zum besseren Verständnis stehen unzählige <a href="/konjugation/beispiele/aufgeben.htm" title="aufgeben Beispiele">Beispiele für das Verb aufgeben</a> zur Verfügung. Zum Üben und Festigen gibt es außerdem <a href="/konjugation/arbeitsblaetter-uebungen/aufgeben.htm" title="aufgeben Arbeitsblätter und Übungen">kostenlose Arbeitsblätter für aufgeben</a>. Man kann nicht nur <a href="https://www.verbformen.de/konjugation/aufgeben.htm">aufgeben konjugieren</a>, sondern alle <a href="/suche/">deutschen Verben</a>. Das Verb gehört zum Wortschatz des Zertifikats Deutsch bzw. zur Stufe B1. </span>
+<span id="c693aImg" onclick="event.stopPropagation(); Rahmen.aufzu('c693a');" class="rInf"><svg style="vertical-align: bottom;" fill="" width="18px" height="18px" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path><path class="rZu" d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span>
+<script type="text/javascript"> if(Rahmen.breite()<700) Rahmen.aufzu('c693a'); </script><span class="kLnk">
+<a href="#kommentare" class="kLnk">Kommentare</a>
+<a href="#kommentare" class="kLnk">☆</a>
+</span></p>
+<div class="rAnkr" id="Steckbrief"></div>
+<div class="rClear"></div>
+<div class="rAbschnitt "><div>
+<section class="rBox rBoxWht " id="vVdBxBox"><div class="rClear" style="margin-bottom: 10px;"></div>
+<div class="rKnpf rInf rRechts rNoSelect" id="vVdPlay" onclick="Verbformen.youtube('vVdBxBox', 'dgxUBSjo9t0')">Video <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m6.6 1h1.95v11.4l5.05-5.25 1.4 1.35-7.5 7.5-7.5-7.5 1.35-1.35 5.25 5.25z"></path></svg>
+</div>
+<p class="rInf">
+<b><span class="bZrt" title="Wortschatz Zertifikat B1">
+B1</span> ·</b>
+unregelmäßig
+· haben
+· trennbar</p>
+<p class="vGrnd rCntr rClear" id="grundform">
+<a href="#Uebersetzungen" title="Deutsch"><img loading="lazy" alt="Deutsch" src="/bedeutungenweb/de.svg" width="20" height="20"></a>
+<b>auf</b>·<b>geb<i>en</i></b> <a class="" href="https://www.verbformen.de/konjugation/infinitiv/aufgeben.mp3" id="11896" onclick="Stimme.klick(event,'11896')" rel="nofollow"><img loading="lazy" src="/s.svg" width="24" height="24" alt=""></a></p>
+<p class="vStm rCntr" id="stammformen">
+<b>g<u>i</u>b<i>t</i></b> <b>auf</b> · <b>g<u>a</u>b</b> <b>auf</b> · <i>hat</i> <b>auf<i>ge</i>geb<i>en</i></b> <a class="" href="https://www.verbformen.de/konjugation/stammformen/aufgeben.mp3" id="caba7" onclick="Stimme.klick(event,'caba7')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></p>
+<p class="rCntr">
+</p>
+<div id="vVdBx" class="rAufZu">
+<div id="vStckLngImg" class="rInf rKnpf rRechts rClrRechts rNoSelect" onclick="Rahmen.aufzu('vStckLng'); Rahmen.aufzu('vStckKrz');">
+<svg fill="" class="kIcn" height="12" viewbox="6 4 12 16" width="10" xmlns="http://www.w3.org/2000/svg"><path style="display: none;" class="rAuf" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"></path><path style="display: inline;" class="rZu" d="M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z"></path></svg>
+</div>
+<div class="rCntr" id="vStckKrz">
+<a class="rKnpf rRechts rClrRechts rInf" title="Bedeutungen" href="https://www.verben.de/verben/aufgeben.htm">
+<svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m2.83 14.4-1.38-1.38 8.06-8.06-7.28 0.141-0.0354-1.94h10.6v10.6l-1.94-0.0354 0.0354-7.39z"></path></svg></a>
+<div onclick="Rahmen.aufzu(['vStckLng']); Rahmen.aufzu('vStckKrz')" style="padding: 0 4%;">
+<p class="r1Zeile rU3px rO0px">
+<span lang="en">
+<img loading="lazy" alt="Englisch" src="/bedeutungenweb/en.svg" width="13" height="13"> quit,
+break off,
+chuck up the sponge,
+jack in,
+retire,
+say die,
+check in,
+assign,
+collapse,
+drop by the wayside</span>
+</p>
+<p class="rInf r1Zeile rU3px rO0px">
+<i>etwas Sinnloses beenden, aufhören, einstellen; etwas zur Erledigung auftragen, zur Aufgabe machen; aufhören; beauftragen; abgeben; (das) Handtuch schmeißen</i>
+</p>
+<p class="rInf r1Zeile rU3px rO0px">
+(<span title="mit Reflexivpronomen im Akkusativ (mich)">sich<span class="bKas rInf">+A</span></span>, <span title="mit Dativobjekt">Dat.</span>, <span title="mit Akkusativobjekt">Akk.</span>, <span title="'für' (mit Akkusativ)">für<span class="bKas rInf">+A</span></span>)</p>
+<p class="rInf r1Zeile rU3px rO0px">
+» Ohne deine Ermutigung <i>h</i><i>ä</i><i>t</i><i>te</i> ich dieses Vorhaben <b>auf</b><b><i>ge</i></b><b>g</b><b>e</b><b>b</b><b><i>en</i></b>.<span class="rBoxInfo">¹</span></p>
+</div>
+</div>
+<div class="rZu rCntr" id="vStckLng" onchange="Ajax.get('/konjugation/steckbrief/info/aufgeben.htm', 'vStckLng', true); document.getElementById('vStckLng').removeAttribute('onchange')"></div>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</section><div id="divZufaellig7bc2e">
+<nav class="rBox rBoxWht " id="83e12Box"><div class="rClear" style="margin-bottom: 10px;"></div>
+<header><h3>
+Wie gefällt Dir folgende Übersetzung?
+</h3>
+</header><div id="83e12" class="rAufZu">
+<form method="post" onsubmit="Ajax.ersetze(event,'divZufaellig7bc2e')" action="/bedeutungen/uebersetzungen/unbewertet.htm">
+<input type="hidden" name="id" value="verb:aufgeben"><input type="hidden" name="uebersetzung.3" value="surrender"><input type="hidden" name="danke" value="true"><img loading="lazy" title="Deutsch" alt="Deutsch" src="/bedeutungenweb/de.svg" width="15" height="15">
+aufgeben
+<br><span style="" class="rNobr">					
+<img loading="lazy" title="Englisch" alt="Englisch" src="/bedeutungenweb/en.svg" width="15" height="15"><a href="https://translate.google.de/#en/de/surrender" target="_blank">surrender</a>
+</span>
+<span class="rNobr">					
+<button type="submit" formaction="/bedeutungen/uebersetzungen/unbewertet.htm?aktion=aufwerten" name="" value="" onclick="Ajax.klick(event)">
+<img loading="lazy" src="/bedauf.svg" alt="" style="vertical-align: middle;" width="18" height="18"> Passt
+</button>
+<button type="submit" formaction="/bedeutungen/uebersetzungen/unbewertet.htm?aktion=abwerten" name="" value="" onclick="Ajax.klick(event)">
+<img loading="lazy" src="/bedab.svg" alt="" style="vertical-align: middle;" width="18" height="18"> Schlecht
+</button>
+<button type="submit" formaction="/bedeutungen/uebersetzungen/unbewertet.htm?aktion=nichtwerten" name="" value="" onclick="Ajax.klick(event)">
+<img loading="lazy" src="/bedegal.svg" alt="" style="vertical-align: middle;" width="18" height="18">Weiß nicht
+</button>
+</span>
+</form>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</nav>
+</div>
+<div class="rAnkr rAnkrBox" id="ueberblick"></div>
+<section class="rBox rBoxWht " id="5a105Box"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="5a105Img" onclick="Rahmen.alleaufzu('5a105','rAufZu')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="m16.6 9.67-1.42-1.41l-3.2 3.14-3.17-3.14-1.42 1.41 4.59 4.63m-4.59 5.8 1.42 1.41 3.17-3.17 3.17 3.17 1.41-1.41-4.58-4.59-4.59 4.59zm9.19-15.9l-1.42-1.41-3.17 3.17-3.17-3.17-1.42 1.41 4.58 4.59"></path><path class="rZu" d="m12 13.8-3.17-3.17-1.41 1.41 4.58 4.59 4.59-4.59-1.42-1.41m-3.16-6.36 3.17 3.17 1.41-1.41-4.58-4.59-4.59 4.59 1.42 1.41 3.17-3.17zm-0.01 15.2-3.17-3.17-1.41 1.41 4.58 4.59 4.59-4.59-1.42-1.41"></path></svg></button></nav><header><p><span class="rInf">Die einfach konjugierten Verbformen Präsens, Präteritum, Imperativ und Konjunktiv von aufgeben</span></p>
+</header><div id="5a105" class="rAufZu">
+<div class="vTbl">
+<h2>Präsens</h2>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/indikativ/praesens/aufgeben.mp3" id="4648d" onclick="Stimme.klick(event,'4648d')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><table>
+<tr>
+<td> ich</td>
+<td> <b>geb</b>(<b><i>e</i></b>)⁵</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> du</td>
+<td> <b>g<u>i</u>b<i>st</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> er</td>
+<td> <b>g<u>i</u>b<i>t</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> wir</td>
+<td> <b>geb<i>en</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> ihr</td>
+<td> <b>geb<i>t</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> sie</td>
+<td> <b>geb<i>en</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+</table>
+</div>
+<div class="vTbl">
+<h2>Präteritum</h2>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/indikativ/praeteritum/aufgeben.mp3" id="b65c8" onclick="Stimme.klick(event,'b65c8')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><table>
+<tr>
+<td> ich</td>
+<td> <b>g<u>a</u>b</b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> du</td>
+<td> <b>g<u>a</u>b<i>st</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> er</td>
+<td> <b>g<u>a</u>b</b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> wir</td>
+<td> <b>g<u>a</u>b<i>en</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> ihr</td>
+<td> <b>g<u>a</u>b<i>t</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> sie</td>
+<td> <b>g<u>a</u>b<i>en</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+</table>
+</div>
+<div class="vTbl">
+<h2>Imperativ</h2>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/imperativ/aufgeben.mp3" id="7ff85" onclick="Stimme.klick(event,'7ff85')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><table>
+<tr><td>-</td></tr>
+<tr>
+<td><b>g<u>i</u>b</b></td>
+<td> (du)</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr><td>-</td></tr>
+<tr>
+<td><b>geb<i>en</i></b></td>
+<td> wir</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td><b>geb<i>t</i></b></td>
+<td> ihr</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td><b>geb<i>en</i></b></td>
+<td> Sie</td>
+<td> <b>auf</b>
+</td>
+</tr>
+</table>
+</div>
+<div class="vTbl">
+<h2>Konjunktiv I</h2>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/konjunktiv/praesens/aufgeben.mp3" id="a6d15" onclick="Stimme.klick(event,'a6d15')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><table>
+<tr>
+<td> ich</td>
+<td> <b>geb<i>e</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> du</td>
+<td> <b>geb<i>est</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> er</td>
+<td> <b>geb<i>e</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> wir</td>
+<td> <b>geb<i>en</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> ihr</td>
+<td> <b>geb<i>et</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> sie</td>
+<td> <b>geb<i>en</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+</table>
+</div>
+<div class="vTbl">
+<h2>Konjunktiv II</h2>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/konjunktiv/praeteritum/aufgeben.mp3" id="c3626" onclick="Stimme.klick(event,'c3626')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><table>
+<tr>
+<td> ich</td>
+<td> <b>g<u>ä</u>b<i>e</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> du</td>
+<td> <b>g<u>ä</u>b<i>est</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> er</td>
+<td> <b>g<u>ä</u>b<i>e</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> wir</td>
+<td> <b>g<u>ä</u>b<i>en</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> ihr</td>
+<td> <b>g<u>ä</u>b<i>et</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> sie</td>
+<td> <b>g<u>ä</u>b<i>en</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+</table>
+</div>
+<div class="vTbl">
+<h2>Infinitiv</h2>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/infinitive/aufgeben.mp3" id="01ba3" onclick="Stimme.klick(event,'01ba3')" rel="nofollow"><img src="/s.svg" width="20" height="20" alt=""></a></span><table>
+<tr><td><b>aufgeb<i>en</i></b></td></tr>
+<tr><td><b>auf<i>zu</i>geb<i>en</i></b></td></tr>
+</table>
+</div>
+<div class="vTbl">
+<h2>Partizip</h2>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/partizipien/aufgeben.mp3" id="e8540" onclick="Stimme.klick(event,'e8540')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><table>
+<tr><td><b>aufgeb<i>end</i></b></td></tr>
+<tr><td><b>auf<i>ge</i>geb<i>en</i></b></td></tr>
+</table>
+</div>
+<div class="rClear"></div>
+<p class="rInf vLeg rClear">
+⁵ Umgangssprachlicher Gebrauch</p>
+<hr>
+<nav><a class="rKnpf rRechts" href="https://www.verben.de/verben/aufgeben.htm">
+Bedeutungen <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m2.83 14.4-1.38-1.38 8.06-8.06-7.28 0.141-0.0354-1.94h10.6v10.6l-1.94-0.0354 0.0354-7.39z"></path></svg></a>
+<a class="rKnpf rRechts" href="https://play.google.com/store/apps/details?id=de.verbformen.verben.app">
+<svg fill="" height="14" viewbox="0 -2 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"></path></svg></a>
+<a class="rKnpf rLinks rNoSelect" id="vRglMnImg" onclick="Rahmen.aufzu('vRglMn')">
+Regeln <svg fill="" class="kIcn" height="12" viewbox="6 4 12 16" width="10" xmlns="http://www.w3.org/2000/svg"><path style="display: none;" class="rAuf" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"></path><path style="display: inline;" class="rZu" d="M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z"></path></svg></a>
+<div id="vRglMn" class="rZu">
+<ul class="rLst rLstDash rClear">
+<li><a href="/konjugation/indikativ/praesens/aufgeben.htm">Wie konjugiert man aufgeben im Präsens?</a></li>
+<li><a href="/konjugation/indikativ/praeteritum/aufgeben.htm">Wie konjugiert man aufgeben im Präteritum?</a></li>
+<li><a href="/konjugation/imperativ/aufgeben.htm">Wie konjugiert man aufgeben im Imperativ?</a></li>
+<li><a href="/konjugation/konjunktiv/praesens/aufgeben.htm">Wie konjugiert man aufgeben im Konjunktiv I?</a></li>
+<li><a href="/konjugation/konjunktiv/praeteritum/aufgeben.htm">Wie konjugiert man aufgeben im Konjunktiv II?</a></li>
+<li><a href="/konjugation/infinitive/aufgeben.htm">Wie konjugiert man aufgeben im Infinitiv?</a></li>
+<li><a href="/konjugation/partizipien/aufgeben.htm">Wie konjugiert man aufgeben im Partizip?</a></li>
+<li><a href="http://www.sprachlehre.de/verben/formenbildung/" target="_blank">Wie konjugiert man Verben im Deutschen?</a></li>
+</ul>
+<hr class="rClear">
+<a class="rKnpf rLinks" href="/konjugation/indikativ/praesens/aufgeben.htm" title="Bildung Präsens von aufgeben">
+Präsens <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m0 9.4v-1.95h11.4l-5.25-5.05 1.35-1.4 7.5 7.5-7.5 7.5-1.35-1.4 5.25-5.2z"></path></svg></a>
+<a class="rKnpf rLinks" href="/konjugation/indikativ/praeteritum/aufgeben.htm" title="Bildung Präteritum von aufgeben">
+Präteritum <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m0 9.4v-1.95h11.4l-5.25-5.05 1.35-1.4 7.5 7.5-7.5 7.5-1.35-1.4 5.25-5.2z"></path></svg></a>
+<a class="rKnpf rLinks" href="/konjugation/imperativ/aufgeben.htm" title="Bildung Imperativ von aufgeben">
+Imperativ <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m0 9.4v-1.95h11.4l-5.25-5.05 1.35-1.4 7.5 7.5-7.5 7.5-1.35-1.4 5.25-5.2z"></path></svg></a>
+<a class="rKnpf rLinks" href="/konjugation/konjunktiv/praesens/aufgeben.htm" title="Bildung Konjunktiv I von aufgeben">
+Konjunktiv I <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m0 9.4v-1.95h11.4l-5.25-5.05 1.35-1.4 7.5 7.5-7.5 7.5-1.35-1.4 5.25-5.2z"></path></svg></a>
+<a class="rKnpf rLinks" href="/konjugation/konjunktiv/praeteritum/aufgeben.htm" title="Bildung Konjunktiv II von aufgeben">
+Konjunktiv II <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m0 9.4v-1.95h11.4l-5.25-5.05 1.35-1.4 7.5 7.5-7.5 7.5-1.35-1.4 5.25-5.2z"></path></svg></a>
+<a class="rKnpf rLinks" href="/konjugation/infinitive/aufgeben.htm" title="Bildung Infinitiv von aufgeben">
+Infinitiv <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m0 9.4v-1.95h11.4l-5.25-5.05 1.35-1.4 7.5 7.5-7.5 7.5-1.35-1.4 5.25-5.2z"></path></svg></a>
+<a class="rKnpf rLinks" href="/konjugation/partizipien/aufgeben.htm" title="Bildung Partizip von aufgeben">
+Partizip <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m0 9.4v-1.95h11.4l-5.25-5.05 1.35-1.4 7.5 7.5-7.5 7.5-1.35-1.4 5.25-5.2z"></path></svg></a>
+</div>
+</nav>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</section><!-- Yieldlove AdTag - verbformen.de - responsive --><div id="div-gpt-ad-1407836102907-0" class="aAnz aArt rClear">
+<script type="text/javascript">
+if (window.innerWidth >= 1100) {
+googletag.cmd.push(function() {
+googletag.defineSlot('/53015287/verbformen.de_d_728x90_1', [728, 90], 'div-gpt-ad-1407836102907-0').addService(googletag.pubads());
+googletag.display('div-gpt-ad-1407836102907-0');
+});
+}
+if (window.innerWidth < 1100) {
+googletag.cmd.push(function() {
+googletag.defineSlot('/53015287/verbformen.de_m_320x250_1', [[320, 250], [300, 250], [320, 100], [320, 50]], 'div-gpt-ad-1407836102907-0').addService(googletag.pubads());
+googletag.display('div-gpt-ad-1407836102907-0');
+});
+}
+</script>
+</div>
+<div class="rCntr" style="margin: 8px 0 8px 0;"><a href="/mitmachen.htm" class="rInf rKln">Werbung ausblenden</a></div>
+<div class="rAnkr rAnkrBox" id="indikativ"></div>
+<section class="rBox rBoxWht " id="4d06aBox"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="4d06aImg" onclick="Rahmen.aufzu('4d06a')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z"></path><path class="rZu" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z"></path></svg></button></nav><header><h2>Indikativ</h2>
+<p><span class="rInf">Das Verb aufgeben konjugiert im Indikativ Aktiv in den Zeitformen Gegenwart, Vergangenheit und Zukunft</span></p>
+</header><div id="4d06a" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Präsens</h3>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/indikativ/praesens/aufgeben.mp3" id="caf72" onclick="Stimme.klick(event,'caf72')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><table>
+<tr>
+<td> ich</td>
+<td> <b>geb</b>(<b><i>e</i></b>)⁵</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> du</td>
+<td> <b>g<u>i</u>b<i>st</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> er</td>
+<td> <b>g<u>i</u>b<i>t</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> wir</td>
+<td> <b>geb<i>en</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> ihr</td>
+<td> <b>geb<i>t</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> sie</td>
+<td> <b>geb<i>en</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Präteritum</h3>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/indikativ/praeteritum/aufgeben.mp3" id="78fd4" onclick="Stimme.klick(event,'78fd4')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><table>
+<tr>
+<td> ich</td>
+<td> <b>g<u>a</u>b</b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> du</td>
+<td> <b>g<u>a</u>b<i>st</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> er</td>
+<td> <b>g<u>a</u>b</b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> wir</td>
+<td> <b>g<u>a</u>b<i>en</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> ihr</td>
+<td> <b>g<u>a</u>b<i>t</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> sie</td>
+<td> <b>g<u>a</u>b<i>en</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Perfekt</h3>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/indikativ/perfekt/aufgeben.mp3" id="0308b" onclick="Stimme.klick(event,'0308b')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><table>
+<tr>
+<td> ich</td>
+<td> <i>habe</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> du</td>
+<td> <i>hast</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> er</td>
+<td> <i>hat</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> wir</td>
+<td> <i>haben</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> ihr</td>
+<td> <i>habt</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> sie</td>
+<td> <i>haben</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Plusquam.</h3>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/indikativ/plusquamperfekt/aufgeben.mp3" id="6e96f" onclick="Stimme.klick(event,'6e96f')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><table>
+<tr>
+<td> ich</td>
+<td> <i>hatte</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> du</td>
+<td> <i>hattest</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> er</td>
+<td> <i>hatte</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> wir</td>
+<td> <i>hatten</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> ihr</td>
+<td> <i>hattet</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> sie</td>
+<td> <i>hatten</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Futur I</h3>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/indikativ/futur1/aufgeben.mp3" id="fc1a6" onclick="Stimme.klick(event,'fc1a6')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><table>
+<tr>
+<td> ich</td>
+<td> <i>werde</i>
+</td>
+<td> <b>aufgeb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> du</td>
+<td> <i>wirst</i>
+</td>
+<td> <b>aufgeb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> er</td>
+<td> <i>wird</i>
+</td>
+<td> <b>aufgeb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> wir</td>
+<td> <i>werden</i>
+</td>
+<td> <b>aufgeb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> ihr</td>
+<td> <i>werdet</i>
+</td>
+<td> <b>aufgeb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> sie</td>
+<td> <i>werden</i>
+</td>
+<td> <b>aufgeb<i>en</i></b>
+</td>
+</tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Futur II</h3>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/indikativ/futur2/aufgeben.mp3" id="b33d5" onclick="Stimme.klick(event,'b33d5')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><table>
+<tr>
+<td> ich</td>
+<td> <i>werde</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+<td> <i>haben</i>
+</td>
+</tr>
+<tr>
+<td> du</td>
+<td> <i>wirst</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+<td> <i>haben</i>
+</td>
+</tr>
+<tr>
+<td> er</td>
+<td> <i>wird</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+<td> <i>haben</i>
+</td>
+</tr>
+<tr>
+<td> wir</td>
+<td> <i>werden</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+<td> <i>haben</i>
+</td>
+</tr>
+<tr>
+<td> ihr</td>
+<td> <i>werdet</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+<td> <i>haben</i>
+</td>
+</tr>
+<tr>
+<td> sie</td>
+<td> <i>werden</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+<td> <i>haben</i>
+</td>
+</tr>
+</table>
+</div>
+<div class="rClear"></div>
+<p class="rInf vLeg rClear">
+⁵ Umgangssprachlicher Gebrauch</p>
+<div class="vBsp rClear">
+<hr>
+<a class="rKnpf rRechts rInf" href="/konjugation/beispiele/aufgeben.htm" title="mehr">
+<svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m0 9.4v-1.95h11.4l-5.25-5.05 1.35-1.4 7.5 7.5-7.5 7.5-1.35-1.4 5.25-5.2z"></path></svg></a>
+<ul class="rLst">
+<li>
+» Seine Anwaltskanzlei <b>g</b><b><u>a</u></b><b>b</b> er im Jahr 1985 <b>auf</b>.<span class="rBoxInfo">²</span><a rel="nofollow" target="_blank" title="Satzbestimmung" href="http://www.satzapp.de/?t=Seine%20Anwaltskanzlei%20gab%20er%20im%20Jahr%201985%20auf."><img width="16" height="16" src="/sa.svg" alt=""></a>
+</li>				
+<li>
+» Dort <i>h</i><i>a</i><i>t</i><i>te</i> sie ihre stalinistische Position schon <b>auf</b><b><i>ge</i></b><b>g</b><b>e</b><b>b</b><b><i>en</i></b>.<span class="rBoxInfo">²</span><a rel="nofollow" target="_blank" title="Satzbestimmung" href="http://www.satzapp.de/?t=Dort%20hatte%20sie%20ihre%20stalinistische%20Position%20schon%20aufgegeben."><img width="16" height="16" src="/sa.svg" alt=""></a>
+</li>				
+</ul>
+</div>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</section><!-- Yieldlove AdTag - verbformen.de - responsive --><div id="div-gpt-ad-1407836149906-0" class="aAnz aArt rClear">
+<script type="text/javascript">
+if (window.innerWidth >= 1100) {
+googletag.cmd.push(function() {
+googletag.defineSlot('/53015287/verbformen.de_d_728x90_2', [728, 90], 'div-gpt-ad-1407836149906-0').addService(googletag.pubads());
+googletag.display('div-gpt-ad-1407836149906-0');
+});
+}
+if (window.innerWidth < 1100) {
+googletag.cmd.push(function() {
+googletag.defineSlot('/53015287/verbformen.de_m_300x250_3', [300, 250], 'div-gpt-ad-1407836149906-0').addService(googletag.pubads());
+googletag.display('div-gpt-ad-1407836149906-0');
+});
+}
+</script>
+</div>
+<div class="rAnkr rAnkrBox" id="konjunktiv"></div>
+<section class="rBox rBoxWht " id="c433cBox"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="c433cImg" onclick="Rahmen.aufzu('c433c')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z"></path><path class="rZu" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z"></path></svg></button></nav><header><h2>Konjunktiv</h2>
+<p><span class="rInf">Die Konjugation im Konjunktiv I und II bzw. in den Zeiten Präsens, Präteritum, Perfekt, Plusquamperfekt und Futur für das Verb aufgeben</span></p>
+</header><div id="c433c" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Konjunktiv I</h3>
+<a class="" href="https://www.verbformen.de/konjugation/konjunktiv/praesens/aufgeben.mp3" id="e5010" onclick="Stimme.klick(event,'e5010')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a><table>
+<tr>
+<td> ich</td>
+<td> <b>geb<i>e</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> du</td>
+<td> <b>geb<i>est</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> er</td>
+<td> <b>geb<i>e</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> wir</td>
+<td> <b>geb<i>en</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> ihr</td>
+<td> <b>geb<i>et</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> sie</td>
+<td> <b>geb<i>en</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Konjunktiv II</h3>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/konjunktiv/praeteritum/aufgeben.mp3" id="d9fc7" onclick="Stimme.klick(event,'d9fc7')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><table>
+<tr>
+<td> ich</td>
+<td> <b>g<u>ä</u>b<i>e</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> du</td>
+<td> <b>g<u>ä</u>b<i>est</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> er</td>
+<td> <b>g<u>ä</u>b<i>e</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> wir</td>
+<td> <b>g<u>ä</u>b<i>en</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> ihr</td>
+<td> <b>g<u>ä</u>b<i>et</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td> sie</td>
+<td> <b>g<u>ä</u>b<i>en</i></b>
+</td>
+<td> <b>auf</b>
+</td>
+</tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Konj. Perfekt</h3>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/konjunktiv/perfekt/aufgeben.mp3" id="cf9cb" onclick="Stimme.klick(event,'cf9cb')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><table>
+<tr>
+<td> ich</td>
+<td> <i>habe</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> du</td>
+<td> <i>habest</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> er</td>
+<td> <i>habe</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> wir</td>
+<td> <i>haben</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> ihr</td>
+<td> <i>habet</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> sie</td>
+<td> <i>haben</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Konj. Plusquam.</h3>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/konjunktiv/plusquamperfekt/aufgeben.mp3" id="ec416" onclick="Stimme.klick(event,'ec416')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><table>
+<tr>
+<td> ich</td>
+<td> <i>hätte</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> du</td>
+<td> <i>hättest</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> er</td>
+<td> <i>hätte</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> wir</td>
+<td> <i>hätten</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> ihr</td>
+<td> <i>hättet</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> sie</td>
+<td> <i>hätten</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+</tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Konj. Futur I</h3>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/konjunktiv/futur1/aufgeben.mp3" id="c97cf" onclick="Stimme.klick(event,'c97cf')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><table>
+<tr>
+<td> ich</td>
+<td> <i>werde</i>
+</td>
+<td> <b>aufgeb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> du</td>
+<td> <i>werdest</i>
+</td>
+<td> <b>aufgeb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> er</td>
+<td> <i>werde</i>
+</td>
+<td> <b>aufgeb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> wir</td>
+<td> <i>werden</i>
+</td>
+<td> <b>aufgeb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> ihr</td>
+<td> <i>werdet</i>
+</td>
+<td> <b>aufgeb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> sie</td>
+<td> <i>werden</i>
+</td>
+<td> <b>aufgeb<i>en</i></b>
+</td>
+</tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Konj. Futur II</h3>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/konjunktiv/futur2/aufgeben.mp3" id="12f9b" onclick="Stimme.klick(event,'12f9b')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><table>
+<tr>
+<td> ich</td>
+<td> <i>werde</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+<td> <i>haben</i>
+</td>
+</tr>
+<tr>
+<td> du</td>
+<td> <i>werdest</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+<td> <i>haben</i>
+</td>
+</tr>
+<tr>
+<td> er</td>
+<td> <i>werde</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+<td> <i>haben</i>
+</td>
+</tr>
+<tr>
+<td> wir</td>
+<td> <i>werden</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+<td> <i>haben</i>
+</td>
+</tr>
+<tr>
+<td> ihr</td>
+<td> <i>werdet</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+<td> <i>haben</i>
+</td>
+</tr>
+<tr>
+<td> sie</td>
+<td> <i>werden</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+<td> <i>haben</i>
+</td>
+</tr>
+</table>
+</div>
+<div class="rClear"></div>
+<div class="vBsp rClear">
+<hr>
+<a class="rKnpf rInf rRechts" href="/konjugation/beispiele/aufgeben.htm" title="mehr">
+<svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m0 9.4v-1.95h11.4l-5.25-5.05 1.35-1.4 7.5 7.5-7.5 7.5-1.35-1.4 5.25-5.2z"></path></svg></a>
+<ul class="rLst">
+<li>
+» Er <i>h</i><i>a</i><i>b</i><i>e</i> das Vorhaben jedoch mangels einer brauchbaren Dokumentation zum komplexen Stoff <b>auf</b><b><i>ge</i></b><b>g</b><b>e</b><b>b</b><b><i>en</i></b>.<span class="rBoxInfo">²</span><a rel="nofollow" target="_blank" title="Satzbestimmung" href="http://www.satzapp.de/?t=Er%20habe%20das%20Vorhaben%20jedoch%20mangels%20einer%20brauchbaren%20Dokumentation%20zum%20komplexen%20Stoff%20aufgegeben."><img width="16" height="16" src="/sa.svg" alt=""></a>
+</li>
+<li>
+» Das Dorf <b>g</b><b>e</b><b>b</b><b><i>e</i></b> diese Kinder einfach <b>auf</b>.<span class="rBoxInfo">²</span><a rel="nofollow" target="_blank" title="Satzbestimmung" href="http://www.satzapp.de/?t=Das%20Dorf%20gebe%20diese%20Kinder%20einfach%20auf."><img width="16" height="16" src="/sa.svg" alt=""></a>
+</li>
+</ul>
+</div>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</section><div class="rAnkr rAnkrBox" id="konditional"></div>
+<section class="rBox rBoxWht " id="4c962Box"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="4c962Img" onclick="Rahmen.aufzu('4c962')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z"></path><path class="rZu" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z"></path></svg></button></nav><header><h2>Konjunktiv II (würde)</h2>
+<p><span class="rInf">Ersatzformen des Konjunktiv II konjugiert mit würde als finites Verb</span></p>
+</header><div id="4c962" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Konjunktiv II</h3>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/konditional/praeteritum/aufgeben.mp3" id="e541a" onclick="Stimme.klick(event,'e541a')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><table>
+<tr>
+<td> ich</td>
+<td> <i>würde</i>
+</td>
+<td> <b>aufgeb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> du</td>
+<td> <i>würdest</i>
+</td>
+<td> <b>aufgeb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> er</td>
+<td> <i>würde</i>
+</td>
+<td> <b>aufgeb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> wir</td>
+<td> <i>würden</i>
+</td>
+<td> <b>aufgeb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> ihr</td>
+<td> <i>würdet</i>
+</td>
+<td> <b>aufgeb<i>en</i></b>
+</td>
+</tr>
+<tr>
+<td> sie</td>
+<td> <i>würden</i>
+</td>
+<td> <b>aufgeb<i>en</i></b>
+</td>
+</tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Konj. Plusquam.</h3>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/konditional/plusquamperfekt/aufgeben.mp3" id="838db" onclick="Stimme.klick(event,'838db')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><table>
+<tr>
+<td> ich</td>
+<td> <i>würde</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+<td> <i>haben</i>
+</td>
+</tr>
+<tr>
+<td> du</td>
+<td> <i>würdest</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+<td> <i>haben</i>
+</td>
+</tr>
+<tr>
+<td> er</td>
+<td> <i>würde</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+<td> <i>haben</i>
+</td>
+</tr>
+<tr>
+<td> wir</td>
+<td> <i>würden</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+<td> <i>haben</i>
+</td>
+</tr>
+<tr>
+<td> ihr</td>
+<td> <i>würdet</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+<td> <i>haben</i>
+</td>
+</tr>
+<tr>
+<td> sie</td>
+<td> <i>würden</i>
+</td>
+<td> <b>auf<i>ge</i>geb<i>en</i></b>
+</td>
+<td> <i>haben</i>
+</td>
+</tr>
+</table>
+</div>
+<div class="vBsp rClear">
+<hr>
+<a class="rKnpf rInf rRechts" href="/konjugation/beispiele/aufgeben.htm" title="mehr">
+<svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m0 9.4v-1.95h11.4l-5.25-5.05 1.35-1.4 7.5 7.5-7.5 7.5-1.35-1.4 5.25-5.2z"></path></svg></a>
+<ul class="rLst">
+<li>
+» Ohne Ihre Ermutigung <i>w</i><i>ü</i><i>rd</i><i>e</i> ich den Plan <b>auf</b><b><i>ge</i></b><b>g</b><b>e</b><b>b</b><b><i>en</i></b> <i>h</i><i>a</i><i>b</i><i>en</i>.<span class="rBoxInfo">¹</span><a rel="nofollow" target="_blank" title="Satzbestimmung" href="http://www.satzapp.de/?t=Ohne%20Ihre%20Ermutigung%20w%C3%BCrde%20ich%20den%20Plan%20aufgegeben%20haben."><img width="16" height="16" src="/sa.svg" alt=""></a>
+</li>			
+<li>
+» An ihrer Stelle <i>w</i><i>ü</i><i>rd</i><i>e</i> ich noch nicht <b>auf</b><b>g</b><b>e</b><b>b</b><b><i>en</i></b>.<span class="rBoxInfo">¹</span><a rel="nofollow" target="_blank" title="Satzbestimmung" href="http://www.satzapp.de/?t=An%20ihrer%20Stelle%20w%C3%BCrde%20ich%20noch%20nicht%20aufgeben."><img width="16" height="16" src="/sa.svg" alt=""></a>
+</li>			
+</ul>
+</div>
+<div class="rClear"></div>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+<script type="text/javascript"> Rahmen.aufzu('4c962'); </script></section><div class="rAnkr rAnkrBox" id="imperativ"></div>
+<section class="rBox rBoxWht " id="1662bBox"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="1662bImg" onclick="Rahmen.aufzu('1662b')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z"></path><path class="rZu" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z"></path></svg></button></nav><header><h2>Imperativ</h2>
+<p><span class="rInf">Die Konjugationsformen im Imperativ Aktiv Präsens für das Verb aufgeben</span></p>
+</header><div id="1662b" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Präsens</h3>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/imperativ/aufgeben.mp3" id="cb432" onclick="Stimme.klick(event,'cb432')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><table>
+<tr>
+<td><b>g<u>i</u>b</b></td>
+<td> (du)</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td><b>geb<i>en</i></b></td>
+<td> wir</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td><b>geb<i>t</i></b></td>
+<td> ihr</td>
+<td> <b>auf</b>
+</td>
+</tr>
+<tr>
+<td><b>geb<i>en</i></b></td>
+<td> Sie</td>
+<td> <b>auf</b>
+</td>
+</tr>
+</table>
+</div>
+<div class="rClear"></div>
+<div class="vBsp rClear">
+<hr>
+<a class="rInf rKnpf rRechts" href="/konjugation/beispiele/aufgeben.htm" title="mehr">
+<svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m0 9.4v-1.95h11.4l-5.25-5.05 1.35-1.4 7.5 7.5-7.5 7.5-1.35-1.4 5.25-5.2z"></path></svg></a>
+<ul class="rLst">
+<li>
+» <b>G</b><b><u>i</u></b><b>b</b> nicht auf halber Strecke <b>auf</b>!<span class="rBoxInfo">¹</span><a rel="nofollow" target="_blank" title="Satzbestimmung" href="http://www.satzapp.de/?t=Gib%20nicht%20auf%20halber%20Strecke%20auf!"><img width="16" height="16" src="/sa.svg" alt=""></a>
+</li>				
+<li>
+» <b>G</b><b><u>i</u></b><b>b</b> die Hoffnung nicht <b>auf</b>!<span class="rBoxInfo">¹</span><a rel="nofollow" target="_blank" title="Satzbestimmung" href="http://www.satzapp.de/?t=Gib%20die%20Hoffnung%20nicht%20auf!"><img width="16" height="16" src="/sa.svg" alt=""></a>
+</li>				
+</ul>
+</div>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</section><div class="rAnkr rAnkrBox" id="infinit"></div>
+<section class="rBox rBoxWht " id="dac7eBox"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="dac7eImg" onclick="Rahmen.aufzu('dac7e')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z"></path><path class="rZu" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z"></path></svg></button></nav><header><h2>Infinitiv/Partizip</h2>
+<p><span class="rInf">Die infiniten Formen Partizip und Infinitiv (mit zu) im Aktiv für aufgeben</span></p>
+</header><div id="dac7e" class="rAufZu">
+<hr>
+<div class="vTbl">
+<h3>Infinitiv I</h3>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/infinitiv1/aufgeben.mp3" id="5a0d6" onclick="Stimme.klick(event,'5a0d6')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><br><table>
+<tr><td><b>aufgeb<i>en</i></b></td></tr>
+<tr><td><b>auf<i>zu</i>geb<i>en</i></b></td></tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Infinitiv II</h3>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/infinitiv2/aufgeben.mp3" id="f3564" onclick="Stimme.klick(event,'f3564')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><br><table>
+<tr><td>
+<b>auf<i>ge</i>geb<i>en</i></b> <i>haben</i>
+</td></tr>
+<tr><td>
+<b>auf<i>ge</i>geb<i>en</i></b> <i>zu</i> <i>haben</i>
+</td></tr>
+</table>
+</div>
+<div class="vTbl">
+<h3>Partizip I</h3>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/partizip1/aufgeben.mp3" id="f5edb" onclick="Stimme.klick(event,'f5edb')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><br><table><tr><td><b>aufgeb<i>end</i></b></td></tr></table>
+</div>
+<div class="vTbl">
+<h3>Partizip II</h3>
+<span class="rH3"><a class="" href="https://www.verbformen.de/konjugation/partizip2/aufgeben.mp3" id="fd497" onclick="Stimme.klick(event,'fd497')" rel="nofollow"><img loading="lazy" src="/s.svg" width="20" height="20" alt=""></a></span><br><table><tr><td><b>auf<i>ge</i>geb<i>en</i></b></td></tr></table>
+</div>
+<div class="rClear"></div>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</section>
+</div></div>
+<div class="rInfo">
+<nav class="rBox rBoxWht " id="eb8b2Box"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="eb8b2Img" onclick="Rahmen.aufzu('eb8b2')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z"></path><path class="rZu" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z"></path></svg></button></nav><header><h2>Arbeitsblätter</h2>
+</header><div id="eb8b2" class="rAufZu">
+<hr>
+<a href="https://www.verbformen.de/konjugation/aufgeben.htm">
+<img loading="lazy" height="80" class="rImg rLinks vBImg" src="https://www.verbformen.de/konjugation/steckbrief/aufgeben.png" title="Konjugation des Verbs aufgeben"></a>
+<a target="_blank" href="/konjugation/aufgeben.pdf" onclick="gtag('config', 'UA-1466848-8', {'anonymize_ip': true, 'page_path': '/konjugation/aufgeben.pdf'})">
+➔ Verbtabelle PDF</a><br><a target="_blank" href="/konjugation/arbeitsblaetter-uebungen/suchsel/aufgeben.pdf" onclick="gtag('config', 'UA-1466848-8', {'anonymize_ip': true, 'page_path': '/konjugation/arbeitsblaetter-uebungen/suchsel/aufgeben.pdf'})">
+➔ Wortsuchrätsel PDF </a><br><a target="_blank" href="/konjugation/arbeitsblaetter-uebungen/lernkarten/aufgeben.pdf" onclick="gtag('config', 'UA-1466848-8', {'anonymize_ip': true, 'page_path': '/konjugation/arbeitsblaetter-uebungen/lernkarten/aufgeben.pdf'})">
+➔ Lernkarten PDF </a>
+<hr class="rClear">
+<a class="rKnpf rRechts" href="/konjugation/arbeitsblaetter-uebungen/aufgeben.htm" title="Arbeitsblätter zur Konjugation des  Verbs aufgeben">
+Arbeitsblätter <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m0 9.4v-1.95h11.4l-5.25-5.05 1.35-1.4 7.5 7.5-7.5 7.5-1.35-1.4 5.25-5.2z"></path></svg></a>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</nav><div class="rAnkr rAnkrBox" id="Beispiele"></div>
+<nav class="rBox rBoxWht " id="3eae8Box"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="3eae8Img" onclick="Rahmen.aufzu('3eae8')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z"></path><path class="rZu" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z"></path></svg></button></nav><header><h2>Beispiele</h2>
+<p><span class="rInf">Beispiele zur Konjugation des Verbs aufgeben</span></p>
+</header><div id="3eae8" class="rAufZu">
+<hr>
+<div class="vBsp">
+<ul class="rLst">
+<li>
+» Ich <b>g</b><b><u>a</u></b><b>b</b> meinen Beruf <b>auf</b>.<span class="rBoxInfo">¹</span><a rel="nofollow" target="_blank" title="Satzbestimmung" href="http://www.satzapp.de/?t=Ich%20gab%20meinen%20Beruf%20auf."><img width="16" height="16" src="/sa.svg" alt=""></a>
+</li>
+<li>
+» Die Ärzte <i>h</i><i>a</i><i>t</i><i>ten</i> sie <b>auf</b><b><i>ge</i></b><b>g</b><b>e</b><b>b</b><b><i>en</i></b>.<span class="rBoxInfo">²</span><a rel="nofollow" target="_blank" title="Satzbestimmung" href="http://www.satzapp.de/?t=Die%20%C3%84rzte%20hatten%20sie%20aufgegeben."><img width="16" height="16" src="/sa.svg" alt=""></a>
+</li>
+<li>
+» Die Idee einer dritten Partei <b>g</b><b><u>a</u></b><b>b</b> er nun <b>auf</b>.<span class="rBoxInfo">²</span><a rel="nofollow" target="_blank" title="Satzbestimmung" href="http://www.satzapp.de/?t=Die%20Idee%20einer%20dritten%20Partei%20gab%20er%20nun%20auf."><img width="16" height="16" src="/sa.svg" alt=""></a>
+</li>
+</ul>
+</div>
+<hr class="rClear">
+<a class="rKnpf rRechts" href="/konjugation/beispiele/aufgeben.htm">
+Beispiele <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m0 9.4v-1.95h11.4l-5.25-5.05 1.35-1.4 7.5 7.5-7.5 7.5-1.35-1.4 5.25-5.2z"></path></svg></a>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</nav><!-- Yieldlove AdTag - verbformen.de - responsive --><div id="div-gpt-ad-1407836191958-0" class="aAnz aInf rClear">
+<script type="text/javascript">
+if (window.innerWidth >= 768) {
+googletag.cmd.push(function() {
+googletag.defineSlot('/53015287/verbformen.de_d_300x250_1', [300, 250], 'div-gpt-ad-1407836191958-0').addService(googletag.pubads());
+googletag.display('div-gpt-ad-1407836191958-0');
+});
+}
+if (window.innerWidth < 768) {
+googletag.cmd.push(function() {
+googletag.defineSlot('/53015287/verbformen.de_m_300x250_2', [300, 250], 'div-gpt-ad-1407836191958-0').addService(googletag.pubads());
+googletag.display('div-gpt-ad-1407836191958-0');
+});
+}
+</script>
+</div>
+<div class="rCntr" style="margin: 8px 0 8px 0;"><a href="/mitmachen.htm" class="rInf rKln">Werbung ausblenden</a></div>
+<div class="rAnkr rAnkrBox" id="Uebersetzungen"></div>
+<section class="rBox rBoxWht " id="13ad5Box"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="13ad5Img" onclick="Rahmen.aufzu('13ad5')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z"></path><path class="rZu" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z"></path></svg></button></nav><header><h2>Übersetzungen</h2>
+<p><span class="rInf">Übersetzungen von aufgeben</span></p>
+</header><div id="13ad5" class="rAufZu">
+<hr>
+<button class="rKnpf rRechts" type="submit" form="rUeStartFrm" onclick="window.location='#UeBearbeiten'">
+<svg fill="" viewbox="4 6 17 11" width="10" height="10" xmlns="http://www.w3.org/2000/svg"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z"></path></svg></button>
+<dl class="vNrn">
+<dd>
+<span class="vLng"><img loading="lazy" title="Deutsch" alt="Deutsch" src="/bedeutungenweb/de.svg" width="14" height="14"></span>
+<span>aufgeben</span>
+</dd>
+</dl>
+<dl class="vNrn">
+<dd lang="en">
+<span class="vLng"><img loading="lazy" title="Englisch" alt="Englisch" src="/bedeutungenweb/en.svg" width="13" height="13"> </span><span>quit, break off, chuck up the sponge, jack in, retire, say die, check in, assign</span>
+</dd>
+</dl>
+<dl class="vNrn">
+<dd lang="ru">
+<span class="vLng"><img loading="lazy" title="Russisch" alt="Russisch" src="/bedeutungenweb/ru.svg" width="13" height="13"> </span><span>сдаваться, бросить, задавать, признава́ть поте́рянным, призна́ть поте́рянным, отка́зываться, поступа́ться, отступа́ться</span>
+</dd>
+<dd lang="cs">
+<span class="vLng"><img loading="lazy" title="Tschechisch" alt="Tschechisch" src="/bedeutungenweb/cs.svg" width="13" height="13"> </span><span>vzdát se, zadávat, podávat, podat</span>
+</dd>
+<dd lang="hu">
+<span class="vLng"><img loading="lazy" title="Ungarisch" alt="Ungarisch" src="/bedeutungenweb/hu.svg" width="13" height="13"> </span><span>felad</span>
+</dd>
+<dd lang="tr">
+<span class="vLng"><img loading="lazy" title="Türkisch" alt="Türkisch" src="/bedeutungenweb/tr.svg" width="13" height="13"> </span><span>vazgeçmek</span>
+</dd>
+<dd lang="ja">
+<span class="vLng"><img loading="lazy" title="Japanisch" alt="Japanisch" src="/bedeutungenweb/ja.svg" width="13" height="13"> </span><span>諦める</span>
+</dd>
+<dd lang="fr">
+<span class="vLng"><img loading="lazy" title="Französisch" alt="Französisch" src="/bedeutungenweb/fr.svg" width="13" height="13"> </span><span>cesser, mettre la clé sous la porte, abandonner, désespérer, abdiquer, démissionner de, se guérir de, se ranger de</span>
+</dd>
+<dd lang="it">
+<span class="vLng"><img loading="lazy" title="Italienisch" alt="Italienisch" src="/bedeutungenweb/it.svg" width="13" height="13"> </span><span>cessare, smettere, mollare, rassegnarsi, arrendersi, demordere, desistere, decampare da</span>
+</dd>
+<dd lang="sv">
+<span class="vLng"><img loading="lazy" title="Schwedisch" alt="Schwedisch" src="/bedeutungenweb/sv.svg" width="13" height="13"> </span><span>ge upp, överge, lämna in, ge, ge i uppgift, ålägga, pollettera</span>
+</dd>
+<dd lang="es">
+<span class="vLng"><img loading="lazy" title="Spanisch" alt="Spanisch" src="/bedeutungenweb/es.svg" width="13" height="13"> </span><span>cesar, poner fin, dejar, darse por vencido, desfondarse, desmayar, rendirse, ceder</span>
+</dd>
+<dd lang="pl">
+<span class="vLng"><img loading="lazy" title="Polnisch" alt="Polnisch" src="/bedeutungenweb/pl.svg" width="13" height="13"> </span><span>poddawać się, porzucić, zrezygnować, rezygnować, zaprzestać, zaniechać, nadawać, zadawać</span>
+</dd>
+<dd lang="pt">
+<span class="vLng"><img loading="lazy" title="Portugiesisch" alt="Portugiesisch" src="/bedeutungenweb/pt.svg" width="13" height="13"> </span><span>desistir, renunciar a, abandonar, deixar de, despachar, parar de, inserir, enviar</span>
+</dd>
+</dl>
+<dl class="vNrn" dir="rtl">
+<dd lang="fa">
+<span class="vLng"><img loading="lazy" title="Persisch" alt="Persisch" src="/bedeutungenweb/fa.svg" width="13" height="13"></span><span>تحویل دادن، جهت ارسال تحویلدادن، کنارگذاشتن، ازدست دادن، کشیدن غذا، چشم پوشی کردن، صرفنظر کردن</span>
+</dd>
+</dl>
+<hr>
+<p>
+<img src="/dictionary.ico" width="16" height="16" alt=""> aufgeben in <a rel="nofollow" target="dict.cc" href="https://www.dict.cc/?s=aufgeben">dict.cc</a><br><img src="/beolingus.gif" width="16" height="16" alt=""> aufgeben in <a rel="nofollow" target="beolingus" href="https://dict.tu-chemnitz.de/deutsch-englisch/aufgeben.html">Beolingus</a>
+</p>
+<a href="https://www.verben.de/verben/uebersetzungen/aufgeben.htm" class="rKnpf rRechts rClear">
+Übersetzungen <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m2.83 14.4-1.38-1.38 8.06-8.06-7.28 0.141-0.0354-1.94h10.6v10.6l-1.94-0.0354 0.0354-7.39z"></path></svg></a>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</section><div class="rAnkr rAnkrBox" id="UeBearbeiten"></div>
+<section class="rBox rBoxWht " id="856afBox"><div class="rClear" style="margin-bottom: 10px;"></div>
+<div id="856af" class="rAufZu">
+<button class="rKnpf rRechts" type="submit" form="rUeStartFrm" onclick="window.location='#UeBearbeiten'">
+<svg fill="" viewbox="4 6 17 11" width="10" height="10" xmlns="http://www.w3.org/2000/svg"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z"></path></svg></button>
+<h2>Mitmachen</h2>
+<hr class="rClear">
+<div id="divZufaelligea6fa">
+<p>Hilf uns und werde ein <a href="/helden.htm">Held</a> indem Du neue Übersetzungen hinzufügst und bestehende bewertest. Als Dankeschön kannst du bei erreichter Punktzahl diese Webseite ohne Werbung nutzen.</p>
+<form method="post" id="rUeStartFrm" onsubmit="Ajax.ersetze(event,'divZufaelligea6fa');" action="/bedeutungen/uebersetzungen/wort.htm">
+<input name="id" value="verb:aufgeben" type="hidden"><p></p>
+<p>Nenn uns einen Namen. Dann können wir dich <a href="/helden.htm">hier als Held</a> verehren.</p>
+<div class="rLinks rCntr" style="margin-right: 15px;">
+<a href="#">
+<img loading="lazy" title="Englisch" alt="Englisch" src="/bedeutungenweb/en.svg" width="14" height="14"><br><img loading="lazy" alt="" src="/bedeutungenweb/held.svg" width="60" height="45"><br></a>
+</div>
+<span id="uePseudonym" class="">
+<input name="pseudonym" value="" style="width: 120px; font-size: 1.2em; margin: 0 0 6px 0;" lang="en" placeholder="Dein Name"></span>
+<select name="sprache" onchange="Ajax.ersetze(event,'divZufaelligea6fa')" style="width: 120px; font-size: 1.2em; ; margin: 0 0 6px 0;" required="required"><option value="en" selected>Englisch</option>
+<option value="ru">Russisch</option>
+<option value="es">Spanisch</option>
+<option value="pt">Portugiesisch</option>
+<option value="fi">Finnisch</option>
+<option value="fr">Französisch</option>
+<option value="it">Italienisch</option>
+<option value="pl">Polnisch</option>
+<option value="sv">Schwedisch</option>
+<option value="tr">Türkisch</option>
+<option value="nl">Niederländisch</option>
+<option value="hu">Ungarisch</option>
+<option value="ja">Japanisch</option>
+<option value="no">Norwegisch</option>
+<option value="ar">Arabisch</option>
+<option value="da">Dänisch</option>
+<option value="cs">Tschechisch</option>
+<option value="fa">Persisch</option>
+<option value="iw">Hebräisch</option>
+<option value="el">Weißrussisch</option>
+<option value="ca">Katalanisch</option>
+<option value="eu">Baskisch</option>
+<option value="ur">Urdu</option>
+<option value="ro">Rumänisch</option></select><span id="ueEmail" class="rZu">
+<input name="email" type="email" value="" style="width: 200px; font-size: 1.2em; ; margin: 0 0 6px 0;" lang="en" placeholder="Deine E-Mail"></span>
+<span id="ueOk" class="">
+<button type="submit"><svg class="vIcn" viewbox="0 1 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></button>
+</span>
+<div class="rClear"></div>
+
+<input class="rLinks" type="submit" value="Bearbeitung starten ...">
+</form>
+</div>
+<a href="/helden.htm" class="rKnpf rLinks">
+Alle Helden <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m0 9.4v-1.95h11.4l-5.25-5.05 1.35-1.4 7.5 7.5-7.5 7.5-1.35-1.4 5.25-5.2z"></path></svg></a>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</section><div class="rAnkr rAnkrBox" id="Bedeutungen"></div>
+<section class="rBox rBoxWht " id="1fa85Box"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="1fa85Img" onclick="Rahmen.aufzu('1fa85')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z"></path><path class="rZu" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z"></path></svg></button></nav><header><h2 class="rNt">Bedeutungen</h2>
+<span class="rInf">Bedeutungen und Synonyme von aufgeben</span></header><div id="1fa85" class="rAufZu">
+<hr>
+<ul class="rLst rLstGt">
+<li><i>etwas Sinnloses beenden, aufhören, einstellen; etwas beenden, obwohl der Sinn im Weitermachen besteht; aufhören; aufstecken; ablassen (von); kapitulieren</i></li>
+<li><i>etwas zur Erledigung auftragen, zur Aufgabe machen; beauftragen</i></li>
+<li><i>jemandem etwas zur Beförderung oder Bearbeitung übergeben; abgeben; einliefern; etwas in Auftrag geben</i></li>
+<li><i>kaputtgehen; auferlegen; (das) Handtuch schmeißen; hinschmeißen; abschicken; aufhören (mit)</i></li>
+</ul>
+<hr class="rClear">
+<a class="rKnpf rRechts rNoSelect" href="https://www.verben.de/verben/bedeutungen/aufgeben.htm">
+Bedeutungen <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m2.83 14.4-1.38-1.38 8.06-8.06-7.28 0.141-0.0354-1.94h10.6v10.6l-1.94-0.0354 0.0354-7.39z"></path></svg></a>
+<a class="rKnpf rRechts rNoSelect" href="https://www.verben.de/verben/bedeutungen/aufgeben.htm">
+Synonyme <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m2.83 14.4-1.38-1.38 8.06-8.06-7.28 0.141-0.0354-1.94h10.6v10.6l-1.94-0.0354 0.0354-7.39z"></path></svg></a>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</section><div class="rAnkr rAnkrBox" id="Praepositionen"></div>
+<section class="rBox rBoxWht " id="514b2Box"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="514b2Img" onclick="Rahmen.aufzu('514b2')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z"></path><path class="rZu" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z"></path></svg></button></nav><header><h2>Präpositionen</h2>
+<p><span class="rInf">Präpositionen für aufgeben</span></p>
+</header><div id="514b2" class="rAufZu">
+<hr>
+<ul class="rLst rLstGt">
+<li>
+<g>jmd./etw.</g><q>g<b>i</b>b<u>t</u></q> <g>etw.</g> für <g>etw.</g><q>auf</q>
+</li>
+</ul>
+<hr class="rClear">
+<a class="rKnpf rRechts rNoSelect" href="https://www.verben.de/verben/verwendungen/aufgeben.htm">
+Verwendungen <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m2.83 14.4-1.38-1.38 8.06-8.06-7.28 0.141-0.0354-1.94h10.6v10.6l-1.94-0.0354 0.0354-7.39z"></path></svg></a>
+<a class="rKnpf rRechts rNoSelect" href="https://www.verben.de/verben/verwendungen/aufgeben.htm">
+Präpositionen <svg fill="" class="kIcn" height="10" viewbox="0 1 15 15" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m2.83 14.4-1.38-1.38 8.06-8.06-7.28 0.141-0.0354-1.94h10.6v10.6l-1.94-0.0354 0.0354-7.39z"></path></svg></a>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</section><section class="rBox rBoxWht " id="9317bBox"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="9317bImg" onclick="Rahmen.aufzu('9317b')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z"></path><path class="rZu" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z"></path></svg></button></nav><header><h2>Bildungsregeln</h2>
+<p><span class="rInf">Detaillierte Regeln zur Konjugation</span></p>
+</header><div id="9317b" class="rAufZu">
+<hr>
+<ul class="rLst rLstDash rClear">
+<li><a href="/konjugation/indikativ/praesens/aufgeben.htm">Bildung Präsens von aufgeben</a></li>
+<li><a href="/konjugation/indikativ/praeteritum/aufgeben.htm">Bildung Präteritum von aufgeben</a></li>
+<li><a href="/konjugation/imperativ/aufgeben.htm">Bildung Imperativ von aufgeben</a></li>
+<li><a href="/konjugation/konjunktiv/praesens/aufgeben.htm">Bildung Konjunktiv I von aufgeben</a></li>
+<li><a href="/konjugation/konjunktiv/praeteritum/aufgeben.htm">Bildung Konjunktiv II von aufgeben</a></li>
+<li><a href="/konjugation/infinitive/aufgeben.htm">Bildung Infinitiv von aufgeben</a></li>
+<li><a href="/konjugation/partizipien/aufgeben.htm">Bildung Partizip von aufgeben</a></li>
+<li><a href="http://www.sprachlehre.de/verben/formenbildung/" target="_blank">Wie konjugiert man Verben im Deutschen?</a></li>
+</ul>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</section><nav class="rBox rBoxWht " id="babddBox"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="babddImg" onclick="Rahmen.aufzu('babdd')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z"></path><path class="rZu" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z"></path></svg></button></nav><header><h2>Ableitungen</h2>
+<p><span class="rInf">Abgeleitete Formen von aufgeben</span></p>
+</header><div id="babdd" class="rAufZu">
+<hr>
+<p style="column-count: 2;">
+≡ <a href="/konjugation/eingeben.htm" title="eingeben">eingeben</a><br>
+≡ <a href="/konjugation/aufbieten.htm" title="aufbieten">aufbieten</a><br>
+≡ <a href="/konjugation/drangeben.htm" title="drangeben">drangeben</a><br>
+≡ <a href="/konjugation/fortgeben.htm" title="fortgeben">fortgeben</a><br>
+≡ <a href="/konjugation/dreingeben.htm" title="dreingeben">dreingeben</a><br>
+≡ <a href="/konjugation/aufbauschen.htm" title="aufbauschen">aufbauschen</a><br>
+≡ <a href="/konjugation/freigeben.htm" title="freigeben">freigeben</a><br>
+≡ <a href="/konjugation/aufbessern.htm" title="aufbessern">aufbessern</a><br>
+≡ <a href="/konjugation/aufbauen.htm" title="aufbauen">aufbauen</a><br>
+≡ <a href="/konjugation/beigeben.htm" title="beigeben">beigeben</a><br>
+≡ <a href="/konjugation/aufba3umen.htm" title="aufbäumen">aufbäumen</a><br>
+≡ <a href="/konjugation/abgeben.htm" title="abgeben">abgeben</a><br>
+≡ <a href="/konjugation/aufaddieren.htm" title="aufaddieren">aufaddieren</a><br>
+≡ <a href="/konjugation/darangeben.htm" title="darangeben">darangeben</a><br>
+≡ <a href="/konjugation/dazugeben.htm" title="dazugeben">dazugeben</a><br>
+≡ <a href="/konjugation/aufarbeiten.htm" title="aufarbeiten">aufarbeiten</a><br></p>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</nav>
+</div>
+<div class="rClear"></div>		
+<section class="rBox rBoxTrns " id="ade42Box"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="ade42Img" onclick="Rahmen.aufzu('ade42')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z"></path><path class="rZu" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z"></path></svg></button></nav><header><h2>Verb aufgeben konjugieren</h2>
+<p><span class="rInf">Zusammenfassung aller Zeitformen des Zeitworts, Tätigkeitsworts bzw. Tuworts  aufgeben</span></p>
+</header><div id="ade42" class="rAufZu">
+<hr>
+<p>
+Die <u>auf·geben Konjugation</u> online als Verbtabelle mit allen Verbformen in Singular (Einzahl) und Plural (Mehrzahl) in allen Personen (1. Person, 2.Person, 3. Person) übersichtlich dargestellt. Die Beugung bzw. Flexion des Verbs auf·geben ist somit eine Hilfestellung für Hausaufgaben, Prüfungen, Klausuren, für den Deutschuntericht der Schule, zum Deutsch Lernen, für das Studium, Deutsch als Fremdsprache (DaZ), Deutsch als Zweitsprache (DaZ) und für die Erwachsenenbildung. Gerade auch für Deutsch-lernende ist die korrekte Konjugation des Verbs bzw. die korrekt flektierten Formen (gibt auf - gab auf - hat aufgegeben) entscheidend. Weitere Informationen finden sich unter <a href="https://de.wiktionary.org/wiki/Flexion:aufgeben" rel="nofollow">Wiktionary aufgeben</a> und unter <a href="https://www.duden.de/suchen/dudenonline/aufgeben" rel="nofollow">aufgeben im Duden</a>.</p>
+<h3>aufgeben Konjugation</h3>
+<div class="vTxtTbl">
+<table>
+<tr>
+<th></th>
+<th scope="col">Präsens</th>
+<th scope="col">Präteritum</th>
+<th scope="col">Konjunktiv I</th>
+<th scope="col">Konjunktiv II</th>
+<th scope="col">Imperativ</th>
+</tr>
+<tr>
+<td>ich </td>
+<td>geb(e) auf</td>
+<td>gab auf</td>
+<td>gebe auf</td>
+<td>gäbe auf</td>
+<td>-</td>
+</tr>
+<tr>
+<td>du </td>
+<td>gibst auf</td>
+<td>gabst auf</td>
+<td>gebest auf</td>
+<td>gäbest auf</td>
+<td>gib auf</td>
+</tr>
+<tr>
+<td>er </td>
+<td>gibt auf</td>
+<td>gab auf</td>
+<td>gebe auf</td>
+<td>gäbe auf</td>
+<td>-</td>
+</tr>
+<tr>
+<td>wir </td>
+<td>geben auf</td>
+<td>gaben auf</td>
+<td>geben auf</td>
+<td>gäben auf</td>
+<td>geben auf</td>
+</tr>
+<tr>
+<td>ihr </td>
+<td>gebt auf</td>
+<td>gabt auf</td>
+<td>gebet auf</td>
+<td>gäbet auf</td>
+<td>gebt auf</td>
+</tr>
+<tr>
+<td>sie </td>
+<td>geben auf</td>
+<td>gaben auf</td>
+<td>geben auf</td>
+<td>gäben auf</td>
+<td>geben auf</td>
+</tr>
+</table>
+</div>
+<h3>
+Indikativ Aktiv</h3>
+<ul>
+<li>
+<b>Präsens</b>:
+ich geb(e) auf, du gibst auf, er gibt auf, wir geben auf, ihr gebt auf, sie geben auf</li>
+<li>
+<b>Präteritum</b>:
+ich gab auf, du gabst auf, er gab auf, wir gaben auf, ihr gabt auf, sie gaben auf</li>
+<li>
+<b>Perfekt</b>:
+ich habe aufgegeben, du hast aufgegeben, er hat aufgegeben, wir haben aufgegeben, ihr habt aufgegeben, sie haben aufgegeben</li>
+<li>
+<b>Plusquamperfekt</b>:
+ich hatte aufgegeben, du hattest aufgegeben, er hatte aufgegeben, wir hatten aufgegeben, ihr hattet aufgegeben, sie hatten aufgegeben</li>
+<li>
+<b>Futur I</b>:
+ich werde aufgeben, du wirst aufgeben, er wird aufgeben, wir werden aufgeben, ihr werdet aufgeben, sie werden aufgeben</li>	
+<li>
+<b>Futur II</b>:
+ich werde aufgegeben haben, du wirst aufgegeben haben, er wird aufgegeben haben, wir werden aufgegeben haben, ihr werdet aufgegeben haben, sie werden aufgegeben haben</li>
+</ul>
+<h3>
+Konjunktiv Aktiv</h3>
+<ul>
+<li>
+<b>Präsens</b>:
+ich gebe auf, du gebest auf, er gebe auf, wir geben auf, ihr gebet auf, sie geben auf</li>	
+<li>
+<b>Präteritum</b>:
+ich gäbe auf, du gäbest auf, er gäbe auf, wir gäben auf, ihr gäbet auf, sie gäben auf</li>	
+<li>
+<b>Perfekt</b>:
+ich habe aufgegeben, du habest aufgegeben, er habe aufgegeben, wir haben aufgegeben, ihr habet aufgegeben, sie haben aufgegeben</li>	
+<li>						
+<b>Plusquamperfekt</b>:
+ich hätte aufgegeben, du hättest aufgegeben, er hätte aufgegeben, wir hätten aufgegeben, ihr hättet aufgegeben, sie hätten aufgegeben</li>	
+<li>
+<b>Futur I</b>:
+ich werde aufgeben, du werdest aufgeben, er werde aufgeben, wir werden aufgeben, ihr werdet aufgeben, sie werden aufgeben</li>	
+<li>
+<b>Futur II</b>:
+ich werde aufgegeben haben, du werdest aufgegeben haben, er werde aufgegeben haben, wir werden aufgegeben haben, ihr werdet aufgegeben haben, sie werden aufgegeben haben</li>
+</ul>
+<h3>
+Konjunktiv II (würde) Aktiv</h3>
+<ul>
+<li>
+<b>	Präteritum</b>:
+ich würde aufgeben, du würdest aufgeben, er würde aufgeben, wir würden aufgeben, ihr würdet aufgeben, sie würden aufgeben</li>	
+<li>
+<b>Plusquamperfekt</b>:
+ich würde aufgegeben haben, du würdest aufgegeben haben, er würde aufgegeben haben, wir würden aufgegeben haben, ihr würdet aufgegeben haben, sie würden aufgegeben haben</li>
+</ul>
+<h3>
+Imperativ Aktiv</h3>
+<ul>
+<li>
+<b>Präsens</b>:
+gib (du) auf, geben wir auf, gebt ihr auf, geben Sie auf</li>
+</ul>
+<h3>
+Infinitiv/Partizip Aktiv</h3>
+<ul>
+<li>
+<b>Infinitiv I</b>:
+aufgeben, aufzugeben</li>	
+<li>
+<b>Infinitiv II</b>:
+aufgegeben haben, aufgegeben zu haben</li>	
+<li>
+<b>Partizip I</b>:
+aufgebend</li>	
+<li>
+<b>Partizip II</b>:
+aufgegeben</li>
+</ul>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</section><div class="rAnkr rAnkrBox" id="kommentare"></div>
+<section class="rBox rBoxTrns " id="c2122Box"><div class="rClear" style="margin-bottom: 10px;"></div>
+<nav class="rRechts"><button class="rRechts rInf" type="button" id="c2122Img" onclick="Rahmen.aufzu('c2122')"><svg fill="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path class="rAuf" d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z"></path><path class="rZu" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z"></path></svg></button></nav><header><h2>Kommentare</h2>
+</header><div id="c2122" class="rAufZu">
+<hr>
+<!-- Yieldlove AdTag - verbformen.de - responsive --><div id="div-gpt-ad-1407836016707-0" class="aAnz aArt rClear">
+<script type="text/javascript">
+if (window.innerWidth >= 768) {
+googletag.cmd.push(function() {
+googletag.defineSlot('/53015287/verbformen.de_d_728x90_3', [728, 90], 'div-gpt-ad-1407836016707-0').addService(googletag.pubads());
+googletag.display('div-gpt-ad-1407836016707-0');
+});
+}
+if (window.innerWidth < 768) {
+googletag.cmd.push(function() {
+googletag.defineSlot('/53015287/verbformen.de_m_300x250_4', [300, 250], 'div-gpt-ad-1407836016707-0').addService(googletag.pubads());
+googletag.display('div-gpt-ad-1407836016707-0');
+});
+}
+</script>
+</div>
+<div class="kFrm" id="250e7">
+<form method="post" action="/kommentare/anlage.htm" onsubmit="Ajax.ersetze(event,'250e7')">
+<div class="rMrgn">
+<select class="kBwrt rRechts" name="bewertung"><option value="" selected>★✰✰✰✰</option>
+<option value="5">★★★★★</option>
+<option value="4">★★★★</option>
+<option value="3">★★★</option>
+<option value="2">★★</option>
+<option value="1">★</option></select><label for="kommentar">Kommentar:</label><br><div class="rClear"></div>
+<textarea maxlength="1000" rows="5" name="kommentar" id="kommentar" required="required"></textarea>
+</div>
+<span class="rMrgn rIn"><label for="name">Name:</label>
+<input name="autor" id="name" required="required" maxlength="20" size="15" value=""></span>
+<span class="rMrgn rIn"><label for="email">E-Mail (<a href="https://www.netzverb.de/datenschutz.htm">Datenschutz</a>):</label>
+<input type="email" name="email" id="email" value=""></span>
+<span class="rMrgn rIn">
+<img style="vertical-align: middle;" loading="lazy" src="/kommentare/captcha.png?33775" width="90"><input name="captcha" id="captcha" required="required" size="5" style=""></span>
+<input type="submit" value="Kommentieren"><input name="pfad" type="hidden" value="/konjugation/aufgeben.htm"><input name="url" type="hidden" value="https://www.verbformen.de/?w=aufgeben">
+</form>
+</div>
+</div>
+<div class="rClear" style="margin-top: 10px; min-height: 1px">
+</div>
+</section><footer class="rInf rKln rClear"><p>* Definitionen stammen zum Teil aus dem Wiktionary-Eintrag <a rel="nofollow" href="https://de.wiktionary.org/wiki?curid=24706">24706  (de.wiktionary.org)</a> und wurden mitunter nachträglich geändert. Sie sind unter der Lizenz CC-BY-SA 3.0 (creativecommons.org/licenses/by-sa/3.0) frei verfügbar. Die Urheber sind über den angegebenen Link unter der Rubrik Autoren aufgeführt.</p>
+<p>* Synonyme stammen zum Teil aus dem OpenThesaurus-Eintrag <a rel="nofollow" href="https://www.openthesaurus.de/synonyme/aufgeben">aufgeben  (openthesaurus.de)</a> und wurden mitunter nachträglich geändert. Sie sind unter der Lizenz CC-BY-SA 4.0 (creativecommons.org/licenses/by-sa/4.0) frei verfügbar.</p>
+</footer><footer class="rInf vLeg rClear">
+¹ Die Beispielsätze stammen von <a href="https://tatoeba.org" rel="nofollow" target="_blank">Tatoeba</a>. Sie sind unter der Lizenz <a href="https://creativecommons.org/licenses/by/2.0/" rel="nofollow" target="_blank">CC BY 2.0</a> <i>(creativecommons.org/licenses/by/2.0)</i> frei verfügbar. Die Urheber der Sätze sind über den Link ... direkt am Satz oder über folgende URLs jeweils unter <i>https://tatoeba.org/sentences/show</i> zu finden (die Reihenfolge entspricht dem Auftreten): <i>/4914412</i>, <i>/1691523</i>, <i>/797668</i>, <i>/1840339</i>, <i>/3813000</i>, <i>/4708069</i>, <i>/2394332</i><br>
+² Die Beispielsätze stammen aus der <a href="https://de.wikipedia.org" rel="nofollow" target="_blank">Wikipedia</a>. Sie sind unter der Lizenz <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="nofollow" target="_blank">CC-BY-SA 3.0</a> <i>(creativecommons.org/licenses/by-sa/3.0)</i> frei verfügbar. Die Urheber der Sätze sind über den Link ... direkt am Satz oder über folgende URLs jeweils unter <i>https://de.wikipedia.org/wiki?curid=</i> zu finden (die Reihenfolge entspricht dem Auftreten): <i>9428527 (Jon A. Lund)</i>, <i>365329 (Liselotte Welskopf-Henrich)</i>, <i>4062889 (Der Baader Meinhof Komplex)</i>, <i>9439205 (The North Star (Film))</i>, <i>591703 (Käthe Papke)</i>, <i>578904 (Friedrich Christian von Plettenberg)</i><br><br></footer><div class="rDnb">
+<!-- Yieldlove AdTag - verbformen.de - responsive -->
+<div id="div-gpt-ad-1407836062535-0" class="aAnz aDnb" style="position: fixed;">
+<script type="text/javascript">
+if (window.innerWidth >= 1260) {
+googletag.cmd.push(function() {
+googletag.defineSlot('/53015287/verbformen.de_d_300x600_1', [[300, 600], [160, 600], [300, 250]], 'div-gpt-ad-1407836062535-0').addService(googletag.pubads());
+googletag.display('div-gpt-ad-1407836062535-0');
+});
+}
+</script>
+</div>
+</div>
+</div>
+<div class="rClear"></div></article><script type="text/javascript">window.onscroll = function() { Rahmen.hoch('rHch'); };</script><a href="#rkopf"><div id="rHch" class="rHch"><svg fill="#ffffff" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z"></path></svg></div></a>
+<footer><div>
+<div class="rLinks rFuss">
+<h2>Kontakt</h2>
+<p>Netzverb® Deutsch<br>
+Inh. <a href="https://www.netzverb.de/andreas.htm">Andreas Göbel</a><br>
+Alte Buchholzer Str. 8<br>
+D-09487 Schlettau</p>
+<p>Telefon: +49 3733 6196894<br>
+E-Mail: info@netzverb.de</p>
+<p>Facebook: <a rel="nofollow" href="https://www.facebook.com/Netzverb">facebook.com/Netzverb</a><br>
+Twitter: <a rel="nofollow" href="https://twitter.com/Netzverb">twitter.com/Netzverb</a><br>
+Youtube: <a href="https://www.youtube.com/Netzverb-Deutsch">youtube.com/Netzverb</a><br>
+TikTok: <a href="https://www.tiktok.com/@netzverb">tiktok.com/@Netzverb</a><br>
+Instagram: <a href="https://www.instagram.com/netzverb/">instagram.com/Netzverb</a><br>
+Pinterest: <a href="https://www.pinterest.de/netzverb/">pinterest.de/Netzverb</a><br>
+Tumblr: <a href="https://netzverb.tumblr.com/">netzverb.tumblr.com</a><br>
+Google Play Store: <a href="https://play.google.com/store/apps/dev?id=7197812532170593543">play.google.com/Netzverb</a><br>
+Facebook App: <a href="https://www.facebook.com/Verbformen" target="_blank">facebook.com/Verbformen</a><br></p>
+</div>
+<div class="rLinks rFuss">
+<h2>Netzverb</h2>
+<p>Netzwerk der deutschen Sprache<br><a rel="nofollow" href="https://www.netzverb.de">www.netzverb.de</a>  ·
+<a rel="nofollow" href="https://www.netzverb.de/blog/">Blog</a></p>
+<p>Deutsche Flexion: <a rel="nofollow" href="https://www.verbformen.de">verbformen.de</a><br>
+Deutsches Wörterbuch: <a rel="nofollow" href="https://www.verben.de">verben.de</a><br>
+Deutsche Grammatik: <a rel="nofollow" href="//www.sprachlehre.de">sprachlehre.de</a><br>
+Deutsche Sätze: <a rel="nofollow" href="//www.satzapp.de">satzapp.de</a><br>
+Deutsche Wörter: <a rel="nofollow" href="https://www.verblisten.de">verblisten.de</a><br>
+Sprachforum: <a rel="nofollow" href="http://www.konjugation.de">konjugation.de</a><br>
+Deutsche Konjugation: <a rel="nofollow" href="http://www.konjugieren.de">konjugieren.de</a><br>
+Deutsche Deklination: <a rel="nofollow" href="http://www.deklinieren.de">deklinieren.de</a></p>
+<p><strong>Apps 📱</strong><br>
+Android: <a href="https://play.google.com/store/apps/details?id=de.verbformen.verben.app">Verben</a>
+<a href="https://play.google.com/store/apps/details?id=de.verbformen.verben.app.pro">Pro</a>
+<a href="https://play.google.com/store/apps/details?id=de.verbformen.verben.app.top">Top</a> · <a href="https://play.google.com/store/apps/details?id=de.verbformen.substantive.app.top">Substantive</a>
+<a href="https://play.google.com/store/apps/details?id=de.verbformen.substantive.app.pro">Pro</a>
+<a href="https://play.google.com/store/apps/details?id=de.verbformen.substantive.app.top">Top</a>
+<br>
+iOS:  <a href="https://apps.apple.com/de/app/id1522285301">Verben</a><br>
+Google: <a href="https://assistant.google.com/services/a/id/0d6a90c5e47fa7eb">Sprachassistent</a></p>
+</div>
+<div class="rLinks rFuss">
+<h2>Hinweise</h2>
+<p><a href="//www.netzverb.de/impressum.htm">Impressum</a><br><a href="//www.netzverb.de/impressum.htm">Nutzungsbedingungen</a></p>
+<h2>Datenschutz</h2>
+<p><a href="//www.netzverb.de/datenschutz.htm">Datenschutzerklärung</a><br><a href="javascript:window.yieldlove_cmp.loadPrivacyManager(379508)">Einwilligungen</a></p>
+<h2>Hilfe</h2>
+<p><a href="/hilfe/">Hilfe und FAQ</a> · <a href="/kommentare.htm">Kommentare</a><br><a href="//www.netzverb.de/links/">Links</a> · <a href="/hilfe/widgets.htm">Widgets</a> · <a href="/neuigkeiten.htm">Neuigkeiten</a></p>
+<p><a href="/mitmachen.htm">Werbung ausblenden</a></p>
+<a href="/nutzer/?anmelden">Anmelden</a>
+</div>
+<div class="rClear">
+<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow">
+<svg fill="#fff" fill-opacity="0.6" height="26" viewbox="0 0 26 26" width="26" xmlns="http://www.w3.org/2000/svg"><path d="m13 0c3.6 0 6.7 1.3 9.3 3.8 1.2 1.2 2.2 2.6 2.8 4.2 0.6 1.6 0.9 3.3 0.9 5 0 1.8-0.3 3.5-0.9 5 -0.6 1.6-1.5 2.9-2.8 4.1 -1.3 1.3-2.7 2.2-4.3 2.9 -1.6 0.7-3.3 1-5 1s-3.4-0.3-4.9-1c-1.6-0.6-3-1.6-4.3-2.9 -1.3-1.2-2.2-2.6-2.8-4.2 -0.6-1.5-1-3.2-1-4.9s0.3-3.4 1-5c0.7-1.6 1.6-3 2.9-4.3 2.5-2.5 5.5-3.8 9.1-3.8Zm0 2.3c-3 0-5.5 1-7.5 3.1 -1 1-1.8 2.2-2.3 3.5 -0.5 1.3-0.8 2.6-0.8 4 0 1.4 0.3 2.7 0.8 4 0.5 1.3 1.3 2.4 2.4 3.5s2.2 1.8 3.5 2.3c1.3 0.5 2.6 0.8 4 0.8 1.4 0 2.7-0.3 4.1-0.8s2.5-1.3 3.5-2.3c2-2 3-4.5 3-7.4 0-1.4-0.3-2.8-0.8-4.1 -0.5-1.3-1.2-2.4-2.2-3.4 -2.1-2.1-4.6-3.1-7.6-3.1Zm-0.2 8.5l-1.7 0.9c-0.2-0.4-0.4-0.7-0.7-0.8 -0.3-0.2-0.5-0.2-0.8-0.2 -1.2 0-1.7 0.8-1.7 2.3 0 0.7 0.1 1.3 0.4 1.7 0.3 0.4 0.7 0.6 1.3 0.6 0.8 0 1.3-0.4 1.6-1.1l1.6 0.8c-0.3 0.6-0.8 1.1-1.4 1.5 -0.6 0.4-1.3 0.5-2 0.5 -1.2 0-2.1-0.4-2.8-1.1 -0.7-0.7-1.1-1.7-1.1-3 0-1.2 0.4-2.2 1.1-2.9 0.7-0.7 1.6-1.1 2.7-1.1 1.6 0 2.8 0.6 3.5 1.9Zm7.5 0l-1.7 0.9c-0.2-0.4-0.4-0.7-0.7-0.8 -0.3-0.2-0.5-0.2-0.8-0.2 -1.2 0-1.7 0.8-1.7 2.3 0 0.7 0.1 1.3 0.4 1.7 0.3 0.4 0.7 0.6 1.3 0.6 0.8 0 1.3-0.4 1.6-1.1l1.6 0.8c-0.4 0.6-0.8 1.1-1.4 1.5 -0.6 0.4-1.3 0.5-2 0.5 -1.2 0-2.1-0.4-2.8-1.1 -0.7-0.7-1.1-1.7-1.1-3 0-1.2 0.4-2.2 1.1-2.9 0.7-0.7 1.6-1.1 2.7-1.1 1.6 0 2.8 0.6 3.4 1.9Z"></path></svg><svg fill="#fff" fill-opacity="0.6" height="26" viewbox="0 0 26 26" width="26" xmlns="http://www.w3.org/2000/svg"><path d="m13 0c3.7 0 6.7 1.3 9.2 3.8 2.5 2.6 3.8 5.6 3.8 9.2 0 3.7-1.2 6.7-3.7 9.1 -2.6 2.6-5.8 3.9-9.3 3.9 -3.6 0-6.6-1.3-9.2-3.8 -2.5-2.6-3.8-5.6-3.8-9.2 0-3.6 1.3-6.6 3.8-9.2 2.5-2.5 5.6-3.8 9.2-3.8Zm0.1 2.3c-3 0-5.4 1-7.5 3.1 -2.1 2.2-3.2 4.7-3.2 7.6 0 2.9 1.1 5.4 3.2 7.5 2 2 4.5 3.1 7.4 3.1 2.9 0 5.4-1.1 7.6-3.2 2-2 3.1-4.5 3.1-7.4s-1-5.5-3.1-7.6c-2-2.1-4.5-3.2-7.5-3.2Zm3.5 7.4v5.3h-1.5v6.3h-4v-6.3h-1.5v-5.3c0-0.2 0.1-0.4 0.2-0.6 0.2-0.2 0.4-0.2 0.6-0.2h5.3c0.2 0 0.4 0.1 0.6 0.2 0.2 0.2 0.3 0.4 0.3 0.6Zm-5.4-3.4c0-1.2 0.6-1.8 1.8-1.8s1.8 0.6 1.8 1.8c0 1.2-0.6 1.8-1.8 1.8 -1.2 0-1.8-0.6-1.8-1.8Z"></path></svg><svg fill="#fff" fill-opacity="0.6" height="26" viewbox="0 0 26 26" width="26" xmlns="http://www.w3.org/2000/svg"><path d="m13 0c3.6 0 6.7 1.3 9.2 3.8 2.5 2.5 3.8 5.6 3.8 9.2 0 3.6-1.2 6.7-3.7 9.1 -2.6 2.6-5.7 3.9-9.3 3.9 -3.5 0-6.6-1.3-9.2-3.8 -2.5-2.6-3.8-5.6-3.8-9.2 0-3.5 1.3-6.6 3.8-9.2 2.5-2.5 5.6-3.8 9.2-3.8Zm0 2.3c-3 0-5.4 1-7.5 3.1 -2.1 2.2-3.2 4.7-3.2 7.5 0 2.9 1.1 5.4 3.2 7.5 2.1 2.1 4.6 3.2 7.5 3.2 2.9 0 5.4-1.1 7.6-3.2 2.1-2 3.1-4.5 3.1-7.4 0-3-1-5.5-3.1-7.5 -2-2.2-4.5-3.2-7.4-3.2Zm-5.7 8.9c0.3-1.6 0.9-2.9 1.9-3.7 1-0.9 2.3-1.3 3.8-1.3 2.1 0 3.7 0.7 4.9 2 1.2 1.3 1.8 3 1.8 5.1 0 2-0.6 3.7-1.9 5 -1.3 1.3-2.9 2-4.9 2 -1.5 0-2.7-0.4-3.8-1.3s-1.7-2.1-1.9-3.8h3.3c0.1 1.6 1 2.4 2.9 2.4 0.9 0 1.7-0.4 2.2-1.2 0.6-0.8 0.8-1.8 0.8-3.2 0-1.4-0.3-2.4-0.8-3.1 -0.5-0.7-1.2-1.1-2.2-1.1 -1.7 0-2.7 0.8-2.9 2.3h1l-2.6 2.6 -2.6-2.6 1 0Z"></path></svg></a>
+<p>Alle originären Inhalte auf dieser Website sind, soweit nichts anderes vermerkt ist, unter der offenen Lizenz <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license nofollow" target="_blank">CC BY-SA 4.0</a> <em>(https://creativecommons.org/licenses/by-sa/4.0)</em> verfügbar. Die Inhalte dürfen somit frei und dauerhaft verwendet, kopiert und geändert werden und eignen sich im Rahmen von Open Educational Resources (OER) als Lehrmaterial. Bei einer Veröffentlichung ist als Urheber <em>"Netzverb (<a href="https://www.verbformen.de/">www.verbformen.de</a>)"</em> mit Verlinkung auf <em>https://www.verbformen.de/</em> zu nennen. Mehr Informationen stehen in den <a rel="nofollow" href="//www.netzverb.de/impressum.htm">Nutzungsbedingungen</a>. Server gehostet von <a rel="nofollow" href="https://www.inetsolutions.de/">Inetsolutions</a>.</p>
+</div>
+<span class="rInf rKln">66 ms</span>
+</div></footer><audio id="sTon" preload="auto" autoplay></audio><script async src="https://www.googletagmanager.com/gtag/js?id=UA-1466848-8"></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-1466848-8', { 'anonymize_ip': true });
+</script><script async type="text/javascript">
+if(document.getElementById("vStckLngImg")) {
+document.getElementById("vStckLngImg").addEventListener("click", function() {
+gtag('event', 'open-profile-details', {'event_category' : 'details', 'event_label' : 'Profile Details'});
+});
+}
+if(document.getElementById("vVdPlay")) {
+document.getElementById("vVdPlay").addEventListener("click", function() {
+gtag('event', 'play-conjugation-video', {'event_category' : 'videos', 'event_label' : 'Conjugation Video'});
+});
+}
+</script><script type="application/ld+json">{
+"@id": "http://www.netzverb.de/",
+"@context": "http://schema.org",
+"@type": "Organization",
+"url": "http://www.netzverb.de/",
+"name": "Netzverb Inh. Andreas Göbel",
+"logo": {
+"@type": "ImageObject",
+"url": "http://www.netzverb.de/netzverb.png"
+}, 
+"sameAs": [
+"https://www.facebook.com/NetzverbDeutsch",
+"https://twitter.com/Netzverb",
+"https://www.youtube.com/Netzverb-Deutsch",
+"https://www.tiktok.com/@netzverb",
+"https://www.instagram.com/netzverb/",
+"https://www.pinterest.de/netzverb/",
+"https://netzverb.tumblr.com/"
+]
+}</script><script type="application/ld+json">{
+"@context": "http://schema.org",
+"@type": "WebSite",
+"url": "https://www.verbformen.de/",
+"potentialAction": {
+"@type": "SearchAction",
+"target": "https://www.verbformen.de/suche/?w={search_term_string}",
+"query-input": "required name=search_term_string"
+},
+"author": { "@id": "http://www.netzverb.de/" },
+"publisher": { "@id": "http://www.netzverb.de/" }
+}</script><script type="application/ld+json">{
+"@context": "http://schema.org",
+"@type": "Article",
+"mainEntityOfPage": {
+"@type": "WebPage",
+"@id": "https://www.verbformen.de/konjugation/aufgeben.htm"
+},
+"headline": "Konjugation des Verbs aufgeben",
+"image": {
+"@type": "ImageObject",
+"url": "https://www.verbformen.de/konjugation/steckbrief/aufgeben.png",
+"license": "https://creativecommons.org/licenses/by-sa/4.0/",
+"acquireLicensePage": "https://www.netzverb.de/impressum.htm",
+"height": 600,
+"width": 900
+},
+"license": "https://creativecommons.org/licenses/by-sa/4.0/",
+"acquireLicensePage": "https://www.netzverb.de/impressum.htm",
+"datePublished": "2017-01-01T08:00:00+02:00",
+"dateModified": "2018-08-06T11:07:00+02:00",
+"author": {
+"@id": "http://www.netzverb.de/"
+},
+"publisher": {
+"@id": "http://www.netzverb.de/"
+}
+}</script><script type="application/ld+json">[
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"Beispiele",
+"url":"https://www.verbformen.de/konjugation/beispiele/aufgeben.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"Präsens",
+"url":"https://www.verbformen.de/konjugation/indikativ/praesens/aufgeben.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"Präteritum",
+"url":"https://www.verbformen.de/konjugation/indikativ/praeteritum/aufgeben.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"Imperativ",
+"url":"https://www.verbformen.de/konjugation/imperativ/aufgeben.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"Konjunktiv I",
+"url":"https://www.verbformen.de/konjugation/konjunktiv/praesens/aufgeben.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"Konjunktiv II",
+"url":"https://www.verbformen.de/konjugation/konjunktiv/praeteritum/aufgeben.htm"
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"Infinitiv",
+"url":"https://www.verbformen.de/konjugation/infinitive/aufgeben.htm\""
+},
+{
+"@context": "http://schema.org/",
+"@type": "SiteNavigationElement",
+"name":"Partizip",
+"url":"https://www.verbformen.de/konjugation/indikativ/praesens/aufgeben.htm"
+}
+]</script>
+</body>
+</html>

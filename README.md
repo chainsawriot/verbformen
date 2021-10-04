@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+[![R-CMD-check](https://github.com/chainsawriot/verbformen/workflows/R-CMD-check/badge.svg)](https://github.com/chainsawriot/verbformen/actions)
 <!-- badges: end -->
 
 The goal of verbformen is to query the website
@@ -70,7 +71,7 @@ the tidy format using the argument `tidy`.
 
 ``` r
 verbformen("aufgegeben", tidy = TRUE)
-#> # A tibble: 34 × 6
+#> # A tibble: 32 × 6
 #>    input      grundform pos   person tempus     wort     
 #>    <chr>      <chr>     <chr> <chr>  <chr>      <chr>    
 #>  1 aufgegeben auf·geben Verb  ich    Präsens    gebe auf 
@@ -83,7 +84,7 @@ verbformen("aufgegeben", tidy = TRUE)
 #>  8 aufgegeben auf·geben Verb  du     Präteritum gabst auf
 #>  9 aufgegeben auf·geben Verb  er     Präteritum gab auf  
 #> 10 aufgegeben auf·geben Verb  wir    Präteritum gaben auf
-#> # … with 24 more rows
+#> # … with 22 more rows
 ```
 
 You can also tidy the object after a query.
