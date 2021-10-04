@@ -200,6 +200,10 @@ tidy.verbformenobj <- function(x, ...) {
     if (ncol(konj) == 3) {
         konj %>% dplyr::mutate("X2" := paste(.data$X2, .data$X3)) -> konj
     }
+    if (any(stringr::str_detect(konj$X2, "/"))) {
+        ## kill all alternative spellings, issue #2
+        konj$X2 <- stringr::str_replace(konj$X2, "/.+", "")
+    }
     tab <- tibble::tibble(deklination = deklination, genus = genus, kasus = konj$X1, wort = konj$X2)
     tab$wort <- .clean_text(tab$wort)
     return(tab)

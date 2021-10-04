@@ -8,3 +8,14 @@ test_that("adj, issue #3", {
     res$table %>% dplyr::filter(deklination == "gemischte") %>% dplyr::pull(wort) -> x
     expect_true("ein guter" %in% x)
 })
+
+
+test_that("No alternative spelling, issue #2", {
+    ## x <- .request("tapfer", pos = "adj")
+    ## xml2::write_xml(x, "../testdata/tapfer.html")
+    src <- rvest::read_html("../testdata/tapfer.html")
+    res <- .parse_adj(src)
+    expect_true("tapferer" %in% res$table$wort)
+    expect_true("der tapfere" %in% res$table$wort)
+    expect_false("tapferemtapfremtapferm" %in% res$table$wort)
+})
