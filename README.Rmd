@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# verbformen
+# verbformen <img src="man/figures/verbformen_logo.png" align="right" height="200" />
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -29,6 +29,8 @@ devtools::install_github("chainsawriot/verbformen")
 ```
 
 ## Example
+
+### Verb
 
 Query verbformen.de. Please note that the query does not need to be in the *Grundform*. For example, querying *bin* (no need to be *sein*):
 
@@ -50,3 +52,46 @@ x <- verbformen("befinden")
 x
 tidy(x)
 ```
+
+### Noun (Substantiv)
+
+```{r sub}
+verbformen("Elefant")
+```
+
+### Adjective (Adjektiv)
+
+```{r adj}
+verbformen("übermenschlich")
+```
+
+### `pos` argument
+
+The `pos` argument is useful for word that can be functioned as multiple POSs.
+
+```{r pos_adj}
+verbformen("radikal", pos = "adj")
+```
+
+```{r pos_sub}
+verbformen("radikal", pos = "sub")
+```
+
+### Other word forms
+
+Please note that verbformen.de does not accept all word forms. For example, it can't be used to query adverb.
+
+```{r other}
+verbformen("noch")
+```
+
+## References
+
+The logo of verbformen contains [an image](https://www.atlas-alltagssprache.de/wp-content/uploads/2012/05/f4_24d.jpg) from the *Atlas zur deutschen Alltagssprache*.
+
+* Elspaß, Stephan & Robert Möller. 2003ff. Atlas zur deutschen Alltagssprache (AdA). Open-Access-Publikation: <https://www.atlas-alltagssprache.de>
+
+The data is scraped from the website *verbformen.de*. Please cite the data as:
+
+* Netzverb (2021). verbformen.de. https://www.verbformen.de/
+
