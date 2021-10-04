@@ -173,19 +173,19 @@ verbformen("übermenschlich")
 #> Info: Unkomparierbar
 #> 
 #> ── Deklination ─────────────────────────────────────────────────────────────────
-#> # A tibble: 49 × 4
-#>    deklination genus    kasus wort            
-#>    <chr>       <chr>    <chr> <chr>           
-#>  1 Prädikativ  <NA>     <NA>  übermenschlich  
-#>  2 starke      Maskulin Nom.  übermenschlicher
-#>  3 starke      Maskulin Gen.  übermenschlichen
-#>  4 starke      Maskulin Dat.  übermenschlichem
-#>  5 starke      Maskulin Akk.  übermenschlichen
-#>  6 starke      Neutral  Nom.  übermenschliches
-#>  7 starke      Neutral  Gen.  übermenschlichen
-#>  8 starke      Neutral  Dat.  übermenschlichem
-#>  9 starke      Neutral  Akk.  übermenschliches
-#> 10 starke      Feminin  Nom.  übermenschliche 
+#> # A tibble: 49 × 5
+#>    deklination genus    kasus artikel wort            
+#>    <chr>       <chr>    <chr> <chr>   <chr>           
+#>  1 Prädikativ  <NA>     <NA>  <NA>    übermenschlich  
+#>  2 starke      Maskulin Nom.  <NA>    übermenschlicher
+#>  3 starke      Maskulin Gen.  <NA>    übermenschlichen
+#>  4 starke      Maskulin Dat.  <NA>    übermenschlichem
+#>  5 starke      Maskulin Akk.  <NA>    übermenschlichen
+#>  6 starke      Neutral  Nom.  <NA>    übermenschliches
+#>  7 starke      Neutral  Gen.  <NA>    übermenschlichen
+#>  8 starke      Neutral  Dat.  <NA>    übermenschlichem
+#>  9 starke      Neutral  Akk.  <NA>    übermenschliches
+#> 10 starke      Feminin  Nom.  <NA>    übermenschliche 
 #> # … with 39 more rows
 ```
 
@@ -204,19 +204,19 @@ verbformen("radikal", pos = "adj")
 #> Info: Positiv · Endungen er/sten
 #> 
 #> ── Deklination ─────────────────────────────────────────────────────────────────
-#> # A tibble: 49 × 4
-#>    deklination genus    kasus wort     
-#>    <chr>       <chr>    <chr> <chr>    
-#>  1 Prädikativ  <NA>     <NA>  radikal  
-#>  2 starke      Maskulin Nom.  radikaler
-#>  3 starke      Maskulin Gen.  radikalen
-#>  4 starke      Maskulin Dat.  radikalem
-#>  5 starke      Maskulin Akk.  radikalen
-#>  6 starke      Neutral  Nom.  radikales
-#>  7 starke      Neutral  Gen.  radikalen
-#>  8 starke      Neutral  Dat.  radikalem
-#>  9 starke      Neutral  Akk.  radikales
-#> 10 starke      Feminin  Nom.  radikale 
+#> # A tibble: 49 × 5
+#>    deklination genus    kasus artikel wort     
+#>    <chr>       <chr>    <chr> <chr>   <chr>    
+#>  1 Prädikativ  <NA>     <NA>  <NA>    radikal  
+#>  2 starke      Maskulin Nom.  <NA>    radikaler
+#>  3 starke      Maskulin Gen.  <NA>    radikalen
+#>  4 starke      Maskulin Dat.  <NA>    radikalem
+#>  5 starke      Maskulin Akk.  <NA>    radikalen
+#>  6 starke      Neutral  Nom.  <NA>    radikales
+#>  7 starke      Neutral  Gen.  <NA>    radikalen
+#>  8 starke      Neutral  Dat.  <NA>    radikalem
+#>  9 starke      Neutral  Akk.  <NA>    radikales
+#> 10 starke      Feminin  Nom.  <NA>    radikale 
 #> # … with 39 more rows
 ```
 
