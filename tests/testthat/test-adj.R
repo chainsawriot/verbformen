@@ -4,9 +4,11 @@ test_that("adj, issue #3", {
     src <- rvest::read_html("../testdata/gut.html")
     res <- .parse_adj(src)
     res$table %>% dplyr::filter(deklination == "schwache") %>% dplyr::pull(wort) -> x
-    expect_true("der gute" %in% x)
+    expect_true("gute" %in% x)
     res$table %>% dplyr::filter(deklination == "gemischte") %>% dplyr::pull(wort) -> x
-    expect_true("ein guter" %in% x)
+    res$table %>% dplyr::filter(deklination == "gemischte") %>% dplyr::pull(artikel) -> y
+    expect_true("guter" %in% x)
+    expect_true("ein" %in% y)
 })
 
 
@@ -16,6 +18,8 @@ test_that("No alternative spelling, issue #2", {
     src <- rvest::read_html("../testdata/tapfer.html")
     res <- .parse_adj(src)
     expect_true("tapferer" %in% res$table$wort)
-    expect_true("der tapfere" %in% res$table$wort)
     expect_false("tapferemtapfremtapferm" %in% res$table$wort)
+    expect_true("tapfere" %in% res$table$wort)
+    expect_true("ein" %in% res$table$artikel)
+    expect_true("der" %in% res$table$artikel)
 })

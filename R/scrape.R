@@ -197,21 +197,22 @@ tidy.verbformenobj <- function(x, ...) {
     vt %>% rvest::html_element("h3") %>% rvest::html_text() -> genush3
     purrr::discard(c(genush3, genush2), is.na) -> genus
     vt %>% rvest::html_element("table") %>% rvest::html_table() -> konj
-    if (ncol(konj) == 3) {
-        konj %>% dplyr::mutate("X2" := paste(.data$X2, .data$X3)) -> konj
+    if (ncol(konj) != 3) {
+        konj %>% dplyr::mutate("X3" := .data$X2, "X2" := NA) -> konj
     }
-    if (any(stringr::str_detect(konj$X2, "/"))) {
+    if (any(stringr::str_detect(konj$X3, "/"))) {
         ## kill all alternative spellings, issue #2
-        konj$X2 <- stringr::str_replace(konj$X2, "/.+", "")
+        konj$X3 <- stringr::str_replace(konj$X3, "/.+", "")
     }
-    tab <- tibble::tibble(deklination = deklination, genus = genus, kasus = konj$X1, wort = konj$X2)
+    tab <- tibble::tibble(deklination = deklination, genus = genus, kasus = konj$X1, artikel = konj$X2, wort = konj$X3)
     tab$wort <- .clean_text(tab$wort)
     return(tab)
 }
 
 
 .parse_adjt_all <- function(rbox, deklination) {
-    rbox %>% rvest::html_elements("div.vTbl") %>% purrr::map_dfr(.parse_adjt, deklination = deklination)
+    rbox %>% rvest::html_elements("div.vTbl") %>% purrr::map2_dfr(.y = deklination, .f = .parse_adjt) -> res
+    return(res)
 }
 
 .parse_adj <- function(src) {
@@ -221,7 +222,7 @@ tidy.verbformenobj <- function(x, ...) {
     allp[[2]] %>% .squish_text -> comparativ
     rbox[[1]] %>% rvest::html_element("header") %>% .squish_text() -> info
     purrr::map2_dfr(rbox[2:4], c("starke", "schwache", "gemischte"), .parse_adjt_all) -> adj_table
-    prad <- tibble::tibble(deklination = "Pr\u00e4dikativ", genus = NA, kasus = NA, wort = grundform)
+    prad <- tibble::tibble(deklination = "Pr\u00e4dikativ", genus = NA, kasus = NA, artikel = NA, wort = grundform)
     adj_table <- dplyr::bind_rows(prad, adj_table)
     res <- list(pos = "Adjektiv", "basicinfo" = info, "grundform" = grundform, "comparativ" = comparativ, "table" = adj_table)
     class(res) <- append(class(res), "verbformenobj")
