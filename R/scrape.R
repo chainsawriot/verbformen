@@ -53,26 +53,28 @@ verbformen <- function(input, tidy = FALSE, pos = "ukn", sleep = 1) {
 .clean_text <- function(x, dot = FALSE) {
     ## clean up all non-german characters
     if (dot) {
-        rex <- "[^a-zA-Z äöüÄÖÜß·]"
+        rex <- "[^a-zA-Z \u00e4\u00f6\u00fc\u00c4\u00d6\u00dc\u00df\u00b7]"
     } else {
-        rex <- "[^a-zA-Z äöüÄÖÜß]"
+        rex <- "[^a-zA-Z \u00e4\u00f6\u00fc\u00c4\u00d6\u00dc\u00df]"
     }
     stringr::str_replace_all(x, rex, "")
 }
 
+#' @importFrom rlang .data
+#' @importFrom rlang :=
 .parse_vt <- function(vt) {
     vt %>% rvest::html_element("h2") %>% rvest::html_text() -> tempus
     vt %>% rvest::html_element("table") %>% rvest::html_table() -> konj
     if (ncol(konj) == 3) {
         ## trennbar
         if (tempus != "Imperativ") {
-            konj %>% dplyr::mutate(X2 = paste(X2, X3)) -> konj
+            konj %>% dplyr::mutate("X2" := paste(.data$X2, .data$X3)) -> konj
         } else {
-            konj %>% dplyr::mutate(X1 = paste(X1, X3)) -> konj            
+            konj %>% dplyr::mutate("X1" := paste(.data$X1, .data$X3)) -> konj            
         }
     }
     if (tempus == "Imperativ") {
-        tab <- tibble::tibble(person = konj$X2, tempus = tempus, wort = konj$X1) %>% dplyr::filter(!is.na(person))
+        tab <- tibble::tibble(person = konj$X2, tempus = tempus, wort = konj$X1) %>% dplyr::filter(!is.na(.data$person))
     } else if (tempus %in% c("Infinitiv", "Partizip")) {
         tab <- tibble::tibble(person = NA, tempus = tempus, wort = konj$X1)
     } else {
@@ -117,7 +119,7 @@ verbformen <- function(input, tidy = FALSE, pos = "ukn", sleep = 1) {
 .parse_verb <- function(src) {
     .extract_rbox(src) -> rbox
     rbox[[1]] %>% rvest::html_elements("p") -> allp
-    allp[[1]] %>% .squish_text %>% stringr::str_split("[ ·]+") %>% unlist -> verbbasicinfo
+    allp[[1]] %>% .squish_text %>% stringr::str_split("[ \u00b7]+") %>% unlist -> verbbasicinfo
     rbox[[1]] %>% rvest::html_element("p#grundform") %>% .squish_text -> grundform
     rbox[[1]] %>% rvest::html_element("p#stammformen") %>% .squish_text -> stammformen
     purrr::keep(allp, .is_node, css = "span[lang='en']") %>% .squish_text -> eng
@@ -153,23 +155,23 @@ verbformen <- function(input, tidy = FALSE, pos = "ukn", sleep = 1) {
 
 #' @method print verbformenobj
 #' @export
-print.verbformenobj <- function(obj, ...) {
-    cli::cli_h1(obj$input)
-    .d("POS:", obj$pos)
-    .d("Grundform:", obj$grundform)
-    .d("Komparation:", obj$comparativ)
-    .d("Stammformen:", obj$stammformen)
-    .d("Info:", obj$basicinfo)
-    .d("Bedeutung:", obj$bedeutung)
-    .d("Englisch:", obj$eng)
-    .d("Präpositionen:", obj$praep)
-    if (obj$pos == "verb") {
+print.verbformenobj <- function(x, ...) {
+    cli::cli_h1(x$input)
+    .d("POS:", x$pos)
+    .d("Grundform:", x$grundform)
+    .d("Komparation:", x$comparativ)
+    .d("Stammformen:", x$stammformen)
+    .d("Info:", x$basicinfo)
+    .d("Bedeutung:", x$bedeutung)
+    .d("Englisch:", x$eng)
+    .d("Pr\u00e4positionen:", x$praep)
+    if (x$pos == "verb") {
         title <- "Konjugation"
     } else {
         title <- "Deklination"
     }
     cli::cli_h1(title)
-    print(obj$table)
+    print(x$table)
 }
 
 #' tidy up verbformenobj to tibble
@@ -186,8 +188,8 @@ tidy <- function(x, ...) {
 #' @method tidy verbformenobj
 #' @rdname tidy
 #' @export
-tidy.verbformenobj <- function(obj, ...) {
-    dplyr::bind_cols(tibble::tibble(input = obj$input, grundform = obj$grundform, pos = obj$pos), obj$table)
+tidy.verbformenobj <- function(x, ...) {
+    dplyr::bind_cols(tibble::tibble(input = x$input, grundform = x$grundform, pos = x$pos), x$table)
 }
 
 .parse_adjt <- function(vt, deklination = "starke") {
@@ -208,26 +210,23 @@ tidy.verbformenobj <- function(obj, ...) {
 .parse_adj <- function(src) {
     .extract_rbox(src) -> rbox
     rbox[[1]] %>% rvest::html_elements("p") -> allp
-    allp[[1]] %>% .squish_text %>% stringr::str_split("[ ·]+") %>% unlist -> grundform
+    allp[[1]] %>% .squish_text %>% stringr::str_split("[ \u00b7]+") %>% unlist -> grundform
     allp[[2]] %>% .squish_text -> comparativ
     rbox[[1]] %>% rvest::html_element("header") %>% .squish_text() -> info
     purrr::map2_dfr(rbox[2:4], c("starke", "schwache", "gemischte"), .parse_adjt_all) -> adj_table
-    prad <- tibble::tibble(deklination = "Prädikativ", genus = NA, kasus = NA, wort = grundform)
+    prad <- tibble::tibble(deklination = "Pr\u00e4dikativ", genus = NA, kasus = NA, wort = grundform)
     adj_table <- dplyr::bind_rows(prad, adj_table)
     res <- list(pos = "Adjektiv", "basicinfo" = info, "grundform" = grundform, "comparativ" = comparativ, "table" = adj_table)
     class(res) <- append(class(res), "verbformenobj")
     return(res)
 }
 
-src <- .request("Elefant")
-
-
 .parse_sub <- function(src) {
     .extract_rbox(src) -> rbox
     rbox[[1]] %>% rvest::html_elements("p") -> allp
     rbox[[1]] %>% rvest::html_element("p.vGrnd") %>% .squish_text() -> grundform
     rbox[[1]] %>% rvest::html_element("p.vStm") %>% .squish_text() %>% .clean_text(dot = TRUE) -> stammformen
-    allp[[1]] %>% .squish_text %>% stringr::str_split("[ ·]+") %>% unlist -> info
+    allp[[1]] %>% .squish_text %>% stringr::str_split("[ \u00b7]+") %>% unlist -> info
     rbox[[1]] %>% rvest::html_element("span[lang='en']") %>% .squish_text -> eng
     rbox[[1]] %>% rvest::html_element("p.rInf.r1Zeile") %>% rvest::html_element("i") %>% .squish_text -> meaning
     rbox %>% rvest::html_elements("div.vTbl") %>% purrr::map_dfr(.parse_subt) -> sub_table

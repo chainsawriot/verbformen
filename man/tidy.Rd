@@ -7,7 +7,7 @@
 \usage{
 tidy(x, ...)
 
-\method{tidy}{verbformenobj}(obj, ...)
+\method{tidy}{verbformenobj}(x, ...)
 }
 \arguments{
 \item{x, }{an S3 object of the type "verformenobj"}
