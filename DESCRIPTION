@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "chainsawtiney@gmail.com",
            comment = c(ORCID = "0000-0002-6232-7530"))
-Description: This client scrapes the search results from the website verbformen.de. Please don\'t abuse.
+Description: This client scrapes the search results from the website verbformen.de and turns them into useful R data structures such as S3 object and tibble. Please don\'t abuse.
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true

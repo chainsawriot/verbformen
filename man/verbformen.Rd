@@ -4,16 +4,27 @@
 \alias{verbformen}
 \title{Query verbformen}
 \usage{
-verbformen(input, tidy = FALSE, pos = "ukn", sleep = 1)
+verbformen(
+  input = NULL,
+  tidy = FALSE,
+  pos = "ukn",
+  keep_dot = TRUE,
+  sleep = 1,
+  html_file = NULL
+)
 }
 \arguments{
 \item{input}{string, the word to be quried. Please note that verbformen.de accepts only verb, adjective, and noun. Other word types, e.g. adverb, are not supported. It is case-insensitive, i.e. "elefant" and "Elefant" are going to generate the same result.}
 
 \item{tidy}{logical, whether to return a tidy tibble only}
 
-\item{pos}{string, query for which pos of the input, possible values are "verb" (verb), "adj" (adjective), "sub" (noun) and "ukn" (unknown). This is useful for \code{input} that can be functioned as multiple POSs, e.g. "(r)adikal" can be both noun and adjective.}
+\item{pos}{string, query for which pos of the input, possible values are "verb" (verb), "adj" (adjective), "sub" (noun) and "ukn" (unknown). Other values are treated as "ukn". This is useful for \code{input} that can be functioned as multiple POSs, e.g. "(r)adikal" can be both noun and adjective.}
+
+\item{keep_dot}{logical, for separable verbs (trennbare Verben), whether to keep the dot indicating the separable part in the Grundform.}
 
 \item{sleep}{numeric, sleep time after query. Please set it at least to 1 to prevent abuse.}
+
+\item{html_file}{string, a downloaded HTML from verbformen.de. This parameter is not very useful, except for debugging.}
 }
 \value{
 an S3 object of the type of 'verbformenobj' or a tibble, depending on the parameter \code{tidy}

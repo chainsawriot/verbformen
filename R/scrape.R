@@ -5,28 +5,39 @@
 #'
 #' @param input string, the word to be quried. Please note that verbformen.de accepts only verb, adjective, and noun. Other word types, e.g. adverb, are not supported. It is case-insensitive, i.e. "elefant" and "Elefant" are going to generate the same result.
 #' @param tidy logical, whether to return a tidy tibble only
-#' @param pos string, query for which pos of the input, possible values are "verb" (verb), "adj" (adjective), "sub" (noun) and "ukn" (unknown). This is useful for `input` that can be functioned as multiple POSs, e.g. "(r)adikal" can be both noun and adjective.
+#' @param pos string, query for which pos of the input, possible values are "verb" (verb), "adj" (adjective), "sub" (noun) and "ukn" (unknown). Other values are treated as "ukn". This is useful for `input` that can be functioned as multiple POSs, e.g. "(r)adikal" can be both noun and adjective.
+#' @param keep_dot logical, for separable verbs (trennbare Verben), whether to keep the dot indicating the separable part in the Grundform.
 #' @param sleep numeric, sleep time after query. Please set it at least to 1 to prevent abuse.
+#' @param html_file string, a downloaded HTML from verbformen.de. This parameter is not very useful, except for debugging.
 #' @return an S3 object of the type of 'verbformenobj' or a tibble, depending on the parameter `tidy`
 #' @author Chung-hong Chan <chainsawtiney@@gmail.com>
 #' @export
-verbformen <- function(input, tidy = FALSE, pos = "ukn", sleep = 1) {
-    src <- .request(input, sleep = sleep, pos = pos)
+verbformen <- function(input = NULL, tidy = FALSE, pos = "ukn", keep_dot = TRUE, sleep = 1, html_file = NULL) {
+    if (is.null(input) & is.null(html_file)) {
+        stop("input and html_file cannot be both NULL.")
+    }
+    if (is.null(html_file)) {
+        src <- .request(input, sleep = sleep, pos = pos)
+    } else {
+        src <- rvest::read_html(html_file)
+    }
     result <- .detect_word(src)
     if (is.na(result)) {
         return(NA)
     } else if (result == "verb") {
-        res <- .parse_verb(src)
-        res$input <- input
+        res <- .parse_verb(src, keep_dot = keep_dot)
     } else if (result == "adj") {
         res <- .parse_adj(src)
-        res$input <- input
     } else if (result == "noun") {
         res <- .parse_sub(src)
-        res$input <- input
     } else {
         warning("Scraping ", result, " is not implemented")
         return(NA)
+    }
+    if (is.null(html_file)) {
+        res$input <- res$grundform
+    } else {
+        res$input <- input
     }
     if (tidy) {
         return(tidy(res))
@@ -116,11 +127,14 @@ verbformen <- function(input, tidy = FALSE, pos = "ukn", sleep = 1) {
     node %>% rvest::html_text() %>% stringr::str_squish()
 }
 
-.parse_verb <- function(src) {
+.parse_verb <- function(src, keep_dot) {
     .extract_rbox(src) -> rbox
     rbox[[1]] %>% rvest::html_elements("p") -> allp
     allp[[1]] %>% .squish_text %>% stringr::str_split("[ \u00b7]+") %>% unlist -> verbbasicinfo
     rbox[[1]] %>% rvest::html_element("p#grundform") %>% .squish_text -> grundform
+    if (!keep_dot) {
+        grundform <- stringr::str_replace_all(grundform, "\u00b7", "")
+    }
     rbox[[1]] %>% rvest::html_element("p#stammformen") %>% .squish_text -> stammformen
     purrr::keep(allp, .is_node, css = "span[lang='en']") %>% .squish_text -> eng
     purrr::keep(allp, .is_node, css = "span[title^='mit']") %>% .squish_text -> praep
